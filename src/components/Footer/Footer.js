@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss'
 
-export default () => {
+const Footer = ({ title }) => {
   return (
     <footer>
       <div className="footer-content">
@@ -9,7 +9,7 @@ export default () => {
           <svg width={27} height={20} viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="logo-img" d="M12.854 18.361C13.484 19.262 14.491 19.245 15.09 18.323L25.91 1.67701C26.509 0.755007 26.1 7.62939e-06 25 7.62939e-06L1.99999 7.62939e-06C0.89999 7.62939e-06 0.516991 0.737007 1.14599 1.63901L12.854 18.361Z" fill="#2D2D2D" />
           </svg>
-          <a href="/">devthread.ru</a>
+          <a href="/">{title}</a>
         </div>
         <div className="footer-content__nav">
           <div className="footer-nav__links">
@@ -53,9 +53,11 @@ export default () => {
           </div>
         </div>
         <div className="footer-content__copy">
-          <span>© 2020 devthread.ru</span>
+          <span>© 2020 {title}</span>
         </div>
       </div>
     </footer>
   )
 }
+
+export default Footer
