@@ -1,0 +1,118 @@
+@import '../../styles/variables.scss';
+
+.articles {
+  & .articles-heading {
+    margin-bottom: 35px;
+    & h1, h3 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    & a {
+      margin-top: 15px;
+      color: $black-clr;
+      & svg {
+        margin-left: 15px;
+        transition: all .1s;
+      }
+      &:hover {
+        & svg {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  & .articles-categories {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 85px;
+    margin-bottom: 10px;
+  }
+  & .articles-search {
+    margin-bottom: 35px;
+    & input {
+      width: 90%;
+      height: 45px;
+      margin-right: 15px;
+    }
+    & span {
+      font-size: 21px;
+      color: $black-clr;
+      font-weight: 700;
+    }
+  }
+  & .articles-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  & .articles-more {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+.dark {
+  & .articles-heading {
+    & h1, h3 {
+      color: $white-clr;
+    }
+    & a {
+      color: $white-clr;
+      & svg {
+        & .arrow-svg-more {
+          fill: $white-clr;
+        }
+      }
+    }
+  }
+  & .articles-search {
+    & input {
+      background-color: #202020;
+      border: 2px solid rgba(153, 153, 153, 0.2);
+      color: $white-clr;
+    }
+    & span {
+      color: $white-clr;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .articles {
+    & .articles-categories {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .articles {
+    & .articles-content {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .articles {
+    & .articles-heading {
+      & h3 {
+        font-size: 28px;
+      }
+    }
+    & .articles-search {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      margin-top: 20px;
+      & input {
+        width: 100%;
+        margin-top: 10px;
+      }
+      & span {
+        font-size: 18px;
+      }
+    }
+  }
+}

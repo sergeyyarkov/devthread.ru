@@ -1,0 +1,273 @@
+@import '../../styles/variables.scss';
+
+.headerScrolled {
+  height: 60px!important;
+}
+
+header {
+  border-bottom: 2px solid #F3F3F4;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  height: 70px;
+  transition: height .2s ease;
+  & .mobileOpen {
+    height: 100%!important;
+    padding: 3em;
+  }
+  & .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    height: 100%;
+    &__logo {
+      display: flex;
+      align-items: center;
+      & a {
+        text-decoration: none;
+        margin-left: 15px;
+        font-weight: 700;
+        background-color: $black-clr;
+        color: #fff;
+        border-radius: 20px;
+        padding: 2px 10px;
+      }
+    }
+    &__nav.desktop {
+      display: flex;
+      align-items: center;
+      & .header-nav__social {
+        margin-right: 35px;
+        & a {
+          text-decoration: none; 
+        }
+        & a:nth-child(1) {
+          margin-right: 13px;
+        }
+      }
+      & .header-nav__links nav ul {
+        display: flex;
+        margin-right: 30px;
+        & li {
+          list-style: none;
+          margin-right: 10px;
+          & a {
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: $black-clr;
+            border-radius: 6px;
+            padding: 10px;
+            transition: .1s;
+            &:hover {
+              background: rgba(0,0,0,.05);;
+              color: rgba(0,0,0,.8);
+            }
+          }
+        }
+        & li.active a {
+          background: rgba(0,0,0,.05);;
+          color: rgba(0,0,0,.8);
+        }
+      }
+      & .header-nav__theme {
+        cursor: pointer;
+      }
+    }
+    &__nav.mobile {
+      background: #0d0d0d;
+      position: fixed;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 0%;
+      transition: padding-top .2s ease-out;
+      overflow: scroll;
+      overflow-x: hidden;
+      z-index: 99;
+      & span {
+        color: $white-clr;
+        display: block;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 16px;
+      }
+      & nav {
+        & li {
+          margin-bottom: 20px;
+          & a {
+            font-size: 28px;
+            text-decoration: none;
+            color: $white-clr;
+            font-weight: 600;
+          }
+        }
+      }
+      & .mobile-social {
+        margin-top: 30px;
+        & svg {
+          & .telegram-svg-social {
+            fill: $white-clr;
+            width: 50px;
+          }
+          & .twitter-svg-social {
+            fill: $white-clr;
+          }
+        }
+        & a:nth-child(2) {
+          margin-left: 20px;
+        }
+        & a {
+          text-decoration: none;
+        }
+      }
+    }
+    &__button.mobile {
+      z-index: 999;
+      cursor: pointer;
+      width: 30px;
+      height: 21px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      background: none;
+      & span {
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $black-clr;
+        border-radius: 7px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+      & span:nth-child(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+      & span:nth-child(2) {
+        top: 7px;
+        transform-origin: left center;
+      }
+      & span:nth-child(3) {
+        top: 14px;
+        transform-origin: left center;
+      }
+    }
+    &__button.mobile.active {
+      & span:nth-child(1) {
+        transform: rotate(45deg);
+        background: $white-clr;
+        top: -3px;
+        left: 0px;
+      }
+      & span:nth-child(2) {
+        width: 0%;
+        opacity: 0; 
+        background: $white-clr;
+      }
+      & span:nth-child(3) {
+        transform: rotate(-45deg);
+        background: $white-clr;
+        top: 18px;
+        left: 0px;
+      }
+    }
+  }
+}
+
+.dark {
+  & header {
+    background: #1c1c1c;
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    & .header-content {
+      &__logo {
+        & svg {
+          & .logo-img {
+            fill: $white-clr;
+          }
+        }
+        & a {
+          background: none;
+          color: $white-clr;
+        }
+      }
+      &__nav {
+        & .header-nav__social {
+          & svg {
+            & .telegram-svg-social {
+              fill: $white-clr;
+            }
+            & .twitter-svg-social {
+              fill: $white-clr;
+            }
+          }
+        }
+        & .header-nav__links {
+          & nav {
+            & ul {
+              & li {
+                & a {
+                  color: $white-clr;
+                  &:hover {
+                    color: $primary-clr;
+                    background: rgba(0,0,0,.2);
+                  }
+                }
+              }
+              & li.active a {
+                background: rgba(0,0,0,.2);
+                color: $primary-clr;
+              }
+            }
+          }
+        }
+        & .header-nav__theme {
+          & svg {
+            & .theme-svg-option {
+              fill: $white-clr;
+            }
+          }
+        }
+      }
+      &__button.mobile {
+        & span {
+          background: $white-clr;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    & .header-content {
+      &__nav.mobile {
+        display: none;
+      }
+      &__button.mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    & .header-content {
+      &__nav.desktop {
+        display: none;
+      }
+    }
+  }
+}

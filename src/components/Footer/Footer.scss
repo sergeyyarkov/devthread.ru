@@ -1,0 +1,135 @@
+@import '../../styles/variables.scss';
+
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px 0 30px 0;
+  margin-top: 60px;
+  & .footer-content {
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    &__logo {
+      margin-bottom: 30px;
+      & a {
+        margin-left: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        color: $black-clr;
+      }
+    }
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      & .footer-nav__links {
+        display: flex;
+        & .links-social {
+          margin-right: 0;
+        }
+        & div {
+          margin-right: 80px;
+          & p {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 14px;
+          }
+          & ul {
+            & li {
+              margin-bottom: 7px;
+              & a {
+                text-decoration: none;
+                color: $black-clr;
+                font-size: 14px;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+      & .footer-nav__helpers {
+        display: flex;
+        align-items: flex-end;
+        & a {
+          text-decoration: none;
+        }
+        & a:nth-child(1) {
+          margin-right: 15px;
+        }
+      }
+    }
+    &__copy {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 40px;
+      color: $black-clr;
+      font-weight: 700;
+      font-size: 13px;
+    }
+  }
+}
+
+.dark {
+  footer {
+    color: $white-clr;
+    & .footer-content {
+      &__logo {
+        & svg {
+          & .logo-img {
+            fill: $white-clr;
+          }
+        }
+        & a {
+          color: $white-clr;
+        }
+      }
+      &__nav {
+        & .footer-nav__links {
+          & a {
+            color: $white-clr;
+          }
+        }
+      }
+      &__copy {
+        color: $white-clr;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    & .footer-content {
+      &__logo {
+        text-align: center;
+      }
+      &__nav {
+        flex-direction: column;
+        align-items: center;
+        & .footer-nav__links {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 596px) {
+  footer {
+    & .footer-content {
+      &__nav {
+        & .footer-nav__links {
+          flex-direction: column;
+          text-align: center;
+          & div {
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,36 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: 'devthread.ru',
+    menuLinks: [
+      {
+        name: 'Статьи',
+        link: '/articles'
+      },
+      {
+        name: 'О сайте',
+        link: '/about'
+      },
+      {
+        name: 'Контакты',
+        link: '/contacts'
+      },
+      {
+        name: 'Ресурсы',
+        link: '/books'
+      }
+    ]
+  },
+  plugins: [
+    'gatsby-plugin-sass',
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
+    }
+  ],
 }
