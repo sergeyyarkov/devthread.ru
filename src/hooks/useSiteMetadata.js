@@ -6,6 +6,9 @@ const useSiteMetadata = () => {
       site {
         siteMetadata {
           title
+          titleTemplate
+          description
+          siteUrl: url
           menuLinks {
             name
             link

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from 'gatsby'
+import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Description from '../components/Description/Description'
 import Articles from '../components/Articles/Articles'
@@ -8,9 +9,10 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import ArrowNext from '../images/arrow-next.svg'
 
-const Index = () => {
+const IndexPage = () => {
   return (
     <Layout>
+      <SEO />
       <Description />
       <main>
         <div className="container-fluid">
@@ -39,4 +41,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default IndexPage

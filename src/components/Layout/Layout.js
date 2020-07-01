@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header title={siteMetadata.title} menuLinks={siteMetadata.menuLinks} />
-      {children}
+        {children}
       <Footer title={siteMetadata.title} />
     </>
   )
