@@ -8,6 +8,7 @@ const useSiteMetadata = () => {
           title
           titleTemplate
           description
+          email
           siteUrl: url
           menuLinks {
             name

@@ -14,7 +14,7 @@ export default () => {
               </div>
               <div className="description-content__info">
                 <p>
-                  здесь публикуются самые различные статьи и руководства на тему веб-разработки для того чтобы помочь вам
+                  сборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="21px" height="21px" style={{msTransform: 'rotate(360deg)', WebkitTransform: 'rotate(360deg)', transform: 'rotate(360deg)'}} preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36">
                   <path fill="#EF9645" d="M4.861 9.147c.94-.657 2.357-.531 3.201.166l-.968-1.407c-.779-1.111-.5-2.313.612-3.093c1.112-.777 4.263 1.312 4.263 1.312c-.786-1.122-.639-2.544.483-3.331a2.483 2.483 0 0 1 3.456.611l10.42 14.72L25 31l-11.083-4.042L4.25 12.625a2.495 2.495 0 0 1 .611-3.478z" />

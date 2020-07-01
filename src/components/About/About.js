@@ -4,7 +4,7 @@ import './About.scss'
 
 import ContactsIcon from '../../images/contacts-icon.svg'
 
-const About = ({ title, pageTitle }) => {
+const About = ({ title, pageTitle, email }) => {
   return (
     <div className="about">
       <div className="about-heading">
@@ -28,7 +28,7 @@ const About = ({ title, pageTitle }) => {
             <span>контакты</span>
           </div>
           <ul>
-            <li><a href="mailto:support@devthread.ru">support@devthread.ru</a></li>
+            <li><a href={`mailto:${email}`}>{email}</a></li>
             <li><a href="/">telegram</a></li>
             <Link to='/contacts'>форма обратной связи</Link>
           </ul>
