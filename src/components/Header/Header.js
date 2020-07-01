@@ -14,7 +14,7 @@ const Header = ({ title, menuLinks }) => {
 
   React.useEffect(() =>  {
     isMobileOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = ''
-    document.body.onscroll = () => window.pageYOffset >= 200 ? setIsScrolled(true) : setIsScrolled(false)
+    document.body.onscroll = () => window.pageYOffset >= 100 ? setIsScrolled(true) : setIsScrolled(false)
   })
 
   const mobileHandler = () => {
