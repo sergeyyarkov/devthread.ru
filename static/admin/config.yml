@@ -6,7 +6,7 @@ public_folder: /assets
 collections:
   - name: "articles"
     label: "Article"
-    folder: "src/pages/blog"
+    folder: "content/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -19,7 +19,7 @@ collections:
       - {label: "Тэги", name: "tags", widget: "list"}
   - name: 'categories'
     label: "Category"
-    folder: 'src/pages/blog/categories'
+    folder: 'content/categories'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
