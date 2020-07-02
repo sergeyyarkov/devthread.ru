@@ -1,0 +1,29 @@
+import React from "react"
+import SEO from '../components/SEO/SEO'
+import Layout from '../components/Layout/Layout'
+import Books from '../components/Books/Books'
+import Offers from '../components/Offers/Offers'
+import Newsletter from '../components/Newsletter/Newsletter'
+
+const BooksPage = () => {
+  return (
+    <Layout>
+      <SEO title='Ресурсы' />
+      <main>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-9 col-xs-12">
+              <Books />
+              <Newsletter />
+            </div>
+            <div className="col-md-3 col-xs-12">
+              <Offers /> 
+            </div>
+          </div>
+        </div>
+      </main>
+    </Layout>
+  )
+}
+
+export default BooksPage

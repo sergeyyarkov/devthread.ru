@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.books {
+  & .books-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    & svg {
+      margin-right: 15px;
+    }
+  }
+  & .books-description {
+    margin-bottom: 30px;
+  }
+  & .books-inner {
+    margin-bottom: 35px;
+  }
+}
+
+.dark {
+  & .books {
+    & p, h1, h2, h3, h4, h5, h6, ul, ol {
+      color: $white-clr;
+    }
+    & blockquote {
+      background: #2A2A2A;
+      color: $white-clr;
+    }
+  }
+}
