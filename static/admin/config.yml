@@ -1,5 +1,6 @@
 backend:
-  name: sergeyyarkov/devthread.ru
+  name: "devthread.ru"
+  repo: your-username/your-repo-name
 media_folder: static/assets
 public_folder: /assets
 collections:
