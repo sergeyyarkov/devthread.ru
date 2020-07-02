@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
 import './Header.scss'
@@ -88,3 +89,18 @@ const Header = ({ title, menuLinks }) => {
 }
 
 export default Header
+
+Header.propTypes = {
+  title: PropTypes.string,
+  menuLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string,
+      name: PropTypes.string
+    })
+  )
+}
+
+Header.defaultProps = {
+  title: null,
+  menuLinks: null
+}

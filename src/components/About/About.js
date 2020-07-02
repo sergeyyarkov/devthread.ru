@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import './About.scss'
 
@@ -39,3 +40,15 @@ const About = ({ title, pageTitle, email }) => {
 }
 
 export default About
+
+About.propTypes = {
+  title: PropTypes.string,
+  pageTitle: PropTypes.string,
+  email: PropTypes.string
+}
+
+About.defaultProps = {
+  title: null,
+  pageTitle: null,
+  email: null
+}

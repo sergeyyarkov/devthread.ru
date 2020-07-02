@@ -18,7 +18,7 @@ const ThemeProvider = ({ children }) => {
   }
 
   React.useEffect(() => {
-    if (localStorage.getItem('dark')) {
+    if (localStorage.getItem('dark') || (new Date().getHours() >= 22 || new Date().getHours() <= 6)) {
       toggleDarkTheme()
     }
   }, [setIsDark])

@@ -2,7 +2,7 @@ import React from 'react';
 import ArticleCard from './ArticleCard/ArticleCard'
 import './Articles.scss'
 
-export default () => {
+const Articles = () => {
   return (
     <div className="articles">
       <div className="articles-content">
@@ -11,3 +11,5 @@ export default () => {
     </div>
   )
 }
+
+export default Articles

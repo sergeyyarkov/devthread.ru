@@ -6,7 +6,7 @@ import ViewsIcon from '../../images/views-icon.svg'
 import TagIcon from '../../images/tag-icon.svg'
 import BooksIcon from '../../images/books-icon.svg'
 
-export default () => {
+const Offers = () => {
   return (
     <div className="offers">
       <div className="offers-popular offer-box">
@@ -97,3 +97,5 @@ export default () => {
     </div>
   )
 }
+
+export default Offers

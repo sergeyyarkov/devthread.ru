@@ -1,7 +1,7 @@
 import React from 'react';
 import './Newsletter.scss'
 
-export default () => {
+const Newsletter = () => {
   return (
     <div className="newsletter">
       <div className="newsletter-heading">
@@ -23,3 +23,5 @@ export default () => {
     </div>
   )
 }
+
+export default Newsletter
