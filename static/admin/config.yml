@@ -12,7 +12,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "name.first", searchFields: ["name.first"]}
+      - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "title", searchFields: ["title"]}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
       - {label: "Описание", name: "description", widget: "text"}
       - {label: "Содержание", name: "body", widget: "markdown"}
