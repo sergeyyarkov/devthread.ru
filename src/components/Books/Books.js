@@ -1,20 +1,9 @@
 import React from 'react';
 import './Books.scss'
 
-import BooksIcon from '../../images/books-icon__large.svg'
-
 const Books = () => {
   return (
     <div className="books">
-      <div className="books-heading">
-        <BooksIcon />
-        <h1>Что почитать</h1>
-      </div>
-      <div className="books-description">
-        <p>
-          Здесь представлен список книг по программированию, которые стоило бы прочитать
-        </p>
-      </div>
       <div className="books-inner inner">
         <h2>Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
         <p>
