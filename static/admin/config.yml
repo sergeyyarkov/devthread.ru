@@ -1,6 +1,6 @@
 backend:
-  name: "devthread.ru"
-  repo: your-username/your-repo-name
+  name: github
+  repo: sergeyyarkov/devthread.ru
 media_folder: static/assets
 public_folder: /assets
 collections:
