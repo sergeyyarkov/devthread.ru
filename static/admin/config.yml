@@ -1,0 +1,26 @@
+backend:
+  name: sergeyyarkov/devthread.ru
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: "articles"
+    label: "Article"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
+      - {label: "Заголовок", name: "title", widget: "string"}
+      - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "name.first", searchFields: ["name.first"]}
+      - {label: "Дата публикации", name: "date", widget: "datetime"}
+      - {label: "Описание", name: "description", widget: "text"}
+      - {label: "Содержание", name: "body", widget: "markdown"}
+      - {label: "Тэги", name: "tags", widget: "list"}
+  - name: 'categories'
+    label: "Category"
+    folder: 'src/pages/blog/categories'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template key", name: "templateKey", widget: "hidden", default: "category"}
+      - {label: "Название категории", name: "title", widget: "string"}

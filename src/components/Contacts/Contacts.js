@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactsFrom from './ContactsForm/ContactsForm';
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import './Contacts.scss'
 
@@ -18,18 +19,7 @@ const Contacts = () => {
           Для того чтобы задать вопрос, сообщить об ошибках или просто поздороваться, вы можете воспользоваться формой обратной связи или использовать контактные данные.
         </p>
       </div>
-      <div className="contacts-form">
-        <h2>форма обратной связи</h2>
-        <form action="#">
-          <input placeholder="Ваше имя" type="text" />
-          <input placeholder="Ваша почта" type="text" />
-          <input placeholder="Тема сообщения" type="text" />
-          <textarea placeholder="Ваше сообщение..." defaultValue={""} />
-          <div className="submit-btn">
-            <button className="btn-primary">Отправить</button>
-          </div>
-        </form>
-      </div>
+      <ContactsFrom />
       <div className="contacts-info">
         <h2>контактные данные</h2>
         <ul>

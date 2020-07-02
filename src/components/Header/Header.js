@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
 import './Header.scss'
 
+import LogoIcon from '../../images/logo-icon.svg'
 import TelegramIcon from '../../images/telegram-icon.svg'
 import TwitterIcon from '../../images/twitter-icon.svg'
 import MoonIcon from '../../images/moon-icon.svg'
@@ -34,9 +35,7 @@ const Header = ({ title, menuLinks }) => {
     <header className={isScrolled ? 'headerScrolled' : null}>
       <div className="header-content">
         <div className="header-content__logo">
-          <svg width={27} height={20} viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path className="logo-img" d="M12.854 18.361C13.484 19.262 14.491 19.245 15.09 18.323L25.91 1.67701C26.509 0.755007 26.1 7.62939e-06 25 7.62939e-06L1.99999 7.62939e-06C0.89999 7.62939e-06 0.516991 0.737007 1.14599 1.63901L12.854 18.361Z" fill="#2D2D2D" />
-          </svg>
+          <LogoIcon />
           <Link to='/'>{title}</Link>
         </div>
         <div className="header-content__nav desktop">
