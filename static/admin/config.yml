@@ -14,6 +14,7 @@ collections:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Время чтения", name: "time", widget: "string"}
       - {label: "Заголовок", name: "title", widget: "string"}
+      - {labe: "Обложка", name: "image", widget: "image"}
       - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "title", searchFields: ["title"]}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
       - {label: "Описание", name: "description", widget: "text"}

@@ -80,6 +80,7 @@ export const query = graphql`
           frontmatter {
             slug
             title
+            image
             category
             tags
             description

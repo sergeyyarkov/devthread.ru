@@ -37,6 +37,7 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        image
         time
         tags
         description

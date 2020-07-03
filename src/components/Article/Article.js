@@ -8,7 +8,7 @@ import VkIcon from '../../images/vk-icon.svg'
 import TwitterIcon from '../../images/twitter-icon__large.svg'
 import FacebookIcon from '../../images/facebook-icon__large.svg'
 
-const Article = ({ data: { title, description, category, tags, time, date }, html }) => {
+const Article = ({ data: { title, image, description, category, tags, time, date }, html }) => {
   return (
     <>
       <SEO title={title} description={description} />
@@ -61,7 +61,7 @@ const Article = ({ data: { title, description, category, tags, time, date }, htm
             </div>)}
           </div>
           <div className="article-image">
-            <img src="https://c.wallhere.com/photos/fb/a1/JavaScript_minimalism-1227036.jpg!d" alt="article" />
+            <img src={image} alt={title} />
           </div>
           <div className="article-inner inner">
             <div dangerouslySetInnerHTML={{__html: html}}></div>

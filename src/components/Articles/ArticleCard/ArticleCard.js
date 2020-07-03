@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby'
 import './ArticleCard.scss'
 
-const ArticleCard = ({ data: { slug, title, category, description, tags } }) => {
+const ArticleCard = ({ data: { slug, title, image, category, description, tags } }) => {
   return (
     <article className="article-card">
       <div className="article-card__image">
         <Link to={`/article/${slug}`}>
-          <img src="https://c.wallhere.com/photos/fb/a1/JavaScript_minimalism-1227036.jpg!d" alt="article" />
+          <img src={image} alt={title} />
         </Link>
       </div>
       <div className="article-card__heading">
