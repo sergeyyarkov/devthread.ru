@@ -4,8 +4,12 @@
   & article {
     & .article-info {
       display: flex;
+      justify-content: space-between;
       margin-bottom: 10px;
       font-size: 14px;
+      & .left-info {
+        display: flex;
+      }
       &__views {
         display: flex;
         align-items: center;
@@ -13,6 +17,10 @@
         & svg {
           margin-right: 7px;
         }
+      }
+      &__date {
+        margin-right: 15px;
+        color: #767676;
       }
     }
     & .article-heading {
@@ -32,12 +40,13 @@
     }
     & .article-share {
       display: flex;
+      align-items: center;
       margin-bottom: 15px;
       &__social{
         margin-left: 15px;
         & a {
           text-decoration: none;
-          margin-right: 5px;
+          margin-right: 10px;
         }
         & a:nth-child(3) {
           margin-right: 0;

@@ -119,6 +119,17 @@
     border-bottom: 1px solid rgba(153, 153, 153, 0.2);
   }
 }
+
+.dark {
+  & .anchor-link {
+    & svg {
+      & .anchor-icon {
+        fill: $white-clr;
+      }
+    }
+  }
+}
+
 html {
   height: 100%;
 }
