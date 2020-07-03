@@ -6,7 +6,7 @@ import Articles from '../components/Articles/Articles'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
-const ArticlesPage = () => {
+const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO title='Статьи' />
@@ -59,7 +59,7 @@ const ArticlesPage = () => {
           </div>
           <div className="row">
             <div className="col-md-9 col-xs-12">
-              <Articles /> 
+              <Articles data={edges} /> 
               <Newsletter />
             </div>
             <div className="col-md-3 col-xs-12">
@@ -71,5 +71,23 @@ const ArticlesPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            category
+            tags
+            description
+          }
+        }
+      }
+    }
+  } 
+`
 
 export default ArticlesPage

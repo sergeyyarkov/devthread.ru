@@ -2,11 +2,11 @@ import React from 'react';
 import ArticleCard from './ArticleCard/ArticleCard'
 import './Articles.scss'
 
-const Articles = () => {
+const Articles = ({ data: { edges } }) => {
   return (
     <div className="articles">
       <div className="articles-content">
-        {[1,2,3,4].map(e => <ArticleCard key={e} />)}
+        {edges.map(({ node }, e) => <ArticleCard key={e} data={node.frontmatter} />)}
       </div>
     </div>
   )

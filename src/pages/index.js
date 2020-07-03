@@ -9,7 +9,7 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import ArrowNext from '../images/arrow-next.svg'
 
-const IndexPage = () => {
+const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO />
@@ -28,7 +28,7 @@ const IndexPage = () => {
           </div>
           <div className="row">
             <div className="col-md-9 col-xs-12">
-              <Articles /> 
+              <Articles data={edges} /> 
               <Newsletter />
             </div>
             <div className="col-md-3 col-xs-12">
@@ -40,5 +40,23 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            category
+            tags
+            description
+          }
+        }
+      }
+    }
+  } 
+`
 
 export default IndexPage

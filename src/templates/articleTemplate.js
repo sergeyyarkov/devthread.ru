@@ -9,7 +9,7 @@ import { graphql } from "gatsby"
 export default function Template ({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-  console.log(markdownRemark.frontmatter)
+
   return (
     <Layout>
       <main>
