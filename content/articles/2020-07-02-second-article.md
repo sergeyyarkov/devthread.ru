@@ -32,8 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligu
   module.exports = {
     plugins: [
       {
-        resolve: `plugin`,
-        options: {},
+        resolve: `plugin`
       }
     ]
   }
