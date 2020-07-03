@@ -9,6 +9,7 @@ const useMoreArticlesQuery = () => {
             frontmatter {
               slug
               title
+              image
               category
               tags
               description
