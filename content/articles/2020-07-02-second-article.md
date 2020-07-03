@@ -3,6 +3,7 @@ templateKey: article
 slug: article-2
 time: "5"
 title: Second article
+image: /assets/javascript.png
 category: First category
 date: 2020-07-02T23:24:00.959Z
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
