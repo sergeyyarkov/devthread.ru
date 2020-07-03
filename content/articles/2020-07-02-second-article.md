@@ -33,9 +33,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligu
     plugins: [
       {
         resolve: `plugin`,
-        options: {
-         
-        },
+        options: {},
       }
     ]
   }
