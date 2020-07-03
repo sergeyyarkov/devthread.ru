@@ -28,7 +28,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligu
 
 ![wallpaper](https://wallpaperplay.com/walls/full/2/9/7/164604.jpg)
 
-```javascript
+```bash
   module.exports = {
     plugins: [
       {
