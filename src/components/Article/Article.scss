@@ -1,0 +1,114 @@
+@import '../../styles/variables.scss';
+
+.article {
+  & article {
+    & .article-info {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 14px;
+      &__views {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        & svg {
+          margin-right: 7px;
+        }
+      }
+    }
+    & .article-heading {
+      margin-bottom: 5px;
+      & h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        color: $black-clr;
+      }
+    }
+    & .article-category {
+      margin-bottom: 10px;
+      & a {
+        font-size: 16px;
+      }
+    }
+    & .article-share {
+      display: flex;
+      margin-bottom: 15px;
+      &__social{
+        margin-left: 15px;
+        & a {
+          text-decoration: none;
+          margin-right: 5px;
+        }
+        & a:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+    & .article-description {
+      margin-bottom: 20px;
+      & p {
+        font-size: 17px;
+        color: $black-clr;
+      }
+    }
+    & .article-tags {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    & .article-image {
+      & img {
+        height: auto;
+        max-width: 100%;
+        border-radius: 7px;
+      }
+      margin-bottom: 25px;
+    }
+    & .article-more {
+      margin: 15px 0;
+    }
+    & .article-comments {
+      margin: 25px 0;
+    }
+  }
+}
+
+.dark {
+  & .article {
+    & article {
+      & .article-share {
+        &__social {
+          & a {
+            & svg {
+              & .vk-icon, .twitter-icon, .facebook-icon {
+                fill: $white-clr;
+              }
+            }
+          }
+        }
+      }
+      & .article-info, & .article-share {
+        color: $white-clr;
+      }
+      & .article-more {
+        color: $white-clr;
+      }
+      & p, h1, h2, h3, h4, h5, h6, ul, ol {
+        color: $white-clr;
+      }
+      & blockquote {
+        background: #2A2A2A;
+        color: $white-clr;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .article {
+    article {
+      & .article-image {
+        padding: 0 5rem;
+      }
+    }
+  }
+}

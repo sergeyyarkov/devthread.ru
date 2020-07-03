@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.more-articles {
+  margin-top: 40px;
+  & .more-articles__heading {
+    margin-bottom: 35px;
+  }
+  & .more-articles__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.dark {
+  & .more-articles__heading {
+    color: $white-clr;
+  }
+}

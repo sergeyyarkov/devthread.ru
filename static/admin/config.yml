@@ -11,6 +11,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Время чтения", name: "time", widget: "string"}
       - {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "title", searchFields: ["title"]}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
