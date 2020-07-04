@@ -4,7 +4,7 @@ slug: third-article
 time: "3"
 title: Third article
 image: /assets/javascript.png
-category: First category
+category: Second category
 date: 2020-07-03T14:09:31.389Z
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
