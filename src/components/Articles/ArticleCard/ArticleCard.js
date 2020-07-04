@@ -9,7 +9,7 @@ const ArticleCard = ({ data: { slug, title, image, category, description, tags }
     <article className="article-card">
       <div className="article-card__image">
         <Link to={`/article/${slug}`}>
-          <Img fluid={image.childImageSharp.fluid} alt={title} />
+          <Img loading="eager" fadeIn={false} fluid={image.childImageSharp.fluid} alt={title} />
         </Link>
       </div>
       <div className="article-card__heading">

@@ -63,7 +63,7 @@ const Article = ({ data: { title, image, description, category, tags, time, date
             </div>)}
           </div>
           <div className="article-image">
-            <Img fluid={image.childImageSharp.fluid} alt={title} />
+            <Img loading="eager" fadeIn={false} fluid={image.childImageSharp.fluid} alt={title} />
           </div>
           <div className="article-inner inner">
             <div dangerouslySetInnerHTML={{__html: html}}></div>
