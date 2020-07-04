@@ -10,7 +10,7 @@ const Categories = () => {
       <div className="tag-item">
         <Link to='/articles'>Все</Link>
       </div>
-      {edges.map(({ node }) => <div className="tag-item">
+      {edges.map(({ node }, i) => <div key={i} className="tag-item">
         <Link to={`/category/${slugify(node.frontmatter.title)}`}>{node.frontmatter.title}</Link>
       </div>)}
     </div>

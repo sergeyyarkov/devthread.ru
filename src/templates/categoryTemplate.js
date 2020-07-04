@@ -22,7 +22,7 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges } }) => {
                 <Categories />
                 <div className="articles-search">
                   <input placeholder="Напишите сюда чтобы отфильтровать статьи" type="text" />
-                  <span>278</span>
+                  <span>{edges.edges.length}</span>
                 </div>
               </div>
             </div>
