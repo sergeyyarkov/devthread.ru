@@ -43,7 +43,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           frontmatter {

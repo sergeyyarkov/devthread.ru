@@ -1,4 +1,5 @@
 import React from 'react';
+import slugify from '../../../helpers/slugify'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import './ArticleCard.scss'
@@ -15,7 +16,7 @@ const ArticleCard = ({ data: { slug, title, image, category, description, tags }
         <h2><Link to={`/article/${slug}`}>{title}</Link></h2>
       </div>
       <div className="article-card__category">
-        <Link to={`/category/${category}`}>{category}</Link>
+        <Link to={`/category/${slugify(category)}`}>{category}</Link>
       </div>
       <div className="article-card__tags">
         <ul>
