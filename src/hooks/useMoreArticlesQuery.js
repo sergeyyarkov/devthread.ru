@@ -9,7 +9,13 @@ const useMoreArticlesQuery = () => {
             frontmatter {
               slug
               title
-              image
+              image {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               category
               tags
               description

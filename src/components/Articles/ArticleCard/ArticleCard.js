@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import './ArticleCard.scss'
 
@@ -7,7 +8,7 @@ const ArticleCard = ({ data: { slug, title, image, category, description, tags }
     <article className="article-card">
       <div className="article-card__image">
         <Link to={`/article/${slug}`}>
-          <img src={image} alt={title} />
+          <Img fluid={image.childImageSharp.fluid} alt={title} />
         </Link>
       </div>
       <div className="article-card__heading">

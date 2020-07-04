@@ -1,3 +1,4 @@
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 const path = require('path')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -32,3 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   })
 }
+
+exports.onCreateNode = ({ node }) => {
+  fmImagesToRelative(node);
+};

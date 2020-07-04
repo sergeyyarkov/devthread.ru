@@ -49,7 +49,13 @@ export const query = graphql`
           frontmatter {
             slug
             title
-            image
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             category
             tags
             description

@@ -31,10 +31,30 @@ module.exports = {
     ]
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: 'assets',
+      },
+    },
+    "gatsby-plugin-sharp",
+		"gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "assets"
+            }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -76,7 +96,7 @@ module.exports = {
               },
               escapeEntities: {},
             },
-          },
+          }
         ],
       },
     },
@@ -96,7 +116,5 @@ module.exports = {
       }
     },
     'gatsby-plugin-netlify-cms',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass'
   ],
 }

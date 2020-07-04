@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../SEO/SEO'
+import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import './Article.scss'
 
@@ -61,7 +62,7 @@ const Article = ({ data: { title, image, description, category, tags, time, date
             </div>)}
           </div>
           <div className="article-image">
-            <img src={image} alt={title} />
+            <Img fluid={image.childImageSharp.fluid} alt={title} />
           </div>
           <div className="article-inner inner">
             <div dangerouslySetInnerHTML={{__html: html}}></div>
