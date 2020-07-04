@@ -1,8 +1,9 @@
 import React from "react"
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
+import Categories from '../components/Articles/Categories/Categories'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
@@ -18,38 +19,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
                 <div className="articles-heading">
                   <h1>Статьи</h1>
                 </div>
-                <div className="articles-categories">
-                  <div className="tag-item">
-                    <Link to='/'>Все</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>Javascript</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>GraphQL</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>Reactjs</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>SEO оптимизация</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>Web разработка</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>pet-проекты</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>Nodejs</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>ООП</Link>
-                  </div>
-                  <div className="tag-item">
-                    <Link to='/'>Новости</Link>
-                  </div>
-                </div>
+                <Categories />
                 <div className="articles-search">
                   <input placeholder="Напишите сюда чтобы отфильтровать статьи" type="text" />
                   <span>278</span>
