@@ -29,7 +29,7 @@
     margin-bottom: 10px;
   }
   & .articles-search {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     & input {
       width: 90%;
       height: 45px;
@@ -39,6 +39,12 @@
       font-size: 21px;
       color: $black-clr;
       font-weight: 700;
+    }
+  }
+  & .articles-info {
+    margin-bottom: 20px;
+    & p {
+      font-size: 18px;
     }
   }
   & .articles-content {
@@ -73,6 +79,11 @@
       color: $white-clr;
     }
     & span {
+      color: $white-clr;
+    }
+  }
+  & .articles-info {
+    & p {
       color: $white-clr;
     }
   }

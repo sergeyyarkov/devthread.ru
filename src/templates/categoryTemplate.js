@@ -3,14 +3,15 @@ import { graphql } from 'gatsby'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
+import Search from '../components/Articles/Search/Search'
 import Categories from '../components/Articles/Categories/Categories'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
-const CategoryPage = ({ data: { allMarkdownRemark: edges } }) => {
+const CategoryPage = ({ data: { allMarkdownRemark: edges }, pathContext: { title } }) => {
   return (
     <Layout>
-      <SEO title='Категория' />
+      <SEO title={title} />
       <main>
         <div className="container-fluid">
           <div className="row">
@@ -20,9 +21,9 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges } }) => {
                   <h1>Статьи</h1>
                 </div>
                 <Categories />
-                <div className="articles-search">
-                  <input placeholder="Напишите сюда чтобы отфильтровать статьи" type="text" />
-                  <span>{edges.edges.length}</span>
+                <Search articlesLength={edges.edges.length} />
+                <div className="articles-info">
+                  <p>Показано {edges.edges.length} из категории "{title}"</p>
                 </div>
               </div>
             </div>

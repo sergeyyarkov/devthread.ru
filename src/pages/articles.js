@@ -4,6 +4,7 @@ import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
 import Categories from '../components/Articles/Categories/Categories'
+import Search from '../components/Articles/Search/Search'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
@@ -20,10 +21,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
                   <h1>Статьи</h1>
                 </div>
                 <Categories />
-                <div className="articles-search">
-                  <input placeholder="Напишите сюда чтобы отфильтровать статьи" type="text" />
-                  <span>278</span>
-                </div>
+                <Search articlesLength={edges.edges.length} />
               </div>
             </div>
           </div>
