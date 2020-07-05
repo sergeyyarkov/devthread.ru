@@ -8,7 +8,7 @@ import Categories from '../components/Articles/Categories/Categories'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
-const CategoryPage = ({ data: { allMarkdownRemark: edges }, pathContext: { title } }) => {
+const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   return (
     <Layout>
       <SEO title={title} />

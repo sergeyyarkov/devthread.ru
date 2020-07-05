@@ -6,7 +6,7 @@ import MoreArticles from '../components/Articles/MoreArticles/MoreArticles'
 import Newsletter from '../components/Newsletter/Newsletter'
 import { graphql } from "gatsby"
 
-export default function Template ({ data }) {
+const articleTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
@@ -53,3 +53,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default articleTemplate

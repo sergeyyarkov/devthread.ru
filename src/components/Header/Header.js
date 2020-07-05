@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from '@reach/router'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
@@ -13,6 +14,7 @@ import SunIcon from '../../images/sun-icon.svg'
 const Header = ({ title, menuLinks }) => {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
+  const { pathname } = useLocation()
 
   React.useEffect(() =>  {
     isMobileOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = ''
@@ -26,7 +28,7 @@ const Header = ({ title, menuLinks }) => {
   const renderLinks = () => {
     return (
       <ul>
-        {menuLinks.map((page, i) => <li key={i}><Link to={page.link}>{page.name}</Link></li>)}
+        {menuLinks.map((page, i) => <li key={i} className={page.link === pathname ? 'active' : null}><Link to={page.link}>{page.name}</Link></li>)}
       </ul>
     )
   }
