@@ -7,6 +7,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const articleTemplate = path.resolve('src/templates/articleTemplate.js')
   const categoryTemplate = path.resolve('src/templates/categoryTemplate.js')
+  const tagTemplate = path.resolve('src/templates/tagTemplate.js')
 
   const result = await graphql(
     `
@@ -33,6 +34,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const all = result.data.allMarkdownRemark.edges
   const articles = all.filter(article => article.node.frontmatter.templateKey === 'article')
   const categories = all.filter(category => category.node.frontmatter.templateKey === 'category')
+  const tags = all.filter(tag => tag.node.frontmatter.templateKey === 'tag')
 
   articles.forEach(({ node }) => {
     createPage({
@@ -52,6 +54,16 @@ exports.createPages = async ({ actions, graphql }) => {
         title: node.frontmatter.title
       },
     });
+  })
+
+  tags.forEach(({ node }) => {
+    createPage({
+      path: `tag/${slugify(node.frontmatter.title)}`,
+      component: tagTemplate,
+      context: {
+        title: node.frontmatter.title
+      }
+    })
   })
 }
 

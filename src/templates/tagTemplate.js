@@ -8,7 +8,7 @@ import Categories from '../components/Articles/Categories/Categories'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
 
-const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
+const TagPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   return (
     <Layout>
       <SEO title={title} />
@@ -23,7 +23,7 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title
                 <Categories />
                 <Search articlesLength={edges.edges.length} />
                 <div className="articles-info">
-                  <p>Показано {edges.edges.length} из категории "{title}"</p>
+                  <p>Показано {edges.edges.length} по тегу "{title}"</p>
                 </div>
               </div>
             </div>
@@ -44,8 +44,8 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title
 }
 
 export const pageQuery = graphql`
-  query articlesByCategory($title: String!) {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: $title}}}) {
+  query articlesByTag($title: [String!]) {
+    allMarkdownRemark(filter: {frontmatter: {tags: {in: $title}}}) {
       edges {
         node {
           frontmatter {
@@ -68,4 +68,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default CategoryPage
+export default TagPage
