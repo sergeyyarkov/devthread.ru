@@ -13,7 +13,6 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   esse cillum dolore eu fugiat nulla pariatur.
 tags:
   - javascript
-  - reactjs
 ---
 ## Lorem ipsum dolor
 
