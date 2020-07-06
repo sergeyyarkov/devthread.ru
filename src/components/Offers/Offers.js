@@ -1,12 +1,16 @@
 import React from 'react';
+import useTagsQuery from '../../hooks/useTagsQuery'
 import './Offers.scss'
 import Tags from './Tags/Tags'
+import TagItem from './Tags/TagItem'
 
 import PopularIcon from '../../images/popular-icon.svg'
 import ViewsIcon from '../../images/views-icon.svg'
 import BooksIcon from '../../images/books-icon.svg'
 
 const Offers = () => {
+  const { tags } = useTagsQuery()
+
   return (
     <div className="offers">
       <div className="offers-popular offer-box">
@@ -25,7 +29,9 @@ const Offers = () => {
           </div>)}
         </div>
       </div>
-      <Tags />
+      <Tags>
+        {tags.map(({ node }, i) => <TagItem key={i} title={node.frontmatter.title} />)}
+      </Tags>
       <div className="offers-books offer-box">
         <div className="offers-books__heading offer-heading">
           <BooksIcon />

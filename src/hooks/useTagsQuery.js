@@ -14,7 +14,7 @@ const useTagsQuery = () => {
       }
     }
   `)
-  return { edges }
+  return { tags: edges }
 }
 
 export default useTagsQuery
