@@ -13,9 +13,9 @@ description: |-
     commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
     esse cillum dolore eu fugiat nulla pariatur.
 tags:
-  - js
-  - react
-  - webdev
+  - reactjs
+  - javascript
+  - graphql
 ---
 ## Lorem ipsum dolor
 
