@@ -14,7 +14,6 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 tags:
   - graphql
   - reactjs
-  - javascript
 ---
 ## Lorem ipsum dolor
 
