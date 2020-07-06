@@ -1,9 +1,9 @@
 import React from 'react';
 import './Offers.scss'
+import Tags from './Tags/Tags'
 
 import PopularIcon from '../../images/popular-icon.svg'
 import ViewsIcon from '../../images/views-icon.svg'
-import TagIcon from '../../images/tag-icon.svg'
 import BooksIcon from '../../images/books-icon.svg'
 
 const Offers = () => {
@@ -25,53 +25,7 @@ const Offers = () => {
           </div>)}
         </div>
       </div>
-      <div className="offers-tags offer-box">
-        <div className="offers-tags__heading offer-heading">
-          <TagIcon />
-          Тэги
-        </div>
-        <div className="offers-tags__content">
-          <div className="tag-item">
-            <a href="/">serverless</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">reactjs</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">nodejs</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">graphql</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">seo</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">ооп</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">gatsby</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">nextjs</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">jquery</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">mysql</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">php</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">python</a>
-          </div>
-          <div className="tag-item">
-            <a href="/">jekyll</a>
-          </div>
-        </div>
-      </div>
+      <Tags />
       <div className="offers-books offer-box">
         <div className="offers-books__heading offer-heading">
           <BooksIcon />
