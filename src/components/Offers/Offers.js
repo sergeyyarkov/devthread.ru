@@ -85,7 +85,7 @@ const Offers = () => {
       </div>
       <div className="offers-subscription offer-box">
         <div className="offers-subscription__heading offer-heading">
-          Читайте нас в Telegram
+           Читайте нас в Telegram
         </div>
         <div className="offers-subscription__content">
           <p>

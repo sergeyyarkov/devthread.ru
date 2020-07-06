@@ -10,16 +10,16 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
+      - {label: "Template Key", name: "templateKey", wisdget: "hidden", default: "article"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Время чтения", name: "time", widget: "string"}
       - {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Обложка", name: "image", widget: "image"}
-      - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "title", searchFields: ["title", "slug"]}
+      - {label: "Категория", name: "category", widget: "relation", collection: "categories", valueField: "title", searchFields: ["title"]}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
       - {label: "Описание", name: "description", widget: "text"}
       - {label: "Содержание", name: "body", widget: "markdown"}
-      - {label: "Тэги", name: "tags", widget: "list"}
+      - {label: "Тэги", name: "tags", widget: "relation", multiple: true, collection: "tags", valueField: "title", searchFields: ["title"]}
   - name: 'categories'
     label: "Category"
     folder: 'content/categories'
@@ -28,3 +28,11 @@ collections:
     fields:
       - {label: "Template key", name: "templateKey", widget: "hidden", default: "category"}
       - {label: "Название категории", name: "title", widget: "string"}
+  - name: 'tags'
+    label: "Tag"
+    folder: 'content/tags'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template key", name: "templateKey", widget: "hidden", default: "tag"}
+      - {label: "Название тэга", name: "title", widget: "string"}

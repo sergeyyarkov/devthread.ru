@@ -10,7 +10,7 @@ import VkIcon from '../../images/vk-icon.svg'
 import TwitterIcon from '../../images/twitter-icon__large.svg'
 import FacebookIcon from '../../images/facebook-icon__large.svg'
 
-const Article = ({ data: { title, image, description, category, tags, time, date }, html }) => {
+const Article = ({ data: { slug, title, image, description, category, tags, time, date }, html }) => {
   return (
     <>
       <SEO title={title} description={description} />
@@ -41,13 +41,13 @@ const Article = ({ data: { title, image, description, category, tags, time, date
           <div className="article-share">
             <span>Поделиться:</span>
             <div className="article-share__social">
-              <a href="/">
+              <a href={`/article/${slug}`}>
                 <VkIcon />
               </a>
-              <a href="/">
+              <a href={`/article/${slug}`}>
                 <TwitterIcon />
               </a>
-              <a href="/">
+              <a href={`/article/${slug}`}>
                 <FacebookIcon />
               </a>
             </div>
@@ -59,7 +59,7 @@ const Article = ({ data: { title, image, description, category, tags, time, date
           </div>
           <div className="article-tags">
             {tags.map((tag, i) => <div key={i} className="tag-item">
-              <Link to={`category/${tag}`}>{tag}</Link>
+              <Link to={`/tag/${slugify(tag)}`}>{tag}</Link>
             </div>)}
           </div>
           <div className="article-image">
