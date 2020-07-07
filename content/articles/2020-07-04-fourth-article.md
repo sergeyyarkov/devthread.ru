@@ -3,6 +3,7 @@ templateKey: article
 slug: article-4
 time: "2"
 title: Fourth article
+popular: true
 image: /assets/javascript.png
 category: Новости
 date: 2020-07-04T17:25:23.287Z
