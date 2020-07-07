@@ -1,34 +1,23 @@
 import React from 'react';
+import usePopularArticlesQuery from '../../hooks/usePopularArticlesQuery'
 import useTagsQuery from '../../hooks/useTagsQuery'
 import './Offers.scss'
+import Popular from './Popular/Popular'
+import PopularItem from './Popular/PopularItem'
 import Tags from './Tags/Tags'
 import TagItem from './Tags/TagItem'
 
-import PopularIcon from '../../images/popular-icon.svg'
-import ViewsIcon from '../../images/views-icon.svg'
 import BooksIcon from '../../images/books-icon.svg'
 
 const Offers = () => {
+  const { articles } = usePopularArticlesQuery()
   const { tags } = useTagsQuery()
 
   return (
     <div className="offers">
-      <div className="offers-popular offer-box">
-        <div className="offers-popular__heading offer-heading">
-          <PopularIcon />
-          Популярные статьи</div>
-        <div className="offers-popular__content">
-          {[1,2,3,4,5].map(e => <div key={e} className="article-item">
-            <div className="article-item__title">
-              <a href="/">Lorem ipsum dolor sit amet, consectetur.</a>
-            </div>
-            <div className="article-item__views">
-              <ViewsIcon />
-              <span>4252</span>
-            </div>
-          </div>)}
-        </div>
-      </div>
+      <Popular>
+        {articles.map(({ node }, i) => <PopularItem key={i} slug={node.frontmatter.slug} title={node.frontmatter.title} />)}
+      </Popular>
       <Tags>
         {tags.map(({ node }, i) => <TagItem key={i} title={node.frontmatter.title} />)}
       </Tags>
