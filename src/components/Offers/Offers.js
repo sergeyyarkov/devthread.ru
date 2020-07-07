@@ -51,7 +51,7 @@ const Offers = () => {
           <p>
             В нашем канале telegram вы не пропустите новые статьи, присоединяйтесь к другим разработчикам
           </p>
-          <a href="/" target="_blank" className="btn-primary">Подписаться</a>
+          <a href="https://t.me/devthread" rel='noreferrer' target="_blank" className="btn-primary">Подписаться</a>
         </div>
       </div>
     </div>

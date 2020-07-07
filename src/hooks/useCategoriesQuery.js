@@ -14,7 +14,7 @@ const useCategoriesQuery = () => {
       }
     }
   `)
-  return { edges }
+  return { categories: edges }
 }
 
 export default useCategoriesQuery

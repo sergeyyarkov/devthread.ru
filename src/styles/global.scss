@@ -39,6 +39,10 @@
       color: #3972f4;
     }
   }
+  &.active a {
+    background: #d8e3fd;
+    color: #3972f4;
+  }
 }
 
 .inner {
@@ -113,6 +117,10 @@
         background: #111;
         color: #99c9f7;
       }
+    }
+    &.active a {
+      color: #5183F5;
+      background: #111;
     }
   }
   & .inner {
