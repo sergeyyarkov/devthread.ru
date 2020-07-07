@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import sligify from '../../../helpers/slugify'
 
@@ -11,3 +12,7 @@ const TagItem = ({ title }) => {
 }
 
 export default TagItem
+
+TagItem.propTypes = {
+  title: PropTypes.string
+}

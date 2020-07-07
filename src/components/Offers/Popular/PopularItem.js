@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import ViewsIcon from '../../../images/views-icon.svg'
@@ -18,3 +19,8 @@ const PopularItem = ({ slug, title }) => {
 }
 
 export default PopularItem
+
+PopularItem.propTypes = {
+  slug: PropTypes.string,
+  title: PropTypes.string
+}

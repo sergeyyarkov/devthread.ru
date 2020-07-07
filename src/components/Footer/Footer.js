@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import './Footer.scss'
 
@@ -19,25 +20,25 @@ const Footer = ({ title }) => {
             <div className="links-nav">
               <p>Навигация</p>
               <ul>
-                <li><a href="/">Статьи</a></li>
-                <li><a href="/">О сайте</a></li>
-                <li><a href="/">Ресурсы</a></li>
+                <li><Link to='/articles'>Статьи</Link></li>
+                <li><Link to='/about'>О сайте</Link></li>
+                <li><Link to='/books'>Ресурсы</Link></li>
               </ul>
             </div>
             <div className="links-contacts">
               <p>Контакты</p>
               <ul>
-                <li><a href="/">Форма обратной связи</a></li>
+                <li><Link to='/contacts'>Форма обратной связи</Link></li>
                 <li><a href="/">Телеграмм</a></li>
-                <li><a href="/">Почта</a></li>
+                <li><a href="mailto:support@devthread.ru">Почта</a></li>
               </ul>
             </div>
             <div className="links-social">
               <p>Социальные сети</p>
               <ul>
-                <li><a href="/">Наш телеграмм канал</a></li>
-                <li><a href="/">Яндекс.Дзен</a></li>
-                <li><a href="/">Твиттер</a></li>
+                <li><a href="https://t.me/devthread" rel='noreferrer' target='_blank'>Наш телеграмм канал</a></li>
+                <li><a href="/" target='_blank'>Яндекс.Дзен</a></li>
+                <li><a href="https://twitter.com/devthread" rel='noreferrer' target='_blank'>Твиттер</a></li>
               </ul>
             </div>
           </div>

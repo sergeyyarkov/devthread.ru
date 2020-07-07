@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import ArticleCard from './ArticleCard/ArticleCard'
 import './Articles.scss'
 
@@ -13,3 +14,9 @@ const Articles = ({ data: { edges } }) => {
 }
 
 export default Articles
+
+Articles.propTypes = {
+  data: PropTypes.shape({
+    edges: PropTypes.array
+  })
+}

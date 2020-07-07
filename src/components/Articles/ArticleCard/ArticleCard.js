@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import slugify from '../../../helpers/slugify'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
@@ -33,3 +34,14 @@ const ArticleCard = ({ data: { slug, title, image, category, description, tags }
 }
 
 export default ArticleCard
+
+ArticleCard.propTypes = {
+  data: PropTypes.shape({
+    slug: PropTypes.string,
+    title: PropTypes.string,
+    image: PropTypes.object,
+    category: PropTypes.string,
+    description: PropTypes.string,
+    tags: PropTypes.array
+  })
+}

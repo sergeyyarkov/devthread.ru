@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import SEO from '../SEO/SEO'
 import Img from "gatsby-image"
 import slugify from '../../helpers/slugify'
@@ -85,3 +86,17 @@ const Article = ({ data: { slug, title, image, description, category, tags, time
 }
 
 export default Article
+
+Article.propTypes = {
+  data: PropTypes.shape({
+    slug: PropTypes.string,
+    title: PropTypes.string,
+    image: PropTypes.object,
+    description: PropTypes.string,
+    category: PropTypes.string,
+    tags: PropTypes.array,
+    time: PropTypes.string,
+    date: PropTypes.string
+  }),
+  html: PropTypes.string
+}
