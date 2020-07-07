@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Search = ({ articlesLength }) => {
 	return (
@@ -10,3 +11,7 @@ const Search = ({ articlesLength }) => {
 }
 
 export default Search
+
+Search.propTypes = {
+	articlesLength: PropTypes.number
+}

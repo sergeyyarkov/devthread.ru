@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import slugify from '../../../helpers/slugify'
 
@@ -11,3 +12,7 @@ const BookItem = ({ title }) => {
 }
 
 export default BookItem
+
+BookItem.propTypes = {
+  title: PropTypes.string
+}
