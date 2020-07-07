@@ -1,10 +1,10 @@
 import React from 'react'
-import useSiteMetadata from '../../hooks/useSiteMetadata'
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
 const Layout = ({ children }) => {
-  const { siteMetadata } = useSiteMetadata()
+  const { siteMetadata } = useSiteMetadataQuery()
 
   return (
     <>

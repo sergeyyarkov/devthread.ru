@@ -1,12 +1,12 @@
 import React from 'react';
-import useSiteMetadata from '../hooks/useSiteMetadata'
+import useSiteMetadataQuery from '../hooks/useSiteMetadataQuery'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Offers from '../components/Offers/Offers'
 import About from '../components/About/About'
 
 const AboutPage = () => {
-  const { siteMetadata: { title, menuLinks, email } } = useSiteMetadata()
+  const { siteMetadata: { title, menuLinks, email } } = useSiteMetadataQuery()
   return (
     <Layout>
       <SEO title='О сайте' description='Этот сайт придуман для того, чтобы помочь вам разобраться с вашей проблемой и решить её. Сайт содержит в себе статьи и руководства.' />

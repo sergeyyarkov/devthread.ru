@@ -1,12 +1,12 @@
 import React from 'react';
-import useSiteMetadata from '../../hooks/useSiteMetadata'
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 
 const SEO = ({ title, description }) => {
   const { pathname } = useLocation()
-  const { siteMetadata } = useSiteMetadata()
+  const { siteMetadata } = useSiteMetadataQuery()
 
   const seo = {
     title: title || siteMetadata.title,

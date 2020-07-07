@@ -1,12 +1,12 @@
 import React from 'react';
 import ContactsFrom from './ContactsForm/ContactsForm';
-import useSiteMetadata from '../../hooks/useSiteMetadata'
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import './Contacts.scss'
 
 import MemoIcon from '../../images/memo-icon.svg'
 
 const Contacts = () => {
-  const { siteMetadata: { email } } = useSiteMetadata()
+  const { siteMetadata: { email } } = useSiteMetadataQuery()
   
   return (
     <div className="contacts">
