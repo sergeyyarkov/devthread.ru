@@ -37,3 +37,13 @@ collections:
     fields:
       - {label: "Template key", name: "templateKey", widget: "hidden", default: "tag"}
       - {label: "Название тэга", name: "title", widget: "string"}
+  - name: 'books'
+    label: "Book"
+    folder: 'content/books'
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}"
+    fields:
+      - {label: "Template key", name: "templateKey", widget: "hidden", default: "book"}
+      - {label: "Название книги", name: "title", widget: "string"}
+      - {label: "Обложка", name: "image", widget: "image"}
+      - {label: "Описание книги", name: "body", widget: "markdown"}

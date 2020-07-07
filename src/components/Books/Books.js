@@ -1,28 +1,17 @@
 import React from 'react';
+import slugify from '../../helpers/slugify'
+import Img from "gatsby-image"
 import './Books.scss'
 
-const Books = () => {
+const Books = ({ data: { edges } }) => {
   return (
     <div className="books">
       <div className="books-inner inner">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
-        <p>
-          <img src="https://i.imgur.com/2OMOIej.jpg" alt="book" />
-        </p>
-        <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-        </p>
-        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-        <a href="/" target="_blank">купить на litres.ru</a>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
-        <p>
-          <img src="https://i.imgur.com/2OMOIej.jpg" alt="book" />
-        </p>
-        <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-        </p>
-        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-        <a href="/" target="_blank">купить на litres.ru</a>
+        {edges.map(({ node }, i) => <div key={i}>
+  <h2>{node.frontmatter.title} <a id={slugify(node.frontmatter.title)} href={`/books#${slugify(node.frontmatter.title)}`} className='anchor'>{node.frontmatter.title}</a></h2>
+          <Img loading="eager" fadeIn={false} fluid={node.frontmatter.image.childImageSharp.fluid} alt={node.frontmatter.title} />
+          <div className='md' dangerouslySetInnerHTML={{__html: node.html}}></div>
+        </div>)}
       </div>
     </div>
   )

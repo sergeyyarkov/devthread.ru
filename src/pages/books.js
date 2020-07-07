@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Books from '../components/Books/Books'
@@ -7,7 +8,7 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import BooksIcon from '../images/books-icon__large.svg'
 
-const BooksPage = () => {
+const BooksPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO title='Ресурсы' />
@@ -30,7 +31,7 @@ const BooksPage = () => {
           </div>
           <div className="row">
             <div className="col-md-9 col-xs-12">
-              <Books />
+              <Books data={edges} />
               <Newsletter />
             </div>
             <div className="col-md-3 col-xs-12">
@@ -42,5 +43,27 @@ const BooksPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "book"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          html
+        }
+      }
+    }
+  }
+`
 
 export default BooksPage

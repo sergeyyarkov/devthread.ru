@@ -1,19 +1,21 @@
 import React from 'react';
 import usePopularArticlesQuery from '../../hooks/usePopularArticlesQuery'
 import useTagsQuery from '../../hooks/useTagsQuery'
+import useBooksQuery from '../../hooks/useBooksQuery'
 import './Offers.scss'
 import Popular from './Popular/Popular'
 import Tags from './Tags/Tags'
+import Books from './Books/Books'
 import Subscription from './Subscription/Subscription'
 
 import PopularItem from './Popular/PopularItem'
 import TagItem from './Tags/TagItem'
-
-import BooksIcon from '../../images/books-icon.svg'
+import BookItem from './Books/BookItem'
 
 const Offers = () => {
   const { articles } = usePopularArticlesQuery()
   const { tags } = useTagsQuery()
+  const { books } = useBooksQuery()
 
   return (
     <div className="offers">
@@ -23,17 +25,9 @@ const Offers = () => {
       <Tags>
         {tags.map(({ node }, i) => <TagItem key={i} title={node.frontmatter.title} />)}
       </Tags>
-      <div className="offers-books offer-box">
-        <div className="offers-books__heading offer-heading">
-          <BooksIcon />
-          Что почитать
-        </div>
-        <div className="offers-books__content">
-          {[1,2,3,4,5].map(e => <div key={e} className="book-item">
-            <a href="/">Lorem ipsum dolor sit amet, consectetur.</a>
-          </div>)}
-        </div>
-      </div>
+      <Books>
+        {books.map(({ node }, i) => <BookItem key={i} title={node.frontmatter.title} />)}
+      </Books>
       <Subscription />
     </div>
   )
