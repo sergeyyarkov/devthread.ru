@@ -3,7 +3,7 @@ templateKey: article
 slug: third-article
 time: "3"
 title: Third article
-popular: true
+popular: false
 image: /assets/javascript.png
 category: Second category
 date: 2020-07-03T14:09:31.389Z
