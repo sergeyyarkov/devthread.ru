@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import SEO from '../SEO/SEO'
 import Img from "gatsby-image"
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import slugify from '../../helpers/slugify'
 import { Link } from 'gatsby'
 import './Article.scss'
@@ -12,9 +13,11 @@ import TwitterIcon from '../../images/twitter-icon__large.svg'
 import FacebookIcon from '../../images/facebook-icon__large.svg'
 
 const Article = ({ data: { slug, title, image, description, category, tags, time, date }, html }) => {
+  const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
+
   return (
     <>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} image={`${siteUrl}${image.childImageSharp.fluid.src}`} type='article' />
       <div className="article">
         <article>
           <div className="article-info">
@@ -42,13 +45,13 @@ const Article = ({ data: { slug, title, image, description, category, tags, time
           <div className="article-share">
             <span>Поделиться:</span>
             <div className="article-share__social">
-              <a href={`/article/${slug}`}>
+              <a href={`https://vk.com/share.php?url=${siteUrl}/article/${slug}&title=${title}&image=${siteUrl}${image.childImageSharp.fluid.src}`} target='_blank' rel='noreferrer'>
                 <VkIcon />
               </a>
-              <a href={`/article/${slug}`}>
+              <a href={`https://twitter.com/intent/tweet?text=${title}&url=${siteUrl}/article/${slug}&image=${siteUrl}${image.childImageSharp.fluid.src}`} target='_blank' rel='noreferrer'>
                 <TwitterIcon />
               </a>
-              <a href={`/article/${slug}`}>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/article/${slug}&t=${title}`} target='_blank' rel='noreferrer'>
                 <FacebookIcon />
               </a>
             </div>

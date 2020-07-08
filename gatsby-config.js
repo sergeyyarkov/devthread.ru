@@ -7,9 +7,10 @@
 module.exports = {
   siteMetadata: {
     title: 'devthread.ru',
+    siteName: 'Cборник статей и руководств - devthread.ru',
     titleTemplate: '%s · статьи и руководства по веб-разработке',
-    description: 'сборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам',
-    url: 'https://devthread.ru',
+    description: 'Cборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам',
+    url: 'https://devthread.netlify.app',
     menuLinks: [
       {
         name: 'Статьи',
