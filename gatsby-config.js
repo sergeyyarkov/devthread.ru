@@ -10,7 +10,6 @@ module.exports = {
     titleTemplate: '%s · статьи и руководства по веб-разработке',
     description: 'сборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам',
     url: 'https://devthread.ru',
-    email: 'support@devthread.ru',
     menuLinks: [
       {
         name: 'Статьи',
@@ -28,7 +27,13 @@ module.exports = {
         name: 'Ресурсы',
         link: '/books'
       }
-    ]
+    ],
+    social: {
+      email: 'support@devthread.ru',
+      telegram: 'https://t.me/devthread',
+      twitter: 'https://twitter.com/devthread',
+      yadzen: 'https://zen.yandex.ru/'
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',

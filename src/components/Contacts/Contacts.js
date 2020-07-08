@@ -6,8 +6,7 @@ import './Contacts.scss'
 import MemoIcon from '../../images/memo-icon.svg'
 
 const Contacts = () => {
-  const { siteMetadata: { email } } = useSiteMetadataQuery()
-  
+  const { siteMetadata: { social: { email, telegram } } } = useSiteMetadataQuery()
   return (
     <div className="contacts">
       <div className="contacts-heading">
@@ -24,7 +23,7 @@ const Contacts = () => {
         <h2>контактные данные</h2>
         <ul>
           <li><a href={`mailto:${email}`}>{email}</a></li>
-          <li><a href="/">telegram</a></li>
+          <li><a href={telegram}>telegram</a></li>
         </ul>
       </div>
     </div>

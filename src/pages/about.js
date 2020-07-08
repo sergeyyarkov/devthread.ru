@@ -6,7 +6,7 @@ import Offers from '../components/Offers/Offers'
 import About from '../components/About/About'
 
 const AboutPage = () => {
-  const { siteMetadata: { title, menuLinks, email } } = useSiteMetadataQuery()
+  const { siteMetadata: { title, menuLinks, social } } = useSiteMetadataQuery()
   return (
     <Layout>
       <SEO title='О сайте' description='Этот сайт придуман для того, чтобы помочь вам разобраться с вашей проблемой и решить её. Сайт содержит в себе статьи и руководства.' />
@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-9 col-xs-12">
-              <About title={title} pageTitle={menuLinks.filter(page => page.link === '/about')[0].name} email={email} />
+              <About title={title} pageTitle={menuLinks.filter(page => page.link === '/about')[0].name} social={social} />
             </div>
             <div className="col-md-3 col-xs-12">
               <Offers />

@@ -5,7 +5,7 @@ import './About.scss'
 
 import ContactsIcon from '../../images/contacts-icon.svg'
 
-const About = ({ title, pageTitle, email }) => {
+const About = ({ title, pageTitle, social }) => {
   return (
     <div className="about">
       <div className="about-heading">
@@ -29,8 +29,8 @@ const About = ({ title, pageTitle, email }) => {
             <span>контакты</span>
           </div>
           <ul>
-            <li><a href={`mailto:${email}`}>{email}</a></li>
-            <li><a href="/">telegram</a></li>
+            <li><a href={`mailto:${social.email}`}>{social.email}</a></li>
+            <li><a href={social.telegram} target='_blank' rel='noreferrer'>telegram</a></li>
             <Link to='/contacts'>форма обратной связи</Link>
           </ul>
         </div>

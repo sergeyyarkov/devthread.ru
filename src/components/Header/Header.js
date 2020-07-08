@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from '@reach/router'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import ThemeContext from '../../context/ThemeContext'
 import './Header.scss'
 
@@ -11,7 +12,8 @@ import TwitterIcon from '../../images/twitter-icon.svg'
 import MoonIcon from '../../images/moon-icon.svg'
 import SunIcon from '../../images/sun-icon.svg'
 
-const Header = ({ title, menuLinks }) => {
+const Header = () => {
+  const { siteMetadata: { title, menuLinks, social: { twitter, telegram } } } = useSiteMetadataQuery()
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
   const { pathname } = useLocation()
@@ -42,10 +44,10 @@ const Header = ({ title, menuLinks }) => {
         </div>
         <div className="header-content__nav desktop">
           <div className="header-nav__social">
-            <a href="/" target="_blank">
+            <a href={telegram} target="_blank" rel='noreferrer'>
               <TelegramIcon />
             </a>
-            <a href="/" target="_blank">
+            <a href={twitter} target="_blank" rel='noreferrer'>
               <TwitterIcon />
             </a>
           </div>
