@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import './Footer.scss'
 
+import GitHubButton from 'react-github-btn'
 import LogoIcon from '../../images/logo-icon.svg'
 import GatsbyIcon from '../../images/gatsby-icon.svg'
 import NetlifyIcon from '../../images/netlify-icon.svg'
@@ -43,12 +44,15 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-nav__helpers">
-            <a href="https://www.gatsbyjs.org/" rel='noreferrer' target="_blank">
-              <GatsbyIcon />
-            </a>
-            <a href="https://www.netlify.com/" rel='noreferrer' target="_blank">
-              <NetlifyIcon />
-            </a>
+            <GitHubButton href="https://github.com/sergeyyarkov/devthread.ru" data-icon="octicon-star" aria-label="Start devthread.ru">Star</GitHubButton>
+            <div className="helpers-icons">
+              <a href="https://www.gatsbyjs.org/" rel='noreferrer' target="_blank">
+                <GatsbyIcon />
+              </a>
+              <a href="https://www.netlify.com/" rel='noreferrer' target="_blank">
+                <NetlifyIcon />
+              </a>
+            </div>
           </div>
         </div>
         <div className="footer-content__copy">

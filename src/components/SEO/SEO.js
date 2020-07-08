@@ -22,6 +22,8 @@ const SEO = ({ title, description, image, type }) => {
       <meta name="description" content={seo.description} />
       <meta property='og:locale' content='ru_RU' />
       <meta property="og:url" content={seo.url} />
+      <meta property='og:title' content={seo.title}
+      />
       <meta property='og:site_name' content={seo.siteName}
       />
       {seo.type && (

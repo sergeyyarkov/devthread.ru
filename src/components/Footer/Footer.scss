@@ -51,11 +51,17 @@ footer {
       & .footer-nav__helpers {
         display: flex;
         align-items: flex-end;
-        & a {
-          text-decoration: none;
+        & span {
+          margin-right: 10px;
         }
-        & a:nth-child(1) {
-          margin-right: 15px;
+        & .helpers-icons {
+          display: flex;
+          & a {
+            text-decoration: none;
+          }
+          & a:nth-child(1) {
+            margin-right: 10px;
+          }
         }
       }
     }
@@ -111,6 +117,14 @@ footer {
         align-items: center;
         & .footer-nav__links {
           margin-bottom: 20px;
+        }
+      }
+      & .footer-nav__helpers {
+        align-items: center;
+        flex-direction: column;
+        & span {
+          margin-bottom: 15px;
+          margin-right: 0;
         }
       }
     }
