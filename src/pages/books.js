@@ -1,4 +1,5 @@
 import React from "react"
+import { Grid, Row, Col } from 'react-flexbox-grid'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
@@ -13,13 +14,13 @@ const BooksPage = ({ data: { allMarkdownRemark: edges } }) => {
     <Layout>
       <SEO title='Ресурсы' />
       <main>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-9 col-xs-12">
+        <Grid fluid>
+          <Row>
+            <Col lg={9} xs={12}>
               <div className="books">
                 <div className="books-heading">
-                    <BooksIcon />
-                    <h1>Что почитать</h1>
+                  <BooksIcon />
+                  <h1>Что почитать</h1>
                 </div>
                 <div className="books-description">
                   <p>
@@ -27,18 +28,18 @@ const BooksPage = ({ data: { allMarkdownRemark: edges } }) => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-9 col-xs-12">
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={9} xs={12}>
               <Books data={edges} />
               <Newsletter />
-            </div>
-            <div className="col-md-3 col-xs-12">
+            </Col>
+            <Col lg={3} xs={12}>
               <Offers /> 
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Grid>
       </main>
     </Layout>
   )

@@ -1,12 +1,11 @@
-@import './flexboxgrid.min';
 @import './variables.scss';
 @import './fonts.scss';
 
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
 }
 
 .btn-primary {

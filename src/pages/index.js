@@ -9,33 +9,35 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import ArrowNext from '../images/arrow-next.svg'
 
+import { Grid, Row, Col } from 'react-flexbox-grid'
+
 const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO />
       <Description />
       <main>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-xs-12">
+        <Grid fluid>
+          <Row>
+            <Col xs={12}>
               <div className="articles">
                 <div className="articles-heading">
                   <h3>Последние статьи</h3>
                   <Link to='/articles'>смотреть все <ArrowNext /></Link>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-9 col-xs-12">
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={9} xs={12}>
               <Articles data={edges} /> 
               <Newsletter />
-            </div>
-            <div className="col-md-3 col-xs-12">
+            </Col>
+            <Col lg={3} xs={12}>
               <Offers /> 
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Grid>
       </main>
     </Layout>
   )

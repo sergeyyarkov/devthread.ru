@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid'
 import './Description.scss'
 
 import HelloIcon from '../../images/hello-icon.svg'
@@ -6,9 +7,9 @@ import HelloIcon from '../../images/hello-icon.svg'
 const Description = () => {
   return (
     <section className="description">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-8 col-sm-offset-2">
+      <Grid fluid>
+        <Row>
+          <Col md={8} mdOffset={2}>
             <div className="desctiption-content">
               <div className="description-content__heading">
                 <span>devthread.ru</span><br />
@@ -21,9 +22,9 @@ const Description = () => {
                 <HelloIcon />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Grid>
     </section>
   )
 }
