@@ -1,6 +1,10 @@
 ---
 templateKey: article
 slug: third-article
+keywords:
+  - js
+  - react
+  - graphql
 time: "3"
 title: Third article
 popular: true
