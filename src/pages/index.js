@@ -4,7 +4,6 @@ import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
-import Description from '../components/Description/Description'
 import Articles from '../components/Articles/Articles'
 import Offers from '../components/Offers/Offers'
 import Newsletter from '../components/Newsletter/Newsletter'
@@ -15,7 +14,6 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO />
-      <Description />
       <Main>
         <Grid fluid>
           <Row>
@@ -45,7 +43,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 10) {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 12) {
       edges {
         node {
           frontmatter {
