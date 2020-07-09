@@ -35,6 +35,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         slug
+        keywords
         title
         image {
           childImageSharp {

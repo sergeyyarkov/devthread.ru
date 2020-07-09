@@ -2,6 +2,7 @@ import React from "react"
 import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import { graphql } from 'gatsby'
+import useSiteMetadataQuery from '../hooks/useSiteMetadataQuery'
 import useCategoriesQuery from '../hooks/useCategoriesQuery'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
@@ -14,9 +15,11 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   const { categories } = useCategoriesQuery()
+  const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
+ 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} canonical={`${siteUrl}/articles`} />
       <Main>
         <Grid fluid>
           <Row>
@@ -60,7 +63,7 @@ export const pageQuery = graphql`
             title
             image {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 1400) {
                   ...GatsbyImageSharpFluid
                 }
               }

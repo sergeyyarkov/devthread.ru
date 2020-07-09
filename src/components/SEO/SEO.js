@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 
-const SEO = ({ title, description, image, type }) => {
+const SEO = ({ title, keywords, description, image, type, canonical }) => {
   const { pathname } = useLocation()
   const { siteMetadata } = useSiteMetadataQuery()
 
@@ -14,12 +14,17 @@ const SEO = ({ title, description, image, type }) => {
     type: type || 'website',
     image: image || 'custom image url...',
     description: description || siteMetadata.description,
-    url: `${siteMetadata.siteUrl}${pathname}`
+    keywords: keywords || siteMetadata.keywords,
+    url: `${siteMetadata.siteUrl}${pathname}`,
+    canonical: canonical || `${siteMetadata.siteUrl}${pathname}`
   }
 
   return (
     <Helmet title={seo.title} titleTemplate={siteMetadata.titleTemplate}>
       <meta name="description" content={seo.description} />
+      {seo.keywords && (
+        <meta name='keywords' content={seo.keywords} />
+      )}
       <meta property='og:locale' content='ru_RU' />
       <meta property="og:url" content={seo.url} />
       <meta property='og:title' content={seo.title}
@@ -35,6 +40,7 @@ const SEO = ({ title, description, image, type }) => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
+      <link rel="canonical" href={seo.canonical} />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

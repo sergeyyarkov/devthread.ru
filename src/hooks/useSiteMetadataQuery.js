@@ -6,6 +6,7 @@ const useSiteMetadata = () => {
       site {
         siteMetadata {
           title
+          keywords
           titleTemplate
           siteName
           description

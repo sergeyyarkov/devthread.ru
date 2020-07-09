@@ -12,6 +12,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", wisdget: "hidden", default: "article"}
       - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "list"}
       - {label: "Время чтения", name: "time", widget: "string"}
       - {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Популярная статья", name: "popular", widget: "boolean", default: false}
