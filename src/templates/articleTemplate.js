@@ -1,4 +1,5 @@
 import React from 'react'
+import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import Layout from '../components/Layout/Layout'
 import Article from '../components/Article/Article'
@@ -7,13 +8,10 @@ import MoreArticles from '../components/Articles/MoreArticles/MoreArticles'
 import Newsletter from '../components/Newsletter/Newsletter'
 import { graphql } from "gatsby"
 
-const articleTemplate = ({ data }) => {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
-
+const articleTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) => {
   return (
     <Layout>
-      <main>
+      <Main>
         <Grid fluid>
           <Row>
             <Col lg={9} xs={12}>
@@ -26,7 +24,7 @@ const articleTemplate = ({ data }) => {
             </Col>
           </Row>
         </Grid>
-      </main>
+      </Main>
     </Layout>
   )
 }

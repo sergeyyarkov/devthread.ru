@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
+import { Main } from '../ui/ui'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Description from '../components/Description/Description'
@@ -9,14 +11,12 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import ArrowNext from '../images/arrow-next.svg'
 
-import { Grid, Row, Col } from 'react-flexbox-grid'
-
 const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO />
       <Description />
-      <main>
+      <Main>
         <Grid fluid>
           <Row>
             <Col xs={12}>
@@ -38,7 +38,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
             </Col>
           </Row>
         </Grid>
-      </main>
+      </Main>
     </Layout>
   )
 }

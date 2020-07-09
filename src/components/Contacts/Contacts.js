@@ -1,12 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import ContactsFrom from './ContactsForm/ContactsForm';
-import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import './Contacts.scss'
 
 import MemoIcon from '../../images/memo-icon.svg'
 
-const Contacts = () => {
-  const { siteMetadata: { social: { email, telegram } } } = useSiteMetadataQuery()
+const Contacts = ({ email, telegram }) => {
   return (
     <div className="contacts">
       <div className="contacts-heading">
@@ -31,3 +30,8 @@ const Contacts = () => {
 }
 
 export default Contacts
+
+Contacts.propTypes = {
+  email: PropTypes.string,
+  telegram: PropTypes.string
+}

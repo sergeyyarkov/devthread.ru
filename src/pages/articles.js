@@ -1,4 +1,5 @@
 import React from "react"
+import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import { graphql } from 'gatsby'
 import useCategoriesQuery from '../hooks/useCategoriesQuery'
@@ -16,7 +17,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
   return (
     <Layout>
       <SEO title='Статьи' />
-      <main>
+      <Main>
         <Grid fluid>
           <Row>
             <Col lg={9} xs={12}>
@@ -41,7 +42,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
             </Col >
           </Row>
         </Grid>
-      </main>
+      </Main>
     </Layout>
   )
 }

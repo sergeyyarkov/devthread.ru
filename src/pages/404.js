@@ -1,4 +1,5 @@
 import React from 'react';
+import { Main } from '../ui/ui'
 import { Grid } from 'react-flexbox-grid'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout/Layout'
@@ -6,7 +7,7 @@ import Layout from '../components/Layout/Layout'
 const NotFound = () => {
   return (
     <Layout>
-      <main>
+      <Main>
         <Grid fluid>
           <div className="error">
             <span>#404</span>
@@ -14,7 +15,7 @@ const NotFound = () => {
             <Link to='/'>вернуться на главную</Link>
           </div>
         </Grid>
-      </main>
+      </Main>
     </Layout>
   )
 }
