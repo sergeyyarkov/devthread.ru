@@ -1,6 +1,10 @@
 ---
 templateKey: article
 slug: article-4
+keywords:
+  - seo
+  - tag
+  - js
 time: "2"
 title: Fourth article
 popular: true
