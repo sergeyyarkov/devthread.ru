@@ -6,7 +6,7 @@ keywords:
   - react
   - graphql
 time: "3"
-title: Third article
+title: Третья статья
 popular: true
 image: /assets/javascript.png
 category: Second category
