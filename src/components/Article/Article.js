@@ -16,7 +16,7 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
   const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
   return (
     <>
-      <SEO title={title} keywords={keywords.join(', ')} description={description} image={`${siteUrl}${image.childImageSharp.fluid.src}`} type='article' />
+      <SEO title={title} titleTemplate={false} keywords={keywords.join(', ')} description={description} image={`${siteUrl}${image.childImageSharp.fluid.src}`} type='article' />
       <div className="article">
         <article>
           <div className="article-info">
@@ -31,7 +31,7 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
             </div>
             <div className="right-info">
               <div className="article-info__date">
-                <span>{new Date(date).toLocaleDateString()}</span>
+                <span>{date}</span>
               </div> 
             </div>
           </div>

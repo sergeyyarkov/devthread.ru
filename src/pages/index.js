@@ -20,7 +20,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
             <Col xs={12}>
               <div className="articles">
                 <div className="articles-heading">
-                  <h3>Последние статьи</h3>
+                  <h1>Последние статьи</h1>
                   <Link to='/articles'>смотреть все <ArrowNext /></Link>
                 </div>
               </div>

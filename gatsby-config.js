@@ -131,6 +131,56 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: `
+          {
+            allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "article" } } }) {
+              nodes {
+                id
+                frontmatter {
+                  slug
+                  title
+                  category
+                  image {
+                    childImageSharp {
+                      fluid(maxWidth: 960) {
+                        aspectRatio
+                        base64
+                        sizes
+                        src
+                        srcSet
+                      }
+                    }
+                  }
+                  tags
+                  description
+                }
+                rawMarkdownBody
+              }
+            }
+          }
+        `,
+        ref: 'id',
+        index: ['title', 'category', 'body', 'tags', 'description'],
+        store: ['id', 'slug', 'title', 'category', 'tags', 'description', 'image'],
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map(node => ({
+            id: node.id,
+            slug: node.frontmatter.slug,
+            title: node.frontmatter.title,
+            category: node.frontmatter.category,
+            description: node.frontmatter.description,
+            image: node.frontmatter.image,
+            tags: node.frontmatter.tags,
+            body: node.rawMarkdownBody,
+          })),
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

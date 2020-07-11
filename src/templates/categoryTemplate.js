@@ -7,7 +7,6 @@ import useCategoriesQuery from '../hooks/useCategoriesQuery'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
-import Search from '../components/Articles/Search/Search'
 import Categories from '../components/Articles/Categories/Categories'
 import CategoryItem from '../components/Articles/Categories/CategoryItem'
 import Offers from '../components/Offers/Offers'
@@ -26,12 +25,11 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title
             <Col lg={9} xs={12}>
               <div className="articles">
                 <div className="articles-heading">
-                  <h1>Статьи</h1>
+                  <h1>Категория: <u>{title}</u></h1>
                 </div>
                 <Categories>
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
-                <Search articlesLength={edges.edges.length} />
                 <div className="articles-info">
                   <p>Показано {edges.edges.length} из категории "{title}"</p>
                 </div>

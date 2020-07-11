@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby'
 
-const Categories = ({ children }) => {
+const Categories = ({ children, pathname }) => {
   return (
     <div className="articles-categories">
-      <div className="tag-item">
+      <div className={pathname === `/articles` ? 'tag-item active' : 'tag-item'}>
         <Link to='/articles'>Все</Link>
       </div>
       {children}

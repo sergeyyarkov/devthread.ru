@@ -4,12 +4,13 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 
-const SEO = ({ title, keywords, description, image, type, canonical }) => {
+const SEO = ({ title, titleTemplate, keywords, description, image, type, canonical }) => {
   const { pathname } = useLocation()
   const { siteMetadata } = useSiteMetadataQuery()
 
   const seo = {
     title: title || siteMetadata.title,
+    titleTemplate: true,
     siteName: siteMetadata.siteName,
     type: type || 'website',
     image: image || 'custom image url...',
@@ -18,9 +19,10 @@ const SEO = ({ title, keywords, description, image, type, canonical }) => {
     url: `${siteMetadata.siteUrl}${pathname}`,
     canonical: canonical || `${siteMetadata.siteUrl}${pathname}`
   }
-
+ 
   return (
-    <Helmet title={seo.title} titleTemplate={siteMetadata.titleTemplate}>
+    <Helmet title={seo.title} titleTemplate={titleTemplate === false ? null : siteMetadata.titleTemplate}>
+      <html lang="ru" />
       <meta name="description" content={seo.description} />
       {seo.keywords && (
         <meta name='keywords' content={seo.keywords} />

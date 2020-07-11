@@ -30,7 +30,7 @@ const Header = () => {
   const renderLinks = () => {
     return (
       <ul>
-        {menuLinks.map((page, i) => <li key={i} className={page.link === pathname ? 'active' : null}><Link to={page.link}>{page.name}</Link></li>)}
+        {menuLinks.map((page, i) => <li key={i} className={page.link === pathname || pathname === `${page.link}/` ? 'active' : null}><Link to={page.link}>{page.name}</Link></li>)}
       </ul>
     )
   }

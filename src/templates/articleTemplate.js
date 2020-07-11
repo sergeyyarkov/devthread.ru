@@ -47,7 +47,7 @@ export const pageQuery = graphql`
         time
         tags
         description
-        date
+        date(formatString: "D MMMM YYYY", locale: "ru-RU")
         category
       }
     }
