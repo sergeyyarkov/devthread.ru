@@ -3,12 +3,17 @@ import PropTypes from 'prop-types'
 import ArticleCard from './ArticleCard/ArticleCard'
 import Newsletter from '../Newsletter/Newsletter'
 
-const Articles = ({ data: { edges } }) => {
+const Articles = ({ data: { edges }, limit = 6 }) => {
   return (
     <>
       <div className="articles">
         <div className="articles-content">
-          {edges.map(({ node }, e) => <ArticleCard key={e} data={node.frontmatter} />)}
+          {edges.map(({ node }, i) => {
+            if (i < limit) {
+              return <ArticleCard key={i} data={node.frontmatter} />
+            }
+            return null
+          })}
         </div>
       </div>
       <Newsletter />

@@ -6,7 +6,6 @@ import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
 import Offers from '../components/Offers/Offers'
-import Newsletter from '../components/Newsletter/Newsletter'
 
 import ArrowNext from '../images/arrow-next.svg'
 
@@ -29,7 +28,6 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
           <Row>
             <Col lg={9} xs={12}>
               <Articles data={edges} /> 
-              <Newsletter />
             </Col>
             <Col lg={3} xs={12}>
               <Offers /> 
@@ -43,7 +41,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 12) {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
       edges {
         node {
           frontmatter {

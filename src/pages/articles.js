@@ -18,8 +18,9 @@ import SearchIcon from '../images/search-icon.svg'
 
 const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
   const { categories } = useCategoriesQuery()
-  const { search, pathname } = useLocation()
+  const { search } = useLocation()
   
+  let [limit, setLimit] = React.useState(6)
   const [filtredArticles, setFiltredArticles] = React.useState([])
   const [query, setQuery] = React.useState(queryString.parse(search).search || '')
   
@@ -27,16 +28,16 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
 
   const filterArticles = React.useCallback(arr => {
     return arr.filter(({ node: { frontmatter } }) => 
-				frontmatter.title.toLowerCase().includes(query.toLowerCase())
-			||	frontmatter.description.toLowerCase().includes(query.toLowerCase())
-			||	frontmatter.category.toLowerCase().includes(query.toLowerCase())
-			||	frontmatter.tags.join('').toLowerCase().includes(query.toLowerCase())
+				frontmatter.title.toLowerCase().includes(query.toLowerCase().trim())
+			||	frontmatter.description.toLowerCase().includes(query.toLowerCase().trim())
+			||	frontmatter.category.toLowerCase().includes(query.toLowerCase().trim())
+			||	frontmatter.tags.join('').toLowerCase().includes(query.toLowerCase().trim())
 		)
   }, [query])
 
   React.useEffect(() => {
     if (query !== '') setFiltredArticles(filterArticles(allArticles.edges))
-  }, [setFiltredArticles, filterArticles, allArticles.edges, query, pathname])
+  }, [setFiltredArticles, filterArticles, allArticles.edges, query])
 
   return (
     <Layout>
@@ -63,8 +64,9 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
             <Col lg={9} xs={12}>
               {query && query !== '' 
                 ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} /> : null
-                : <Articles data={edges} />
+                : <Articles data={edges} limit={limit} />
               }
+              <span onClick={() => setLimit(limit + 2)}>load more</span>
             </Col >
             <Col lg={3} xs={12}>
               <Offers /> 

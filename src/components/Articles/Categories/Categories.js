@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 const Categories = ({ children, setQuery = () => null }) => {
   const { search, pathname } = useLocation()
-
   return (
     <div className="articles-categories">
       <div className={
