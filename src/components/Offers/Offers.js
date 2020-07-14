@@ -2,7 +2,6 @@ import React from 'react';
 import usePopularArticlesQuery from '../../hooks/usePopularArticlesQuery'
 import useTagsQuery from '../../hooks/useTagsQuery'
 import useBooksQuery from '../../hooks/useBooksQuery'
-import './Offers.scss'
 import Popular from './Popular/Popular'
 import Tags from './Tags/Tags'
 import Books from './Books/Books'

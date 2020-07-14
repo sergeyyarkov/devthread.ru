@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
-import './Footer.scss'
 
 import GitHubButton from 'react-github-btn'
 import LogoIcon from '../../images/logo-icon.svg'

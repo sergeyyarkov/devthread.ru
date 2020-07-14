@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from '@reach/router'
 import useMoreArticlesQuery from '../../../hooks/useMoreArticlesQuery'
 import ArticleCard from '../ArticleCard/ArticleCard'
-import './MoreArticles.scss'
 
 const MoreArticles = () => {
   const { edges } = useMoreArticlesQuery()

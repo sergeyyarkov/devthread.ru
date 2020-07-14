@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import ContactsFrom from './ContactsForm/ContactsForm';
-import './Contacts.scss'
 
 import MemoIcon from '../../images/memo-icon.svg'
 

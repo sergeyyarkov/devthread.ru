@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import ThemeContext from '../../context/ThemeContext'
-import './Header.scss'
 
 import LogoIcon from '../../images/logo-icon.svg'
 import TelegramIcon from '../../images/telegram-icon.svg'

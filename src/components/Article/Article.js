@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import slugify from '../../helpers/slugify'
 import { Link } from 'gatsby'
-import './Article.scss'
 
 import ViewsIcon from '../../images/views-icon.svg'
 import VkIcon from '../../images/vk-icon.svg'
