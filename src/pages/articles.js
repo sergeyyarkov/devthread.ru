@@ -64,7 +64,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
           </Row>
           <Row>
             <Col lg={9} xs={12}>
-              {query 
+              {query && query !== '' 
                 ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} /> : null
                 : <Articles data={edges} />
               }
