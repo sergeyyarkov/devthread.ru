@@ -2,10 +2,8 @@ import React from "react"
 import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import { graphql } from 'gatsby'
-import { useFlexSearch } from 'react-use-flexsearch'
 import { useLocation } from '@reach/router'
 import * as queryString from 'query-string'
-import toFrontmatter from '../helpers/toFrontmatter'
 import useCategoriesQuery from '../hooks/useCategoriesQuery'
 
 import SEO from '../components/SEO/SEO'
@@ -19,17 +17,29 @@ import Newsletter from '../components/Newsletter/Newsletter'
 
 import SearchIcon from '../images/search-icon.svg'
 
-const ArticlesPage = ({ data: { allMarkdownRemark: edges, localSearchPages }, }) => {
+const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
   const { categories } = useCategoriesQuery()
   const { search, pathname } = useLocation()
   
+  const [filtredArticles, setFiltredArticles] = React.useState([])
   const [query, setQuery] = React.useState(queryString.parse(search).search || '')
+  
+  const allArticles = edges
 
-  const results = useFlexSearch(
-    query,
-    localSearchPages.index,
-    JSON.parse(localSearchPages.store)
-  )
+  const filterArticles = React.useCallback(arr => {
+    return arr.filter(({ node: { frontmatter } }) => 
+				frontmatter.title.toLowerCase().includes(query.toLowerCase())
+			||	frontmatter.description.toLowerCase().includes(query.toLowerCase())
+			||	frontmatter.category.toLowerCase().includes(query.toLowerCase())
+			||	frontmatter.tags.join('').toLowerCase().includes(query.toLowerCase())
+		)
+  }, [query])
+  
+  React.useEffect(() => {
+    if (query !== '') {
+      setFiltredArticles(filterArticles(allArticles.edges))
+    }
+  }, [setFiltredArticles, filterArticles, allArticles.edges, query])
 
   return (
     <Layout>
@@ -45,9 +55,9 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges, localSearchPages }, })
                 <Categories pathname={pathname}>
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
-                <Search articlesLength={edges.edges.length} resultsLength={results.length} query={query} setQuery={setQuery} />
+                <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} />
                 <div className="articles-info">
-                  {query ? results.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
+                  {query ? filtredArticles.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
                 </div>
               </div>
             </Col>
@@ -55,7 +65,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges, localSearchPages }, })
           <Row>
             <Col lg={9} xs={12}>
               {query 
-                ? results.length > 0 ? <Articles data={toFrontmatter(results)} /> : null
+                ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} /> : null
                 : <Articles data={edges} />
               }
               <Newsletter />
@@ -91,10 +101,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    localSearchPages {
-      index
-      store
     }
   } 
 `

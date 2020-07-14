@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import PropTypes from 'prop-types'
 
-const Search = ({ articlesLength, resultsLength, query, setQuery }) => {
+const Search = ({ allArticles, filterArticles, articlesLength, resultsLength, query, setQuery, setFiltredArticles }) => {
 	const handleInput = e => {
 		const query = e.target.value
 		if (query === '') {
@@ -10,9 +10,10 @@ const Search = ({ articlesLength, resultsLength, query, setQuery }) => {
 			setQuery('')
 			return null
 		}
-		
+	
 		navigate(`/articles/?search=${query.trim()}`)
 		setQuery(query)
+		setFiltredArticles(filterArticles(allArticles))
 	}
 
 	return (
