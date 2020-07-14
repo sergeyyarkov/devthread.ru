@@ -13,7 +13,6 @@ import Categories from '../components/Articles/Categories/Categories'
 import CategoryItem from '../components/Articles/Categories/CategoryItem'
 import Search from '../components/Articles/Search/Search'
 import Offers from '../components/Offers/Offers'
-import Newsletter from '../components/Newsletter/Newsletter'
 
 import SearchIcon from '../images/search-icon.svg'
 
@@ -57,7 +56,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
                 </Categories>
                 <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} />
                 <div className="articles-info">
-                  {query ? filtredArticles.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
+                  {query && query !== ''  ? filtredArticles.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
                 </div>
               </div>
             </Col>
@@ -68,7 +67,6 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
                 ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} /> : null
                 : <Articles data={edges} />
               }
-              <Newsletter />
             </Col >
             <Col lg={3} xs={12}>
               <Offers /> 

@@ -10,7 +10,6 @@ import Articles from '../components/Articles/Articles'
 import Categories from '../components/Articles/Categories/Categories'
 import CategoryItem from '../components/Articles/Categories/CategoryItem'
 import Offers from '../components/Offers/Offers'
-import Newsletter from '../components/Newsletter/Newsletter'
 
 const TagPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   const { categories } = useCategoriesQuery()
@@ -39,7 +38,6 @@ const TagPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } })
           <Row>
             <Col lg={9} xs={12}>
               <Articles data={edges} /> 
-              <Newsletter />
             </Col>
             <Col lg={3} xs={12}>
               <Offers /> 
