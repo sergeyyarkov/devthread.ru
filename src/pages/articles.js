@@ -35,10 +35,8 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
   }, [query])
   
   React.useEffect(() => {
-    if (query !== '') {
-      setFiltredArticles(filterArticles(allArticles.edges))
-    }
-  }, [setFiltredArticles, filterArticles, allArticles.edges, query])
+    if (query !== '') setFiltredArticles(filterArticles(allArticles.edges))
+  }, [setFiltredArticles, filterArticles, allArticles.edges, query, pathname])
 
   return (
     <Layout>
@@ -51,7 +49,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
                 <div className="articles-heading">
                   <h1>Статьи</h1>
                 </div>
-                <Categories pathname={pathname}>
+                <Categories pathname={pathname} setQuery={setQuery}>
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
                 <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} />

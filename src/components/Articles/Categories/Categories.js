@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby'
 
-const Categories = ({ children, pathname }) => {
+const Categories = ({ children, pathname, setQuery }) => {
   return (
     <div className="articles-categories">
       <div className={pathname === `/articles` ? 'tag-item active' : 'tag-item'}>
-        <Link to='/articles'>Все</Link>
+        <Link onClick={() => setQuery('')} to='/articles'>Все</Link>
       </div>
       {children}
     </div>
