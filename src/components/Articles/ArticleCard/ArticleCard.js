@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import slugify from '../../../helpers/slugify'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
-import './ArticleCard.scss'
 
 const ArticleCard = ({ data: { slug, title, image, category, description, tags } }) => {
   return (
