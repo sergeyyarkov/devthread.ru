@@ -10,7 +10,6 @@ const Search = ({ allArticles, filterArticles, articlesLength, resultsLength, qu
 			setQuery('')
 			return null
 		}
-	
 		navigate(`/articles/?search=${query.trim()}`)
 		setQuery(query)
 		setFiltredArticles(filterArticles(allArticles))
