@@ -13,9 +13,9 @@ import Offers from '../components/Offers/Offers'
 
 const TagPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   const { categories } = useCategoriesQuery()
-  const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
+  const { siteMetadata: { siteUrl, options: { articles: { onPage } } } } = useSiteMetadataQuery()
   
-  let [limit, setLimit] = React.useState(6)
+  let [limit, setLimit] = React.useState(onPage)
 
   return (
     <Layout>

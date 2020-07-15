@@ -29,6 +29,12 @@ module.exports = {
       telegram: 'https://t.me/devthread',
       twitter: 'https://twitter.com/devthread',
       yadzen: 'https://zen.yandex.ru/'
+    },
+    options: {
+      articles: {
+        onPage: 6,
+        onLoadMore: 2
+      }
     }
   },
   plugins: [

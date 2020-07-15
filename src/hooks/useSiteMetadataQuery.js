@@ -21,6 +21,12 @@ const useSiteMetadata = () => {
             twitter
             yadzen
           }
+          options {
+            articles {
+              onPage
+              onLoadMore
+            }
+          }
         }
       }
     }

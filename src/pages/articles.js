@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
 import * as queryString from 'query-string'
 import useCategoriesQuery from '../hooks/useCategoriesQuery'
+import useSiteMetadataQuery from '../hooks/useSiteMetadataQuery'
 
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
@@ -18,9 +19,10 @@ import SearchIcon from '../images/search-icon.svg'
 
 const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
   const { categories } = useCategoriesQuery()
+  const { siteMetadata: { options: { articles: { onPage } } } } = useSiteMetadataQuery()
   const { search } = useLocation()
   
-  let [limit, setLimit] = React.useState(6)
+  let [limit, setLimit] = React.useState(onPage)
   const [filtredArticles, setFiltredArticles] = React.useState([])
   const [query, setQuery] = React.useState(queryString.parse(search).search || '')
   

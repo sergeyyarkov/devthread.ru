@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import ArticleCard from './ArticleCard/ArticleCard'
 import Newsletter from '../Newsletter/Newsletter'
 
 const Articles = ({ data: { edges }, limit = 6, setLimit = () => null }) => {
+  const { siteMetadata: { options: { articles: { onLoadMore } } } } = useSiteMetadataQuery()
   return (
     <>
       <div className="articles">
@@ -21,7 +23,7 @@ const Articles = ({ data: { edges }, limit = 6, setLimit = () => null }) => {
         <div className="articles-loadMore">
           {edges.length === limit || edges.length <= limit 
             ? null
-            : <button className='btn-loadMore' onClick={() => setLimit(limit + 2)}>Загрузить еще&nbsp;&nbsp;<span role='img' aria-label='load more'>👇</span></button>
+            : <button className='btn-loadMore' onClick={() => setLimit(limit + onLoadMore)}>Загрузить еще&nbsp;&nbsp;<span role='img' aria-label='load more'>👇</span></button>
           }
         </div>
       </div>
