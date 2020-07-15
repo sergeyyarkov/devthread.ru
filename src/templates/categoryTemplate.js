@@ -14,7 +14,9 @@ import Offers from '../components/Offers/Offers'
 const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title } }) => {
   const { categories } = useCategoriesQuery()
   const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
- 
+
+  let [limit, setLimit] = React.useState(6)
+
   return (
     <Layout>
       <SEO title={title} canonical={`${siteUrl}/articles`} />
@@ -30,14 +32,14 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
                 <div className="articles-info">
-                  <p>Показано {edges.edges.length} из категории "{title}"</p>
+                  <p>Найдено {edges.edges.length} из категории "{title}"</p>
                 </div>
               </div>
             </Col>
           </Row>
           <Row>
             <Col lg={9} xs={12}>
-              <Articles data={edges} /> 
+              <Articles data={edges} limit={limit} setLimit={setLimit} /> 
             </Col>
             <Col lg={3} xs={12}>
               <Offers /> 

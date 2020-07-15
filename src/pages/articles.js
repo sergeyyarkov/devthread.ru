@@ -53,7 +53,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
                 <Categories setQuery={setQuery}>
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
-                <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} />
+                <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} setLimit={setLimit} />
                 <div className="articles-info">
                   {query && query !== ''  ? filtredArticles.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
                 </div>
@@ -63,10 +63,9 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
           <Row>
             <Col lg={9} xs={12}>
               {query && query !== '' 
-                ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} /> : null
-                : <Articles data={edges} limit={limit} />
+                ? filtredArticles.length > 0 ? <Articles data={{edges: filtredArticles}} limit={limit} setLimit={setLimit} /> : null
+                : <Articles data={edges} limit={limit} setLimit={setLimit} />
               }
-              <span onClick={() => setLimit(limit + 2)}>load more</span>
             </Col >
             <Col lg={3} xs={12}>
               <Offers /> 
