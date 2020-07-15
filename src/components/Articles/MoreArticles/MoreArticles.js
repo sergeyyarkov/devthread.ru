@@ -14,9 +14,9 @@ const MoreArticles = () => {
         <h2>Вам также может понравится...</h2>
       </div>
       <div className="more-articles__content">
-        {edges.map(({ node }, e) => {
-          if (node.frontmatter.slug !== query) {
-            return <ArticleCard key={e} data={node.frontmatter} />
+        {edges.filter(({ node }) => node.frontmatter.slug !== query).sort(() => Math.random() - 0.5).map(({ node }, i) => {
+          if (i < 4) {
+            return <ArticleCard key={i} data={node.frontmatter} />
           }
           return null
         })}

@@ -8,12 +8,15 @@ const Articles = ({ data: { edges }, limit = 6, setLimit = () => null }) => {
     <>
       <div className="articles">
         <div className="articles-content">
-          {edges.map(({ node }, i) => {
-            if (i < limit) {
-              return <ArticleCard key={i} data={node.frontmatter} />
-            }
-            return null
-          })}
+          {edges.length <= 0
+            ? <p>Записей нет</p>
+            : edges.map(({ node }, i) => {
+                if (i < limit) {
+                  return <ArticleCard key={i} data={node.frontmatter} />
+                }
+                return null
+              })
+          }
         </div>
         <div className="articles-loadMore">
           {edges.length === limit || edges.length <= limit 
