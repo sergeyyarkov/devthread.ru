@@ -1,3 +1,4 @@
+import 'firebase/database';
 import React from "react"
 import './src/styles/global.scss'
 import './src/components/Header/Header.scss'

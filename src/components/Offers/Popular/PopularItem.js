@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import ViewsIcon from '../../../images/views-icon.svg'
-
 const PopularItem = ({ slug, title }) => {
   return (
     <div className="article-item">
@@ -11,8 +9,6 @@ const PopularItem = ({ slug, title }) => {
         <Link to={`/article/${slug}`}>{title}</Link>
       </div>
       <div className="article-item__views">
-        <ViewsIcon />
-        <span>4252</span>
       </div>
     </div>
   )

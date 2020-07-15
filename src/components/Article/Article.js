@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import SEO from '../SEO/SEO'
 import Img from "gatsby-image"
+import ViewCounter from '../ViewCounter/ViewCounter'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import slugify from '../../helpers/slugify'
 import { Link } from 'gatsby'
@@ -25,7 +26,7 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
               </div>
               <div className="article-info__views">
                 <ViewsIcon />
-                <span>4252</span>
+                <ViewCounter id={slug} />
               </div> 
             </div>
             <div className="right-info">
