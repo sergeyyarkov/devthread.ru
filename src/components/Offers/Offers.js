@@ -15,7 +15,7 @@ const Offers = () => {
   const { articles } = usePopularArticlesQuery()
   const { tags } = useTagsQuery()
   const { books } = useBooksQuery()
-
+  
   return (
     <div className="offers">
       <Popular>
