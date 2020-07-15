@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from '@reach/router'
 import usePopularArticlesQuery from '../../hooks/usePopularArticlesQuery'
 import useTagsQuery from '../../hooks/useTagsQuery'
 import useBooksQuery from '../../hooks/useBooksQuery'
@@ -12,12 +13,13 @@ import TagItem from './Tags/TagItem'
 import BookItem from './Books/BookItem'
 
 const Offers = () => {
+  const { pathname } = useLocation()
   const { articles } = usePopularArticlesQuery()
   const { tags } = useTagsQuery()
   const { books } = useBooksQuery()
   
   return (
-    <div className="offers">
+    <div style={{ height: pathname === '/' ? '56%' : '78.5%' }} className="offers">
       <Popular>
         {articles.map(({ node }, i) => <PopularItem key={i} slug={node.frontmatter.slug} title={node.frontmatter.title} />)}
       </Popular>
