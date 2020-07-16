@@ -15,8 +15,20 @@ import './src/components/Footer/Footer.scss'
 
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+
 import { ThemeProvider } from "./src/context/ThemeContext"
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider>{element}</ThemeProvider>
 )
+
+export const shouldUpdateScroll = ({
+  routerProps: { location }
+}) => {
+  const { pathname } = location
+  const scrollToTopRoutes = [`/`, `/about`, '/contacts', '/books', '/articles']
+
+  if (scrollToTopRoutes.indexOf(pathname) !== -1) window.scrollTo(0, 0)
+
+  return false
+}

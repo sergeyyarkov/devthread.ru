@@ -6,7 +6,7 @@ const Search = ({ allArticles, filterArticles, articlesLength, resultsLength, qu
 	const handleInput = e => {
 		const query = e.target.value
 		if (query === '') {
-			navigate('/articles')
+			navigate('/articles/')
 			setQuery('')
 			return null
 		}
