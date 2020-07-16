@@ -6,6 +6,7 @@ import ViewCounter from '../ViewCounter/ViewCounter'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import slugify from '../../helpers/slugify'
 import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 import ViewsIcon from '../../images/views-icon.svg'
 import VkIcon from '../../images/vk-icon.svg'
@@ -14,6 +15,8 @@ import FacebookIcon from '../../images/facebook-icon__large.svg'
 
 const Article = ({ data: { slug, keywords, title, image, description, category, tags, time, date }, html }) => {
   const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
+  const { pathname } = useLocation()
+
   return (
     <>
       <SEO title={title} titleTemplate={false} keywords={keywords.join(', ')} description={description} image={`${siteUrl}${image.childImageSharp.fluid.src}`} type='article' />
@@ -26,7 +29,7 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
               </div>
               <div className="article-info__views">
                 <ViewsIcon />
-                <ViewCounter id={slug} />
+                <ViewCounter id={pathname} />
               </div> 
             </div>
             <div className="right-info">
