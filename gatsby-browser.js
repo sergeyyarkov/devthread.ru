@@ -26,9 +26,9 @@ export const shouldUpdateScroll = ({
   routerProps: { location }
 }) => {
   const { pathname } = location
-  const scrollToTopRoutes = [`/`, `/about`, '/contacts', '/books', '/articles']
+  const stopScrollLinks = ['/articles/']
 
-  if (scrollToTopRoutes.indexOf(pathname) !== -1) window.scrollTo(0, 0)
+  if (stopScrollLinks.includes(pathname)) return false
 
-  return false
+  return window.scrollTo(0, 0)
 }
