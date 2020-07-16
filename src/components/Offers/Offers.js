@@ -19,7 +19,7 @@ const Offers = () => {
   const { books } = useBooksQuery()
   
   return (
-    <div style={{ height: pathname === '/' ? '56%' : '78.5%' }} className="offers">
+    <div style={{ height: pathname === '/' ? '78%' : '78.5%' }} className="offers">
       <Popular>
         {articles.map(({ node }, i) => <PopularItem key={i} slug={node.frontmatter.slug} title={node.frontmatter.title} />)}
       </Popular>

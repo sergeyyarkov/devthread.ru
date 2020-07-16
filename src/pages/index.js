@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from 'gatsby'
 import { Main } from '../ui/ui'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import useSiteMetadataQuery from '../hooks/useSiteMetadataQuery'
 import SEO from '../components/SEO/SEO'
 import Layout from '../components/Layout/Layout'
 import Articles from '../components/Articles/Articles'
@@ -10,6 +11,9 @@ import Offers from '../components/Offers/Offers'
 import ArrowNext from '../images/arrow-next.svg'
 
 const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
+  const { siteMetadata: { options: { articles: { onPage } } } } = useSiteMetadataQuery()
+  let [limit, setLimit] = React.useState(onPage)
+
   return (
     <Layout>
       <SEO />
@@ -27,7 +31,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
           </Row>
           <Row>
             <Col lg={9} xs={12}>
-              <Articles data={edges} /> 
+              <Articles data={edges} limit={limit} setLimit={setLimit} /> 
             </Col>
             <Col lg={3} xs={12}>
               <Offers /> 
@@ -41,7 +45,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           frontmatter {
