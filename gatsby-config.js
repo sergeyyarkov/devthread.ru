@@ -86,6 +86,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#5183F5`,
+        showSpinner: false,
+      },
+    },
     "gatsby-plugin-sharp",
 		"gatsby-transformer-sharp",
     {

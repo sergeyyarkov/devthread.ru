@@ -24,6 +24,7 @@
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-netlify-cms": "^4.3.9",
+    "gatsby-plugin-nprogress": "^2.3.10",
     "gatsby-plugin-react-helmet": "^3.3.8",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.3.7",
