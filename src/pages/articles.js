@@ -36,10 +36,12 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
 			||	frontmatter.tags.join('').toLowerCase().includes(query.toLowerCase().trim())
 		)
   }, [query])
+  
 
   React.useEffect(() => {
+    setLimit(onPage)
     if (query !== '') setFiltredArticles(filterArticles(allArticles.edges))
-  }, [setFiltredArticles, filterArticles, allArticles.edges, query])
+  }, [setFiltredArticles, filterArticles, allArticles.edges, query, onPage])
 
   return (
     <Layout>
@@ -55,7 +57,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges }, }) => {
                 <Categories setQuery={setQuery}>
                   {categories.map(({ node }, i) => <CategoryItem key={i} title={node.frontmatter.title} />)}
                 </Categories>
-                <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} setLimit={setLimit} />
+                <Search allArticles={allArticles.edges} filterArticles={filterArticles} articlesLength={edges.edges.length} resultsLength={filtredArticles.length} query={query} setQuery={setQuery} setFiltredArticles={setFiltredArticles} setLimit={setLimit} onPage={onPage} />
                 <div className="articles-info">
                   {query && query !== ''  ? filtredArticles.length === 0 ? <p><SearchIcon />&nbsp;&nbsp;Ничего не найдено</p> : null : null}
                 </div>

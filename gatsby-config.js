@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: 'Ресурсы',
-        link: '/books'
+        link: '/deleted'
       }
     ],
     social: {
