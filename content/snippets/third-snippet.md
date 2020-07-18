@@ -1,6 +1,9 @@
 ---
 templateKey: snippet
 slug: third-snippet
+keywords:
+  - snippet
+  - keyword
 title: Third snippet
 date: 2020-07-18T15:21:38.779Z
 ---
