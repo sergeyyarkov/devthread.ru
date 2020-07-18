@@ -1,5 +1,6 @@
 ---
 templateKey: snippet
+slug: first-snippet
 title: First snippet
 date: 2020-07-18T15:21:25.880Z
 ---
