@@ -9,8 +9,6 @@ import Articles from '../components/Articles/Articles'
 import Snippets from '../components/Snippets/Snippets'
 import Offers from '../components/Offers/Offers'
 
-import ArrowNext from '../images/arrow-next.svg'
-
 const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   const { siteMetadata: { options: { articles: { onPage } } } } = useSiteMetadataQuery()
   let [limit, setLimit] = React.useState(onPage)
@@ -25,7 +23,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
               <div className="articles">
                 <div className="articles-heading">
                   <h1>Последние статьи</h1>
-                  <Link to='/articles'>смотреть все <ArrowNext /></Link>
+                  <Link to='/articles'>смотреть все</Link>
                 </div>
               </div>
             </Col>
