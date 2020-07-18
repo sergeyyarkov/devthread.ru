@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.snippet {
+  & article {
+    & .snippet-date {
+      text-align: center;
+      font-size: 16px;
+      color: #767676;
+    }
+    & .snippet-heading {
+      font-size: 21px;
+      text-align: center;
+      & h1 {
+        font-size: 40px;
+      }
+      margin-bottom: 15px;
+    }
+    & .snippet-description {
+      margin-bottom: 50px;
+      & p {
+        text-align: center;
+      }
+    }
+    & .snippet-comments {
+      margin: 25px 0;
+    }
+  }
+}
+
+.dark {
+  & .snippet {
+    & article {
+      & p, h1, h2, h3, h4, h5, h6, ul, ol {
+        color: $white-clr;
+      }
+      & blockquote {
+        background: #2A2A2A;
+        color: $white-clr;
+      }
+    }
+  }
+}

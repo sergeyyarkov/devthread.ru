@@ -22,8 +22,8 @@ module.exports = {
         link: '/contacts'
       },
       {
-        name: 'Ресурсы',
-        link: '/deleted'
+        name: 'Сниппеты',
+        link: '/snippets'
       }
     ],
     social: {
@@ -116,7 +116,7 @@ module.exports = {
               className: `anchor-link`,
               maintainCase: true,
               removeAccents: true,
-              isIconAfterHeader: true,
+              isIconAfterHeader: false,
               elements: [`h1`, `h2`, `h3`, `h4`],
             },
           },

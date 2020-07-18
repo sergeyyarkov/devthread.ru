@@ -53,7 +53,7 @@ const CategoryPage = ({ data: { allMarkdownRemark: edges }, pageContext: { title
 
 export const pageQuery = graphql`
   query articlesByCategory($title: String!) {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: $title}}}) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: $title}, templateKey: {eq: "article"}}}) {
       edges {
         node {
           frontmatter {

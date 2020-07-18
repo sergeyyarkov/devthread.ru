@@ -95,6 +95,7 @@ export default Article
 Article.propTypes = {
   data: PropTypes.shape({
     slug: PropTypes.string,
+    keywords: PropTypes.array,
     title: PropTypes.string,
     image: PropTypes.object,
     description: PropTypes.string,

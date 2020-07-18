@@ -22,6 +22,20 @@ collections:
       - {label: "Описание", name: "description", widget: "text"}
       - {label: "Содержание", name: "body", widget: "markdown"}
       - {label: "Тэги", name: "tags", widget: "relation", multiple: true, collection: "tags", valueField: "title", searchFields: ["title"]}
+  - name: 'snippets'
+    label: "Snippet"
+    folder: 'content/snippets'
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template key", name: "templateKey", widget: "hidden", default: "snippet"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "list"}
+      - {label: "Название сниппета", name: "title", widget: "string"}
+      - {label: "Дата публикации", name: "date", widget: "datetime"}
+      - {label: "Тэги", name: "tags", widget: "list"}
+      - {label: "Описание", name: "description", widget: "text"}
+      - {label: "Содержание", name: "body", widget: "markdown"}    
   - name: 'categories'
     label: "Category"
     folder: 'content/categories'

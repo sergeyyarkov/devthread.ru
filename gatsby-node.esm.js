@@ -6,6 +6,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const articleTemplate = path.resolve('src/templates/articleTemplate.js')
+  const snippetTemplate = path.resolve('src/templates/snippetTemplate.js')
   const categoryTemplate = path.resolve('src/templates/categoryTemplate.js')
   const tagTemplate = path.resolve('src/templates/tagTemplate.js')
 
@@ -33,6 +34,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const all = result.data.allMarkdownRemark.edges
   const articles = all.filter(article => article.node.frontmatter.templateKey === 'article')
+  const snippets = all.filter(snippet => snippet.node.frontmatter.templateKey === 'snippet')
   const categories = all.filter(category => category.node.frontmatter.templateKey === 'category')
   const tags = all.filter(tag => tag.node.frontmatter.templateKey === 'tag')
 
@@ -44,7 +46,17 @@ exports.createPages = async ({ actions, graphql }) => {
         slug: node.frontmatter.slug
       },
     });
-  });
+  })
+
+  snippets.forEach(({ node }) => {
+    createPage({
+      path: `snippet/${node.frontmatter.slug}`,
+      component: snippetTemplate,
+      context: {
+        slug: node.frontmatter.slug
+      },
+    })
+  })
 
   categories.forEach(({ node }) => {
     createPage({

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 import ArticleCard from './ArticleCard/ArticleCard'
-import Newsletter from '../Newsletter/Newsletter'
 
 const Articles = ({ data: { edges }, limit = 6, setLimit = () => null }) => {
   const { siteMetadata: { options: { articles: { onLoadMore } } } } = useSiteMetadataQuery()
@@ -27,7 +26,6 @@ const Articles = ({ data: { edges }, limit = 6, setLimit = () => null }) => {
           }
         </div>
       </div>
-      <Newsletter />
     </>
   )
 }

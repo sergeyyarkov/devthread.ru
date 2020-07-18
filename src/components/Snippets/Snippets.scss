@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.snippets {
+  margin-bottom: 40px;
+  & h2 {
+    margin-bottom: 20px;
+    font-size: 34px;
+  }
+  & .snippet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+    background: linear-gradient(92.41deg, #F5F9FF 0%, #F6F4FB 100%);
+    border-radius: 7px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    &__date {
+      font-size: 13px;
+    }
+    &__heading {
+      & a {
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+    &__tags {
+      display: flex;
+      & .tag-item {
+        margin: 0;
+        margin-right: 5px;
+        padding: 5px 10px;
+        background: #EBF1FE;
+        color: #6ab0f3;
+        font-size: 14px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.dark {
+  & .snippets {
+    color: $white-clr;
+    & .snippet-item {
+      background: #2A2A2A;
+      & .tag-item {
+        color: #5183F5;
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
