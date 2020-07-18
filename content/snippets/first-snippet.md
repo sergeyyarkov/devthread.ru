@@ -6,6 +6,12 @@ keywords:
   - fourth
 title: Second snippet
 date: 2020-07-18T15:19:47.574Z
+tags:
+  - php
+  - mysql
+  - js
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non
+  fermentum ligula. Aenean et ex nec magna faucibus congue eu ac justo.
 ---
 ## Lorem ipsum dolor
 
