@@ -6,6 +6,12 @@ keywords:
   - second
 title: First snippet
 date: 2020-07-18T15:21:25.880Z
+tags:
+  - reactjs
+  - js
+  - graphql
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non
+  fermentum ligula. Aenean et ex nec magna faucibus congue eu ac justo.
 ---
 ## Lorem ipsum dolor
 
