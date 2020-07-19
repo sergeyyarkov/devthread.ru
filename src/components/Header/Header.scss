@@ -249,6 +249,14 @@ header {
   }
 }
 
+@media (max-width: 991px) {
+  header {
+    & .header-content {
+      max-width: 880px;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   header {
     & .header-content {

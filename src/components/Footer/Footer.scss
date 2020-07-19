@@ -106,6 +106,14 @@ footer {
   }
 }
 
+@media (max-width: 991px) {
+  footer {
+    & .footer-content {
+      max-width: 880px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   footer {
     & .footer-content {

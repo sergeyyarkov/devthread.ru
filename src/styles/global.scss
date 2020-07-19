@@ -263,6 +263,12 @@ a {
   }
 }
 
+@media (max-width: 991px) {
+  .container-fluid {
+    max-width: 880px;
+  }
+}
+
 @media (max-width: 768px) {
   .error {
     & span {

@@ -38,14 +38,7 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
               </div> 
             </div>
           </div>
-          <div className="article-heading">
-            <h1>{title}</h1>
-          </div>
-          <div className="article-category">
-            <Link to={`/category/${slugify(category)}`}>{category}</Link>
-          </div>
           <div className="article-share">
-            <span>Поделиться:</span>
             <div className="article-share__social">
               <a href={`https://vk.com/share.php?url=${siteUrl}/article/${slug}&title=${title}&image=${siteUrl}${image.childImageSharp.fluid.src}`} target='_blank' rel='noreferrer'>
                 <VkIcon />
@@ -57,6 +50,12 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
                 <FacebookIcon />
               </a>
             </div>
+          </div>
+          <div className="article-heading">
+            <h1>{title}</h1>
+          </div>
+          <div className="article-category">
+            <Link to={`/category/${slugify(category)}`}>{category}</Link>
           </div>
           <div className="article-description">
             <p>
