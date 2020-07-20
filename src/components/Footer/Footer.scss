@@ -51,15 +51,20 @@ footer {
       & .footer-nav__helpers {
         display: flex;
         align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
         & span {
-          margin-right: 10px;
+          font-size: 14px;
+          margin-bottom: 10px;
         }
         & .helpers-icons {
           display: flex;
+          align-items: center;
           & a {
-            text-decoration: none;
+            font-size: 0;
           }
           & a:nth-child(1) {
+            text-decoration: none;
             margin-right: 10px;
           }
         }

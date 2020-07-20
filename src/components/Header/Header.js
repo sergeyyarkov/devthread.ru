@@ -85,7 +85,7 @@ const Header = () => {
             : null 
           }
         </div>
-        <button onClick={mobileHandler} className={isMobileOpen ? "header-content__button mobile active" : 'header-content__button mobile'}>
+        <button aria-label='menu' onClick={mobileHandler} className={isMobileOpen ? "header-content__button mobile active" : 'header-content__button mobile'}>
           <span />
           <span />
           <span />

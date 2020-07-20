@@ -11,6 +11,7 @@ const OnDark = () => {
           window.__setTheme = function(theme) {
             onChangeTheme(theme)
           }
+          
           // onRefreshPage
           if (localStorage.getItem('dark') || (new Date().getHours() >= 22 || new Date().getHours() <= 6)) {
             window.__isDarkTheme = true

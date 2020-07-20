@@ -42,12 +42,15 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-nav__helpers">
+            <span>Разработка при помощи:</span>
             <div className="helpers-icons">
               <a href="https://www.gatsbyjs.org/" rel='noreferrer' target="_blank">
                 <GatsbyIcon />
+                GatsbyJS
               </a>
               <a href="https://www.netlify.com/" rel='noreferrer' target="_blank">
                 <NetlifyIcon />
+                Netlify
               </a>
             </div>
           </div>
