@@ -16,6 +16,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
   const { pathname } = useLocation()
+  const { isDark, toggleLightTheme, toggleDarkTheme } = React.useContext(ThemeContext)
 
   React.useEffect(() =>  {
     isMobileOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = ''
@@ -56,9 +57,7 @@ const Header = () => {
             </nav>
           </div>
           <div className="header-nav__theme">
-            <ThemeContext.Consumer>
-              {theme => theme.isDark ? <SunIcon onClick={theme.toggleLightTheme} /> : <MoonIcon onClick={theme.toggleDarkTheme} />}
-            </ThemeContext.Consumer>
+            {isDark ? <SunIcon onClick={toggleLightTheme} /> : <MoonIcon onClick={toggleDarkTheme} />}
           </div>
         </div>
         <div className={isMobileOpen ? 'header-content__nav mobile mobileOpen' : 'header-content__nav mobile'}>
