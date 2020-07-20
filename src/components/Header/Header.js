@@ -57,7 +57,7 @@ const Header = () => {
           </div>
           <div className="header-nav__theme">
             <ThemeToggler>
-              {({ theme, toggleTheme }) => theme !== 'dark' ? <MoonIcon onClick={() => toggleTheme('dark')} /> : <SunIcon onClick={() => toggleTheme('light')} />}
+              {({ theme, toggleTheme }) => theme === 'dark' ? <SunIcon onClick={() => toggleTheme('light')} /> : <MoonIcon onClick={() => toggleTheme('dark')} />}
             </ThemeToggler> 
           </div>
         </div>
