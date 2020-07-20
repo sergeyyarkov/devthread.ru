@@ -3,7 +3,7 @@ import React from "react"
 const ThemeContext = React.createContext({ isDark: false })
 
 const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = React.useState(false)
+  const [isDark, setIsDark] = React.useState(true)
 
   const toggleDarkTheme = () => {
     setIsDark(true)
@@ -17,16 +17,17 @@ const ThemeProvider = ({ children }) => {
     window.localStorage.removeItem('dark')
   }
 
-  React.useEffect(() => {
-    if (localStorage.getItem('dark')) {
-      setIsDark(true)
-    }
-  }, [setIsDark])
+  // React.useEffect(() => {
+  //   if (localStorage.getItem('dark')) {
+  //     setIsDark(true)
+  //   }
+  // }, [setIsDark])
 
   return (
     <ThemeContext.Provider
       value={{
         isDark,
+        setIsDark,
         toggleDarkTheme,
         toggleLightTheme
       }}
