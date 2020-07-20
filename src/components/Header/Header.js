@@ -14,10 +14,10 @@ const Header = () => {
   const { siteMetadata: { title, menuLinks, social: { twitter, telegram } } } = useSiteMetadataQuery()
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
-  const [isDark, setIsDark] = React.useState(window.__isDarkTheme)
   const { pathname } = useLocation()
 
   React.useEffect(() =>  {
+    const [isDark, setIsDark] = React.useState(window.__isDarkTheme)
     isMobileOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = ''
     document.body.onscroll = () => window.pageYOffset >= 100 ? setIsScrolled(true) : setIsScrolled(false)
   })
