@@ -1,4 +1,7 @@
 import 'firebase/database';
+
+import 'gatsby-remark-vscode/styles.css'
+
 import './src/styles/global.scss'
 import './src/components/Header/Header.scss'
 import './src/components/About/About.scss'
@@ -13,9 +16,6 @@ import './src/components/Articles/MoreArticles/MoreArticles.scss'
 import './src/components/Books/Books.scss'
 import './src/components/Contacts/Contacts.scss'
 import './src/components/Footer/Footer.scss'
-
-import 'prismjs/themes/prism-tomorrow.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 export const shouldUpdateScroll = ({
   routerProps: { location }

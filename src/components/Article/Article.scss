@@ -103,6 +103,17 @@
       & .article-share {
         &__social {
           & a {
+            & svg:hover {
+              & .vk-icon {
+                fill: #4680C2;
+              }
+              & .twitter-icon {
+                fill: #00acee;
+              }
+              & .facebook-icon {
+                fill: #3b5998;
+              }
+            }
             & svg {
               & .vk-icon, .twitter-icon, .facebook-icon {
                 fill: $white-clr;

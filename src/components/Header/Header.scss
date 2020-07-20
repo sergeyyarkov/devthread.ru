@@ -44,6 +44,14 @@ header {
       align-items: center;
       & .header-nav__social {
         margin-right: 35px;
+        & svg:hover {
+          & .twitter-svg-social {
+            fill: #00acee;
+          }
+          & .telegram-svg-social {
+            fill: #0088cc;
+          }
+        }
         & a {
           text-decoration: none; 
         }
@@ -112,6 +120,14 @@ header {
       }
       & .mobile-social {
         margin-top: 30px;
+        & svg:hover {
+          & .twitter-svg-social {
+            fill: #00acee;
+          }
+          & .telegram-svg-social {
+            fill: #0088cc;
+          }
+        }
         & svg {
           & .telegram-svg-social {
             fill: $white-clr;
