@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from '@reach/router'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import useSiteMetadataQuery from '../../hooks/useSiteMetadataQuery'
 
 import LogoIcon from '../../images/logo-icon.svg'
@@ -14,13 +15,12 @@ const Header = () => {
   const { siteMetadata: { title, menuLinks, social: { twitter, telegram } } } = useSiteMetadataQuery()
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
-  const [isDark, setIsDark] = React.useState(localStorage.getItem('dark') ? true : false)
   const { pathname } = useLocation()
 
   React.useEffect(() =>  {
     isMobileOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = ''
     document.body.onscroll = () => window.pageYOffset >= 100 ? setIsScrolled(true) : setIsScrolled(false)
-  }, [isMobileOpen])
+  })
 
   const mobileHandler = () => {
     setIsMobileOpen(!isMobileOpen)
@@ -33,7 +33,7 @@ const Header = () => {
       </ul>
     )
   }
- 
+  
   return (
     <header className={isScrolled ? 'headerScrolled' : null}>
       <div className="header-content">
@@ -56,13 +56,9 @@ const Header = () => {
             </nav>
           </div>
           <div className="header-nav__theme">
-            {isDark ? <SunIcon onClick={() => {
-              window.__setTheme('light')
-              setIsDark(!isDark)
-            }} /> : <MoonIcon onClick={() => {
-              window.__setTheme('dark')
-              setIsDark(!isDark)
-            }} />}
+            <ThemeToggler>
+              {({ theme, toggleTheme }) => theme !== 'dark' ? <MoonIcon onClick={() => toggleTheme('dark')} /> : <SunIcon onClick={() => toggleTheme('light')} />}
+            </ThemeToggler> 
           </div>
         </div>
         <div className={isMobileOpen ? 'header-content__nav mobile mobileOpen' : 'header-content__nav mobile'}>
