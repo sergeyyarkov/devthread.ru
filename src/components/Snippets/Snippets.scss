@@ -2,9 +2,12 @@
 
 .snippets {
   margin-bottom: 40px;
-  & h2 {
-    margin-bottom: 20px;
+  & h1, h2 {
+    margin-bottom: 10px;
     font-size: 34px;
+  }
+  p {
+    margin-bottom: 15px;
   }
   & .snippet-item {
     display: flex;

@@ -55,15 +55,6 @@
 .anchor-link.before {
   top: -2px!important;
 }
-
-.anchor {
-  display: block;
-  position: relative;
-  top: -150px;
-  visibility: hidden;
-  height: 0;
-}
-
 .inner {
   border-bottom: 1px solid #EBEBEB;
   padding-bottom: 15px;
@@ -123,6 +114,27 @@
     border-radius: 7px;
     margin: 0 0 15px;
     font-size: 16px;
+    & code {
+      padding-top: 10px;
+    }
+    &[data-language=js]:before {
+      content: "js";
+      background: rgb(247, 223, 30);
+    }
+    &[data-language]:before {
+      color: #232129;
+      font-size: 0.75rem;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      letter-spacing: 0.075em;
+      line-height: 1;
+      position: absolute;
+      left: 1.5rem;
+      text-align: right;
+      text-transform: uppercase;
+      top: 0px;
+      border-radius: 0px 0px 4px 4px;
+      padding: 0.25rem 0.5rem;
+    }
   }
 }
 
