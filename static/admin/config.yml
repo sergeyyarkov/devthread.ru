@@ -1,14 +1,15 @@
 backend:
   name: github
   repo: sergeyyarkov/devthread.ru
-media_folder: static/assets
-public_folder: /assets
+locale: 'ru'
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 collections:
   - name: "articles"
     label: "Article"
     folder: "content/articles"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", wisdget: "hidden", default: "article"}
       - {label: "Slug", name: "slug", widget: "string"}
@@ -26,7 +27,7 @@ collections:
     label: "Snippet"
     folder: 'content/snippets'
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - {label: "Template key", name: "templateKey", widget: "hidden", default: "snippet"}
       - {label: "Slug", name: "slug", widget: "string"}

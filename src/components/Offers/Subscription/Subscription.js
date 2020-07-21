@@ -7,11 +7,11 @@ const Subscription = () => {
     <div style={pathname !== '/about' && pathname !== '/about/' ? { height: '100%' } : null}>
       <div style={pathname !== '/about' && pathname !== '/about/' ? { position: 'sticky', top: 75 } : null} className="offers-subscription offer-box">
         <div className="offers-subscription__heading offer-heading">
-            Читайте нас в Telegram
+            Канал в Telegram
         </div>
         <div className="offers-subscription__content">
           <p>
-            В нашем канале telegram вы не пропустите новые статьи, присоединяйтесь к другим разработчикам
+            В нашем канале telegram вы не пропустите статьи и новости, присоединяйтесь к другим разработчикам
           </p>
           <a href="https://t.me/devthread" rel='noreferrer' target="_blank" className="btn-primary">Подписаться</a>
         </div>
