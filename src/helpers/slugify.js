@@ -1,8 +1,8 @@
 const slugify = str => {
   const patterns = {
-    rus: /^[0-9а-яё-\s]*$/i
+    rus: /^[0-9а-яё-\s]*$/i,
   }
-  
+
   const translit = str => {
     if (str.match(patterns.rus)) {
       const ru = {
@@ -35,33 +35,33 @@ const slugify = str => {
           ы: "y",
           э: "e",
           ю: "u",
-          я: "ya"
+          я: "ya",
         },
-        newStr = [];
-  
+        newStr = []
+
       for (var i = 0; i < str.length; ++i) {
         const candidate = str[i].toLowerCase()
-  
+
         if (ru[candidate]) {
-          newStr.push(ru[candidate]);
+          newStr.push(ru[candidate])
         }
-  
-        if (candidate === '-' || !isNaN(candidate)) {
+
+        if (candidate === "-" || !isNaN(candidate)) {
           newStr.push(candidate)
         }
       }
-  
-      return newStr.join("");
+
+      return newStr.join("")
     }
-  
-    return 'not rus'
+
+    return "not rus"
   }
 
   if (str.match(patterns.rus)) {
-    return translit(str).split(' ').join('-').toLowerCase()
+    return translit(str).split(" ").join("-").toLowerCase()
   }
 
-  return str.split(' ').join('-').toLowerCase()
-};
+  return str.split(" ").join("-").toLowerCase()
+}
 
 export default slugify

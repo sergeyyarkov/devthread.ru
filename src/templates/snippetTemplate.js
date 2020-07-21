@@ -1,11 +1,15 @@
-import React from 'react'
-import { Main } from '../ui/ui'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Snippet from '../components/Snippet/Snippet'
-import Layout from '../components/Layout/Layout'
+import React from "react"
+import { Main } from "../ui/ui"
+import { Grid, Row, Col } from "react-flexbox-grid"
+import Snippet from "../components/Snippet/Snippet"
+import Layout from "../components/Layout/Layout"
 import { graphql } from "gatsby"
 
-const snippetTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) => {
+const snippetTemplate = ({
+  data: {
+    markdownRemark: { frontmatter, html },
+  },
+}) => {
   return (
     <Layout>
       <Main>
@@ -23,7 +27,9 @@ const snippetTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) =>
 
 export const pageQuery = graphql`
   query Snippet($slug: String!) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}, templateKey: {eq: "snippet"}}) {
+    markdownRemark(
+      frontmatter: { slug: { eq: $slug }, templateKey: { eq: "snippet" } }
+    ) {
       html
       frontmatter {
         slug

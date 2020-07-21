@@ -1,10 +1,11 @@
-import React from 'react';
-import 'firebase/database';
+import React from "react"
+import "firebase/database"
 
 const OnDark = () => {
   return (
     <script
-      dangerouslySetInnerHTML={{ __html: `
+      dangerouslySetInnerHTML={{
+        __html: `
         (() => {
           window.__isDarkTheme = false
           
@@ -31,11 +32,12 @@ const OnDark = () => {
             }
           }          
         })()
-      ` }}
+      `,
+      }}
     />
   )
 }
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents(<OnDark key='isDarkTheme' />)
-} 
+  setPreBodyComponents(<OnDark key="isDarkTheme" />)
+}

@@ -1,9 +1,15 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 const useMoreArticlesQuery = () => {
-  const { allMarkdownRemark: { edges } } = useStaticQuery(graphql`
+  const {
+    allMarkdownRemark: { edges },
+  } = useStaticQuery(graphql`
     {
-      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "article"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "article" } } }
+        sort: { order: DESC, fields: frontmatter___date }
+        limit: 6
+      ) {
         edges {
           node {
             frontmatter {

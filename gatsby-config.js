@@ -1,19 +1,19 @@
-require('dotenv').config()
+require("dotenv").config()
 
-const siteConfig = require('./config')
+const siteConfig = require("./config")
 
 module.exports = {
   siteMetadata: {
-    ...siteConfig
+    ...siteConfig,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/assets`,
-        name: 'assets',
+        name: "assets",
       },
     },
     {
@@ -40,7 +40,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-firebase',
+      resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
           apiKey: process.env.API_KEY,
@@ -61,7 +61,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
-		"gatsby-transformer-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -69,8 +69,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "assets"
-            }
+              name: "assets",
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -89,41 +89,41 @@ module.exports = {
                     removeAccents: true,
                     isIconAfterHeader: true,
                     elements: [`h1`, `h2`, `h3`, `h4`],
-                  }
+                  },
                 },
                 {
                   resolve: `gatsby-remark-vscode`,
                   options: {
-                    extensions: ['material-theme'],
+                    extensions: ["material-theme"],
                     theme: {
-                      default: 'Light+ (default light)',
+                      default: "Light+ (default light)",
                       parentSelector: {
-                        'body.dark': 'One Dark Pro'
-                      }
+                        "body.dark": "One Dark Pro",
+                      },
                     },
-                  }
-                }
-              ]
-            }
-          }
+                  },
+                },
+              ],
+            },
+          },
         ],
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /images/
-        }
-      }
+          include: /images/,
+        },
+      },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'content',
-        path: `${__dirname}/content`
-      }
+        name: "content",
+        path: `${__dirname}/content`,
+      },
     },
-    'gatsby-plugin-netlify-cms',
+    "gatsby-plugin-netlify-cms",
   ],
 }

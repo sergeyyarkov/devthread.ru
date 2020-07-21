@@ -1,9 +1,13 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 const useTagsQuery = () => {
-  const { allMarkdownRemark: { edges } } = useStaticQuery(graphql`
+  const {
+    allMarkdownRemark: { edges },
+  } = useStaticQuery(graphql`
     {
-      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "tag"}}}) {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "tag" } } }
+      ) {
         edges {
           node {
             frontmatter {

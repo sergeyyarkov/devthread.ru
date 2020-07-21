@@ -1,36 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types'
-import firebase from 'gatsby-plugin-firebase';
-import incrementViews from '../../lib/increment-views';
+import React, { useEffect, useState } from "react"
+import PropTypes from "prop-types"
+import firebase from "gatsby-plugin-firebase"
+import incrementViews from "../../lib/increment-views"
 
 const ViewCounter = ({ id }) => {
-  const [viewCount, setViewCount] = useState('');
+  const [viewCount, setViewCount] = useState("")
 
   useEffect(() => {
-    const onViews = (newViews) => {
-      setViewCount(newViews.val() === 1 ? 0 : newViews.val());
-    };
+    const onViews = newViews => {
+      setViewCount(newViews.val() === 1 ? 0 : newViews.val())
+    }
 
-    incrementViews(id);
+    incrementViews(id)
 
-    firebase.database().ref(`/views`).child(id).on(`value`, onViews);
+    firebase.database().ref(`/views`).child(id).on(`value`, onViews)
 
     return () => {
       if (firebase.database()) {
-        firebase.database().ref(`/views`).child(id).off(`value`, onViews);
+        firebase.database().ref(`/views`).child(id).off(`value`, onViews)
       }
-    };
-  }, [id]);
+    }
+  }, [id])
 
-  return (
-    <span>
-      {viewCount ? viewCount : `---`}
-    </span>
-  );
-};
+  return <span>{viewCount ? viewCount : `---`}</span>
+}
 
-export default ViewCounter;
+export default ViewCounter
 
 ViewCounter.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
 }

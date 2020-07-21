@@ -1,14 +1,18 @@
-import React from 'react'
-import { Main } from '../ui/ui'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Layout from '../components/Layout/Layout'
-import Article from '../components/Article/Article'
-import Offers from '../components/Offers/Offers'
-import MoreArticles from '../components/Articles/MoreArticles/MoreArticles'
-import Newsletter from '../components/Newsletter/Newsletter'
+import React from "react"
+import { Main } from "../ui/ui"
+import { Grid, Row, Col } from "react-flexbox-grid"
+import Layout from "../components/Layout/Layout"
+import Article from "../components/Article/Article"
+import Offers from "../components/Offers/Offers"
+import MoreArticles from "../components/Articles/MoreArticles/MoreArticles"
+import Newsletter from "../components/Newsletter/Newsletter"
 import { graphql } from "gatsby"
 
-const articleTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) => {
+const articleTemplate = ({
+  data: {
+    markdownRemark: { frontmatter, html },
+  },
+}) => {
   return (
     <Layout>
       <Main>
@@ -31,7 +35,7 @@ const articleTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) =>
 
 export const pageQuery = graphql`
   query Article($slug: String!) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
         slug

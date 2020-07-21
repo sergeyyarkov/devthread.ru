@@ -1,9 +1,14 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 const useSnippetsQuery = () => {
-  const { allMarkdownRemark: { edges } } = useStaticQuery(graphql`
+  const {
+    allMarkdownRemark: { edges },
+  } = useStaticQuery(graphql`
     {
-      allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "snippet"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "snippet" } } }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
         edges {
           node {
             frontmatter {

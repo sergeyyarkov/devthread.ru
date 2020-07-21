@@ -3,10 +3,10 @@ const toFrontmatter = array => {
     edges: array.map(el => {
       return {
         node: {
-          frontmatter: el
-        }
+          frontmatter: el,
+        },
       }
-    })
+    }),
   }
 }
 
