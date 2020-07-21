@@ -86,6 +86,11 @@ header {
       }
       & .header-nav__theme {
         cursor: pointer;
+        opacity: 0;
+      }
+      & .header-nav__theme.ready {
+        opacity: 1;
+        transition: all 0.2s linear 0s;
       }
     }
     &__nav.mobile {
