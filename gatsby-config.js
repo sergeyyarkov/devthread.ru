@@ -110,12 +110,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `devthread`
-      }
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

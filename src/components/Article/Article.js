@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import SEO from '../SEO/SEO'
 import Img from "gatsby-image"
 import ViewCounter from '../ViewCounter/ViewCounter'
@@ -17,14 +16,6 @@ import FacebookIcon from '../../images/facebook-icon__large.svg'
 const Article = ({ data: { slug, keywords, title, image, description, category, tags, time, date }, html }) => {
   const { siteMetadata: { siteUrl } } = useSiteMetadataQuery()
   const { pathname } = useLocation()
-
-  console.log(siteUrl+pathname)
-
-  let disqusConfig = {
-    url: `${siteUrl+pathname}`,
-    identifier: slug,
-    title: title,
-  }
 
   return (
     <>
@@ -90,7 +81,6 @@ const Article = ({ data: { slug, keywords, title, image, description, category, 
               <h2>Комментарии</h2>
             </div>
             <div className="article-comments__content">
-              <Disqus config={disqusConfig} />
             </div>
           </div>
         </article>
