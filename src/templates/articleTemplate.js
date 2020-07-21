@@ -1,7 +1,6 @@
 import React from "react"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
-import Layout from "../components/Layout/Layout"
 import Article from "../components/Article/Article"
 import Offers from "../components/Offers/Offers"
 import MoreArticles from "../components/Articles/MoreArticles/MoreArticles"
@@ -14,7 +13,7 @@ const articleTemplate = ({
   },
 }) => {
   return (
-    <Layout>
+    <>
       <Main>
         <Grid fluid>
           <Row>
@@ -29,7 +28,7 @@ const articleTemplate = ({
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 

@@ -21,13 +21,19 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
   const { pathname } = useLocation()
 
+  const [ready, setReady] = React.useState(false)
+  const [isDark, setIsDark] = React.useState(false)
+  
+
   React.useEffect(() => {
+    setIsDark(window.__isDarkTheme)
+    setReady(true)
     isMobileOpen
       ? (document.body.style.overflowY = "hidden")
       : (document.body.style.overflowY = "")
     document.body.onscroll = () =>
       window.pageYOffset >= 100 ? setIsScrolled(true) : setIsScrolled(false)
-  }, [isMobileOpen])
+  }, [isMobileOpen, setIsDark, setReady])
 
   const mobileHandler = () => {
     setIsMobileOpen(!isMobileOpen)
@@ -71,7 +77,7 @@ const Header = () => {
           <div className="header-nav__links">
             <nav>{renderLinks()}</nav>
           </div>
-          <ThemeSwitcher />
+          <ThemeSwitcher ready={ready} isDark={isDark} setIsDark={setIsDark} />
         </div>
         <div
           className={

@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
 import SEO from "../components/SEO/SEO"
-import Layout from "../components/Layout/Layout"
 import Snippets from "../components/Snippets/Snippets"
 import SnippetItem from "../components/Snippets/SnippetItem/SnippetItem"
 
@@ -13,7 +12,7 @@ const SnippetsPage = ({
   },
 }) => {
   return (
-    <Layout>
+    <>
       <SEO />
       <Main>
         <Grid fluid>
@@ -39,7 +38,7 @@ const SnippetsPage = ({
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 

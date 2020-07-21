@@ -2,7 +2,6 @@ import React from "react"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
 import Snippet from "../components/Snippet/Snippet"
-import Layout from "../components/Layout/Layout"
 import { graphql } from "gatsby"
 
 const snippetTemplate = ({
@@ -11,7 +10,7 @@ const snippetTemplate = ({
   },
 }) => {
   return (
-    <Layout>
+    <>
       <Main>
         <Grid fluid style={{ maxWidth: 900 }}>
           <Row>
@@ -21,7 +20,7 @@ const snippetTemplate = ({
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 

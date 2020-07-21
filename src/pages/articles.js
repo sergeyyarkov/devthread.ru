@@ -8,7 +8,6 @@ import useCategoriesQuery from "../hooks/useCategoriesQuery"
 import useSiteMetadataQuery from "../hooks/useSiteMetadataQuery"
 
 import SEO from "../components/SEO/SEO"
-import Layout from "../components/Layout/Layout"
 import Articles from "../components/Articles/Articles"
 import Categories from "../components/Articles/Categories/Categories"
 import CategoryItem from "../components/Articles/Categories/CategoryItem"
@@ -64,7 +63,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
   }, [setFiltredArticles, filterArticles, allArticles.edges, query, onPage])
 
   return (
-    <Layout>
+    <>
       <SEO title="Статьи" />
       <Main>
         <Grid fluid>
@@ -123,7 +122,7 @@ const ArticlesPage = ({ data: { allMarkdownRemark: edges } }) => {
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 

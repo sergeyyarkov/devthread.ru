@@ -5,7 +5,6 @@ import { graphql } from "gatsby"
 import useSiteMetadataQuery from "../hooks/useSiteMetadataQuery"
 import useCategoriesQuery from "../hooks/useCategoriesQuery"
 import SEO from "../components/SEO/SEO"
-import Layout from "../components/Layout/Layout"
 import Articles from "../components/Articles/Articles"
 import Categories from "../components/Articles/Categories/Categories"
 import CategoryItem from "../components/Articles/Categories/CategoryItem"
@@ -28,7 +27,7 @@ const CategoryPage = ({
   let [limit, setLimit] = React.useState(onPage)
 
   return (
-    <Layout>
+    <>
       <SEO title={title} canonical={`${siteUrl}/articles`} />
       <Main>
         <Grid fluid>
@@ -63,7 +62,7 @@ const CategoryPage = ({
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 

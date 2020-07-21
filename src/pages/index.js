@@ -5,7 +5,6 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import useSiteMetadataQuery from "../hooks/useSiteMetadataQuery"
 import useSnippetsQuery from "../hooks/useSnippetsQuery"
 import SEO from "../components/SEO/SEO"
-import Layout from "../components/Layout/Layout"
 import Articles from "../components/Articles/Articles"
 import Snippets from "../components/Snippets/Snippets"
 import SnippetItem from "../components/Snippets/SnippetItem/SnippetItem"
@@ -23,7 +22,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
   let [limit, setLimit] = React.useState(onPage)
 
   return (
-    <Layout>
+    <>
       <SEO />
       <Main>
         <Grid fluid>
@@ -59,7 +58,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
           </Row>
         </Grid>
       </Main>
-    </Layout>
+    </>
   )
 }
 
