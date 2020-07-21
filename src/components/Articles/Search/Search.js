@@ -28,5 +28,13 @@ const Search = ({ allArticles, filterArticles, articlesLength, resultsLength, qu
 export default Search
 
 Search.propTypes = {
-	articlesLength: PropTypes.number
+	allArticles: PropTypes.array,
+	filterArticles: PropTypes.func,
+	articlesLength: PropTypes.number,
+	resultsLength: PropTypes.number,
+	query: PropTypes.string,
+	setQuery: PropTypes.func,
+	setFiltredArticles: PropTypes.func,
+	setLimit: PropTypes.func,
+	onPage: PropTypes.number
 }

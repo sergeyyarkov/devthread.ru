@@ -70,11 +70,11 @@ export default SEO
 
 SEO.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string
-}
-
-SEO.defaultProps = {
-  title: null,
-  description: null
+  titleTemplate: PropTypes.bool,
+  keywords: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  type: PropTypes.string,
+  canonical: PropTypes.string
 }
 

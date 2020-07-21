@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
 import firebase from 'gatsby-plugin-firebase';
 import incrementViews from '../../lib/increment-views';
 
@@ -29,3 +30,7 @@ const ViewCounter = ({ id }) => {
 };
 
 export default ViewCounter;
+
+ViewCounter.propTypes = {
+  id: PropTypes.string
+}

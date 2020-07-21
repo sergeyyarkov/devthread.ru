@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { useLocation } from '@reach/router'
 import { Link } from 'gatsby'
 
@@ -19,3 +20,7 @@ const Categories = ({ children, setQuery = () => null }) => {
 }
 
 export default Categories
+
+Categories.propTypes = {
+  setQuery: PropTypes.func
+}

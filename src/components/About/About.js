@@ -45,9 +45,3 @@ About.propTypes = {
   pageTitle: PropTypes.string,
   email: PropTypes.string
 }
-
-About.defaultProps = {
-  title: null,
-  pageTitle: null,
-  email: null
-}
