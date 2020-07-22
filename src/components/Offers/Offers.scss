@@ -85,6 +85,11 @@
       & .tag-item {
         & a {
           color: #5183F5;
+          background: rgba(0,0,0, .2);
+          &:hover {
+            background: #111;
+            color: #99c9f7;
+          }
         }
       }
     }

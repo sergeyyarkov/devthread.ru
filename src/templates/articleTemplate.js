@@ -1,6 +1,7 @@
 import React from "react"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
+import SEO from "../components/SEO/SEO"
 import Article from "../components/Article/Article"
 import Offers from "../components/Offers/Offers"
 import MoreArticles from "../components/Articles/MoreArticles/MoreArticles"
@@ -9,11 +10,22 @@ import { graphql } from "gatsby"
 
 const articleTemplate = ({
   data: {
-    markdownRemark: { frontmatter, html },
+    article: { frontmatter, html },
+    site: {
+      siteMetadata: { siteUrl },
+    },
   },
 }) => {
   return (
     <>
+      <SEO
+        title={frontmatter.title}
+        titleTemplate={false}
+        keywords={frontmatter.keywords.join(", ")}
+        description={frontmatter.description}
+        image={`${siteUrl}${frontmatter.image.childImageSharp.fluid.src}`}
+        type="article"
+      />
       <Main>
         <Grid fluid>
           <Row>
@@ -34,7 +46,7 @@ const articleTemplate = ({
 
 export const pageQuery = graphql`
   query Article($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    article: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
         slug
@@ -52,6 +64,11 @@ export const pageQuery = graphql`
         description
         date(formatString: "D MMMM YYYY", locale: "ru-RU")
         category
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl: url
       }
     }
   }

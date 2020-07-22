@@ -40,12 +40,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligu
 
 ```js
 const {
+  //L1
   siteMetadata: {
     title,
     menuLinks,
     social: { twitter, telegram },
   },
-} = useSiteMetadataQuery() //L1
+} = useSiteMetadataQuery()
 const [isScrolled, setIsScrolled] = React.useState(false)
 const [isMobileOpen, setIsMobileOpen] = React.useState(false)
 const [isDark, setIsDark] = React.useState(false)

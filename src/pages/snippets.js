@@ -13,11 +13,11 @@ const SnippetsPage = ({
 }) => {
   return (
     <>
-      <SEO />
+      <SEO title="Сниппеты" />
       <Main>
         <Grid fluid>
           <Row>
-            <Col lg={12}>
+            <Col xs={12}>
               <Snippets>
                 <h1>Сниппеты</h1>
                 <p>

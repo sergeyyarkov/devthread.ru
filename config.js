@@ -3,7 +3,7 @@ module.exports = {
   keywords:
     "веб разработка, javascript, seo, программирование, reactjs, graphql",
   siteName: "Cборник статей и руководств - devthread.ru",
-  titleTemplate: "%s · статьи и руководства по веб-разработке",
+  titleTemplate: "%s · devthread.ru",
   description:
     "Cборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам",
   url: "https://devthread.netlify.app",

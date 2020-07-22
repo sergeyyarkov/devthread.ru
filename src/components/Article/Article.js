@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../SEO/SEO"
 import Img from "gatsby-image"
 import ViewCounter from "../ViewCounter/ViewCounter"
 import useSiteMetadataQuery from "../../hooks/useSiteMetadataQuery"
@@ -14,17 +13,7 @@ import TwitterIcon from "../../images/twitter-icon__large.svg"
 import FacebookIcon from "../../images/facebook-icon__large.svg"
 
 const Article = ({
-  data: {
-    slug,
-    keywords,
-    title,
-    image,
-    description,
-    category,
-    tags,
-    time,
-    date,
-  },
+  data: { slug, title, image, description, category, tags, time, date },
   html,
 }) => {
   const {
@@ -34,14 +23,6 @@ const Article = ({
 
   return (
     <>
-      <SEO
-        title={title}
-        titleTemplate={false}
-        keywords={keywords.join(", ")}
-        description={description}
-        image={`${siteUrl}${image.childImageSharp.fluid.src}`}
-        type="article"
-      />
       <div className="article">
         <article>
           <div className="article-info">

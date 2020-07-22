@@ -7,7 +7,7 @@ import SEO from "../components/SEO/SEO"
 const NotFound = () => {
   return (
     <>
-      <SEO />
+      <SEO title="Ошибка 404" />
       <Main>
         <Grid fluid>
           <div className="error">

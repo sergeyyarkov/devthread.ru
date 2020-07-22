@@ -1,17 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../SEO/SEO"
 
-const Snippet = ({ data: { keywords, description, title, date }, html }) => {
+const Snippet = ({ data: { description, title, date }, html }) => {
   return (
     <>
-      <SEO
-        title={title}
-        titleTemplate={false}
-        description={description}
-        keywords={keywords.join(", ")}
-        type="article"
-      />
       <div className="snippet">
         <article>
           <div className="snippet-date">{date}</div>

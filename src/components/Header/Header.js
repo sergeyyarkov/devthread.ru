@@ -19,15 +19,20 @@ const Header = () => {
   } = useSiteMetadataQuery()
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
+  const [ready, setReady] = React.useState(false)
+  const [isDark, setIsDark] = React.useState(false)
+
   const { pathname } = useLocation()
 
   React.useEffect(() => {
+    setIsDark(window.__isDarkTheme)
+    setReady(true)
     isMobileOpen
       ? (document.body.style.overflowY = "hidden")
       : (document.body.style.overflowY = "")
     document.body.onscroll = () =>
       window.pageYOffset >= 100 ? setIsScrolled(true) : setIsScrolled(false)
-  }, [isMobileOpen])
+  }, [isMobileOpen, setIsDark, setReady])
 
   const mobileHandler = () => {
     setIsMobileOpen(!isMobileOpen)
@@ -71,7 +76,7 @@ const Header = () => {
           <div className="header-nav__links">
             <nav>{renderLinks()}</nav>
           </div>
-          <ThemeSwitcher />
+          <ThemeSwitcher ready={ready} isDark={isDark} setIsDark={setIsDark} />
         </div>
         <div
           className={
@@ -84,6 +89,11 @@ const Header = () => {
             <>
               <span>{title}</span>
               <nav>{renderLinks()}</nav>
+              <ThemeSwitcher
+                ready={ready}
+                isDark={isDark}
+                setIsDark={setIsDark}
+              />
               <div className="mobile-social">
                 <a href="/" target="_blank">
                   <TelegramIcon />

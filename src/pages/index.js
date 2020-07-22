@@ -23,7 +23,10 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
 
   return (
     <>
-      <SEO />
+      <SEO
+        title="devthread.ru · Статьи и руководства по веб-разработке"
+        titleTemplate={false}
+      />
       <Main>
         <Grid fluid>
           <Row>

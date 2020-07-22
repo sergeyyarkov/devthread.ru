@@ -84,17 +84,10 @@ header {
           color: rgba(0,0,0,.8);
         }
       }
-      & .header-nav__theme {
-        cursor: pointer;
-        opacity: 0;
-      }
-      & .header-nav__theme.ready {
-        opacity: 1;
-        transition: all 0.2s linear 0s;
-      }
     }
     &__nav.mobile {
-      background: #0d0d0d;
+      background-color: rgba(250,252,254, .9);
+      backdrop-filter: blur(8px);
       position: fixed;
       right: 0;
       left: 0;
@@ -102,11 +95,14 @@ header {
       bottom: 0;
       height: 0%;
       transition: padding-top .2s ease-out;
-      overflow: scroll;
-      overflow-x: hidden;
       z-index: 99;
+      & .theme-switcher {
+        position: absolute;
+        right: 22px;
+        bottom: 45px;
+      }
       & span {
-        color: $white-clr;
+        color: #0A0C10;
         display: block;
         margin-bottom: 20px;
         font-weight: 700;
@@ -118,9 +114,12 @@ header {
           & a {
             font-size: 28px;
             text-decoration: none;
-            color: $white-clr;
+            color: #0A0C10;
             font-weight: 600;
           }
+        }
+        & li.active {
+          margin-left: 20px;
         }
       }
       & .mobile-social {
@@ -135,11 +134,11 @@ header {
         }
         & svg {
           & .telegram-svg-social {
-            fill: $white-clr;
+            fill: #0A0C10;
             width: 50px;
           }
           & .twitter-svg-social {
-            fill: $white-clr;
+            fill: #0A0C10;
           }
         }
         & a:nth-child(2) {
@@ -188,18 +187,18 @@ header {
     &__button.mobile.active {
       & span:nth-child(1) {
         transform: rotate(45deg);
-        background: $white-clr;
+        background: #0A0C10;
         top: -3px;
         left: 0px;
       }
       & span:nth-child(2) {
         width: 0%;
         opacity: 0; 
-        background: $white-clr;
+        background: #0A0C10;
       }
       & span:nth-child(3) {
         transform: rotate(-45deg);
-        background: $white-clr;
+        background: #0A0C10;
         top: 18px;
         left: 0px;
       }
@@ -261,8 +260,40 @@ header {
           }
         }
       }
+      &__nav.mobile {
+        background-color: rgba(7,11,14, .99);
+        & span {
+          color: $white-clr;
+        }
+        & nav {
+          & li {
+            & a {
+              color: $white-clr;
+            }
+          }
+        }
+        & svg {
+          & .telegram-svg-social {
+            fill: $white-clr;
+          }
+          & .twitter-svg-social {
+            fill: $white-clr;
+          }
+        }
+      }
       &__button.mobile {
         & span {
+          background: $white-clr;
+        }
+      }
+      &__button.mobile.active {
+        & span:nth-child(1) {
+          background: $white-clr;
+        }
+        & span:nth-child(2) {
+          background: $white-clr;
+        }
+        & span:nth-child(3) {
           background: $white-clr;
         }
       }

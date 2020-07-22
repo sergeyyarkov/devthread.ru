@@ -1,6 +1,7 @@
 import React from "react"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
+import SEO from "../components/SEO/SEO"
 import Snippet from "../components/Snippet/Snippet"
 import { graphql } from "gatsby"
 
@@ -11,6 +12,13 @@ const snippetTemplate = ({
 }) => {
   return (
     <>
+      <SEO
+        title={frontmatter.title}
+        titleTemplate={false}
+        description={frontmatter.description}
+        keywords={frontmatter.keywords.join(", ")}
+        type="article"
+      />
       <Main>
         <Grid fluid style={{ maxWidth: 900 }}>
           <Row>

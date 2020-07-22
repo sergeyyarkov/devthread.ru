@@ -142,6 +142,15 @@
   background: linear-gradient(135.9deg, #F5F9FF 0%, #F5F9FF 0.01%, #F6F4FB 98.96%);
 }
 
+.theme-switcher {
+  cursor: pointer;
+  opacity: 0;
+  &.ready {
+    opacity: 1;
+    transition: all 0.2s linear 0s;
+  }
+}
+
 .dark {
   background: #202020;
   & .light-default-light {

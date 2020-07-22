@@ -1,19 +1,12 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import MoonIcon from "../../../images/moon-icon.svg"
 import SunIcon from "../../../images/sun-icon.svg"
 
-const ThemeSwitcher = () => {
-  const [ready, setReady] = React.useState(false)
-  const [isDark, setIsDark] = React.useState(false)
-
-  React.useEffect(() => {
-    setIsDark(window.__isDarkTheme)
-    setReady(true)
-  }, [setIsDark, setReady])
-
+const ThemeSwitcher = ({ ready, isDark, setIsDark }) => {
   return (
-    <div className={ready ? "header-nav__theme ready" : "header-nav__theme"}>
+    <div className={ready ? "theme-switcher ready" : "theme-switcher"}>
       {isDark ? (
         <SunIcon
           onClick={() => {
@@ -34,3 +27,9 @@ const ThemeSwitcher = () => {
 }
 
 export default ThemeSwitcher
+
+ThemeSwitcher.propTypes = {
+  ready: PropTypes.bool,
+  isDark: PropTypes.bool,
+  setIsDark: PropTypes.func,
+}
