@@ -1,6 +1,6 @@
 import "firebase/database"
 import React from "react"
-import Layout from './src/components/Layout/Layout'
+import Layout from "./src/components/Layout/Layout"
 
 const OnDark = () => {
   return (
@@ -44,5 +44,5 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>;
-};
+  return <Layout {...props}>{element}</Layout>
+}

@@ -1,6 +1,6 @@
 import "firebase/database"
-import React from 'react';
-import Layout from './src/components/Layout/Layout'
+import React from "react"
+import Layout from "./src/components/Layout/Layout"
 
 import "gatsby-remark-vscode/styles.css"
 
@@ -29,5 +29,5 @@ export const shouldUpdateScroll = ({ routerProps: { location } }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>;
-};
+  return <Layout {...props}>{element}</Layout>
+}
