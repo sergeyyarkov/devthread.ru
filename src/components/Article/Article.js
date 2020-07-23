@@ -26,6 +26,9 @@ const Article = ({
     },
   } = useSiteMetadataQuery()
   const { pathname } = useLocation()
+  const [readyComments, setReadyComments] = React.useState(false)
+
+  React.useEffect(() => setReadyComments(true), [setReadyComments])
 
   return (
     <>
@@ -108,7 +111,7 @@ const Article = ({
           <div className="article-comments">
             <div className="article-comments__heading">
               <h2>Комментарии</h2>
-              <GitalkComponent
+              {readyComments ? <GitalkComponent
                 options={{
                   clientID,
                   clientSecret,
@@ -118,7 +121,7 @@ const Article = ({
                   id: pathname,
                   title: title,
                 }}
-              />
+              /> : null}
             </div>
             <div className="article-comments__content"></div>
           </div>
