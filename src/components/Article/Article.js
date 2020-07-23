@@ -111,18 +111,20 @@ const Article = ({
           <div className="article-comments">
             <div className="article-comments__heading">
               <h2>Комментарии</h2>
-              {readyComments ? <GitalkComponent
-                options={{
-                  clientID,
-                  clientSecret,
-                  repo,
-                  owner,
-                  admin: admin.split(","),
-                  language: 'ru',
-                  id: pathname,
-                  title: title,
-                }}
-              /> : null}
+              {readyComments ? (
+                <GitalkComponent
+                  options={{
+                    clientID,
+                    clientSecret,
+                    repo,
+                    owner,
+                    admin: admin.split(","),
+                    language: "ru",
+                    id: pathname,
+                    title: title,
+                  }}
+                />
+              ) : null}
             </div>
             <div className="article-comments__content"></div>
           </div>

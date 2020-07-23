@@ -1,7 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { useLocation } from "@reach/router"
+import GitalkComponent from "gitalk/dist/gitalk-component"
+import useSiteMetadataQuery from "../../hooks/useSiteMetadataQuery"
 
 const Snippet = ({ data: { description, title, date }, html }) => {
+  const {
+    siteMetadata: {
+      gitalk: { clientID, clientSecret, repo, owner, admin },
+    },
+  } = useSiteMetadataQuery()
+  const { pathname } = useLocation()
+  const [readyComments, setReadyComments] = React.useState(false)
+
+  React.useEffect(() => setReadyComments(true), [setReadyComments])
+
   return (
     <>
       <div className="snippet">
@@ -19,6 +32,20 @@ const Snippet = ({ data: { description, title, date }, html }) => {
           <div className="snippet-comments">
             <div className="snippet-comments__heading">
               <h2>Комментарии</h2>
+              {readyComments ? (
+                <GitalkComponent
+                  options={{
+                    clientID,
+                    clientSecret,
+                    repo,
+                    owner,
+                    admin: admin.split(","),
+                    language: "ru",
+                    id: pathname,
+                    title: title,
+                  }}
+                />
+              ) : null}
             </div>
             <div className="snippet-comments__content"></div>
           </div>
