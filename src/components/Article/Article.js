@@ -110,7 +110,6 @@ const Article = ({
           </div>
           <div className="article-comments">
             <div className="article-comments__heading">
-              <h2>Комментарии</h2>
               {readyComments ? (
                 <GitalkComponent
                   options={{

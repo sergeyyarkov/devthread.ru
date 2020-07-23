@@ -31,7 +31,6 @@ const Snippet = ({ data: { description, title, date }, html }) => {
           </div>
           <div className="snippet-comments">
             <div className="snippet-comments__heading">
-              <h2>Комментарии</h2>
               {readyComments ? (
                 <GitalkComponent
                   options={{
