@@ -26,6 +26,13 @@
     & h2 {
       margin-bottom: 10px;
     }
+    & .reload-form {
+      text-decoration: underline;
+      cursor: pointer;
+      color: #6ab0f3;
+      background: none;
+      font-size: 16px;
+    }
   }
   & .contacts-form {
     margin-bottom: 50px;
@@ -33,10 +40,12 @@
       margin-bottom: 30px;
     }
     & form {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 0 20px;
+      & .form-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
       & input {
         margin-bottom: 10px;
         border-radius: 5px;
