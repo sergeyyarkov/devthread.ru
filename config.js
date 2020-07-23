@@ -38,8 +38,8 @@ module.exports = {
     },
   },
   gitalk: {
-    clientID: process.env.GITALK_ADMIN,
-    clientSecret: process.env.GITALK_CLIENT_ID,
+    clientID: process.env.GITALK_CLIENT_ID,
+    clientSecret: process.env.GITALK_CLIENT_SECRET,
     repo: process.env.GITALK_REPO,
     owner: process.env.GITALK_OWNER,
     admin: process.env.GITALK_ADMIN,
