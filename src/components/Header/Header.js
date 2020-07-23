@@ -8,13 +8,14 @@ import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
 import LogoIcon from "../../images/logo-icon.svg"
 import TelegramIcon from "../../images/telegram-icon.svg"
 import TwitterIcon from "../../images/twitter-icon.svg"
+import YadzenIcon from "../../images/yadzen-icon.svg"
 
 const Header = () => {
   const {
     siteMetadata: {
       title,
       menuLinks,
-      social: { twitter, telegram },
+      social: { twitter, telegram, yadzen },
     },
   } = useSiteMetadataQuery()
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -38,7 +39,7 @@ const Header = () => {
     setIsMobileOpen(!isMobileOpen)
   }
 
-  const renderLinks = () => {
+  const MenuLinks = () => {
     return (
       <ul>
         {menuLinks.map((page, i) => (
@@ -50,10 +51,28 @@ const Header = () => {
                 : null
             }
           >
-            <Link to={page.link}>{page.name}</Link>
+            <Link onClick={() => setIsMobileOpen(false)} to={page.link}>
+              {page.name}
+            </Link>
           </li>
         ))}
       </ul>
+    )
+  }
+
+  const SocialLinks = () => {
+    return (
+      <>
+        <a href={yadzen} target="_blank" rel="noreferrer">
+          <YadzenIcon />
+        </a>
+        <a href={telegram} target="_blank" rel="noreferrer">
+          <TelegramIcon />
+        </a>
+        <a href={twitter} target="_blank" rel="noreferrer">
+          <TwitterIcon />
+        </a>
+      </>
     )
   }
 
@@ -66,15 +85,12 @@ const Header = () => {
         </div>
         <div className="header-content__nav desktop">
           <div className="header-nav__social">
-            <a href={telegram} target="_blank" rel="noreferrer">
-              <TelegramIcon />
-            </a>
-            <a href={twitter} target="_blank" rel="noreferrer">
-              <TwitterIcon />
-            </a>
+            <SocialLinks />
           </div>
           <div className="header-nav__links">
-            <nav>{renderLinks()}</nav>
+            <nav>
+              <MenuLinks />
+            </nav>
           </div>
           <ThemeSwitcher ready={ready} isDark={isDark} setIsDark={setIsDark} />
         </div>
@@ -88,19 +104,16 @@ const Header = () => {
           {isMobileOpen ? (
             <>
               <span>{title}</span>
-              <nav>{renderLinks()}</nav>
+              <nav>
+                <MenuLinks />
+              </nav>
               <ThemeSwitcher
                 ready={ready}
                 isDark={isDark}
                 setIsDark={setIsDark}
               />
               <div className="mobile-social">
-                <a href="/" target="_blank">
-                  <TelegramIcon />
-                </a>
-                <a href="/" target="_blank">
-                  <TwitterIcon />
-                </a>
+                <SocialLinks />
               </div>
             </>
           ) : null}

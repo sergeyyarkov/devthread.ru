@@ -21,6 +21,12 @@
       font-weight: 500;
     }
   }
+  & .contacts-submitted {
+    margin-bottom: 30px;
+    & h2 {
+      margin-bottom: 10px;
+    }
+  }
   & .contacts-form {
     margin-bottom: 50px;
     & h2 {

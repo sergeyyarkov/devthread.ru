@@ -54,9 +54,10 @@ header {
         }
         & a {
           text-decoration: none; 
-        }
-        & a:nth-child(1) {
           margin-right: 13px;
+        }
+        & a:nth-child(3) {
+          margin-right: 0px;
         }
       }
       & .header-nav__links nav ul {
@@ -141,8 +142,8 @@ header {
             fill: #0A0C10;
           }
         }
-        & a:nth-child(2) {
-          margin-left: 20px;
+        & a {
+          margin-right: 15px;
         }
         & a {
           text-decoration: none;
@@ -277,6 +278,9 @@ header {
             fill: $white-clr;
           }
           & .twitter-svg-social {
+            fill: $white-clr;
+          }
+          & .yadzen-svg-social {
             fill: $white-clr;
           }
         }
