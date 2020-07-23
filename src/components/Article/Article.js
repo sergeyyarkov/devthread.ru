@@ -1,3 +1,5 @@
+import "gitalk/dist/gitalk.css"
+
 import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
@@ -6,6 +8,7 @@ import useSiteMetadataQuery from "../../hooks/useSiteMetadataQuery"
 import slugify from "../../helpers/slugify"
 import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
+import GitalkComponent from "gitalk/dist/gitalk-component"
 
 import ViewsIcon from "../../images/views-icon.svg"
 import VkIcon from "../../images/vk-icon.svg"
@@ -17,7 +20,10 @@ const Article = ({
   html,
 }) => {
   const {
-    siteMetadata: { siteUrl },
+    siteMetadata: {
+      siteUrl,
+      gitalk: { clientID, clientSecret, repo, owner, admin },
+    },
   } = useSiteMetadataQuery()
   const { pathname } = useLocation()
 
@@ -102,6 +108,17 @@ const Article = ({
           <div className="article-comments">
             <div className="article-comments__heading">
               <h2>Комментарии</h2>
+              <GitalkComponent
+                options={{
+                  clientID,
+                  clientSecret,
+                  repo,
+                  owner,
+                  admin: admin.split(","),
+                  id: pathname,
+                  title: title,
+                }}
+              />
             </div>
             <div className="article-comments__content"></div>
           </div>

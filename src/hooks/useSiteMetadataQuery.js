@@ -29,6 +29,13 @@ const useSiteMetadata = () => {
               onLoadMore
             }
           }
+          gitalk {
+            clientID
+            clientSecret
+            repo
+            owner
+            admin
+          }
         }
       }
     }

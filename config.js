@@ -37,4 +37,11 @@ module.exports = {
       onLoadMore: 2,
     },
   },
+  gitalk: {
+    clientID: process.env.GITALK_ADMIN,
+    clientSecret: process.env.GITALK_CLIENT_ID,
+    repo: process.env.GITALK_REPO,
+    owner: process.env.GITALK_OWNER,
+    admin: process.env.GITALK_ADMIN,
+  },
 }
