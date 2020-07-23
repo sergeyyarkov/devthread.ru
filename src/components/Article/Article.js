@@ -118,6 +118,7 @@ const Article = ({
                   repo,
                   owner,
                   admin: admin.split(","),
+                  language: 'ru',
                   id: pathname,
                   title: title,
                 }}
