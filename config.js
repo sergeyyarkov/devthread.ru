@@ -6,7 +6,7 @@ module.exports = {
   titleTemplate: "%s · devthread.ru",
   description:
     "Cборник статей и руководств по тематике веб-разработки и IT для того чтобы помочь вам",
-  url: "https://devthread.netlify.app",
+  url: "https://devthread.ru",
   menuLinks: [
     {
       name: "Статьи",
