@@ -1,4 +1,5 @@
 import React from "react"
+import { useForm } from "react-hook-form"
 
 function encode(data) {
   return Object.keys(data)
@@ -7,6 +8,7 @@ function encode(data) {
 }
 
 const ContactsFrom = () => {
+  const { register, handleSubmit, errors } = useForm()
   const [state, setState] = React.useState({})
   const [submitted, setSubmitted] = React.useState(false)
   const [error, setError] = React.useState(false)
@@ -15,18 +17,19 @@ const ContactsFrom = () => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
+  const onSubmit = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": form.getAttribute("name"),
+        "form-name": "contact",
         ...state,
       }),
     })
-      .then(() => setSubmitted(true))
+      .then(() => {
+        setSubmitted(true)
+        setState({})
+      })
       .catch(error => {
         console.error(error)
         setError(true)
@@ -72,40 +75,59 @@ const ContactsFrom = () => {
     <div className="contacts-form">
       <h2>форма обратной связи</h2>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         name="contact"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        {Object.keys(errors).filter(
+          field =>
+            errors[field].type === "required" ||
+            errors[field].type === "pattern"
+        ).length > 0 ? (
+          <p className="error-info">* Заполните все поля в нужном формате </p>
+        ) : null}
         <div hidden>
           Не заполняйте это
           <input name="bot-field" onChange={handleChange} />
         </div>
         <div className="form-content">
           <input
+            className={errors.name ? "error-field" : null}
             onChange={handleChange}
             name="name"
-            placeholder="Ваше имя"
+            placeholder="Введите ваше имя"
             type="text"
+            ref={register({ required: true, maxLength: 100 })}
           />
           <input
+            className={errors.email ? "error-field" : null}
             onChange={handleChange}
             name="email"
-            placeholder="Ваша почта"
+            placeholder="Ваша почта example@email.com"
             type="email"
+            ref={register({
+              required: true,
+              pattern: /^\S+@\S+$/i,
+              maxLength: 100,
+            })}
           />
           <input
+            className={errors.subject ? "error-field" : null}
             onChange={handleChange}
             name="subject"
             placeholder="Тема сообщения"
             type="text"
+            ref={register({ required: true })}
           />
           <textarea
+            className={errors.message ? "error-field" : null}
             onChange={handleChange}
             name="message"
             placeholder="Ваше сообщение..."
             defaultValue={""}
+            ref={register({ required: true })}
           />
           <div className="submit-btn">
             <button className="btn-primary" type="submit">

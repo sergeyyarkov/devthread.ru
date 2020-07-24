@@ -22,6 +22,7 @@
     }
   }
   & .contacts-submitted {
+    min-height: 290px;
     margin-bottom: 30px;
     & h2 {
       margin-bottom: 10px;
@@ -40,11 +41,18 @@
       margin-bottom: 30px;
     }
     & form {
+      & .error-info {
+        text-align: left;
+        margin-bottom: 15px;
+        color: #df4e4e;
+      }
+      & .error-field {
+        border: 1px solid #ff3737;
+      }
       & .form-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 0 20px;
       }
       & input {
         margin-bottom: 10px;

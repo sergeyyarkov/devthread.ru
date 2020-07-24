@@ -30,7 +30,7 @@ const ArticleCard = ({
       <div className="article-card__tags">
         <ul>
           {tags.map((tag, i) => (
-            <li key={i}>
+            <li className="tag-item" key={i}>
               <Link to={`/tag/${tag}`}>{tag}</Link>
             </li>
           ))}

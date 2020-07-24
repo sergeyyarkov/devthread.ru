@@ -51,6 +51,9 @@ header {
           & .telegram-svg-social {
             fill: #0088cc;
           }
+          & .yadzen-svg-social {
+            fill: #2E3238;
+          }
         }
         & a {
           text-decoration: none; 
@@ -131,6 +134,9 @@ header {
           }
           & .telegram-svg-social {
             fill: #0088cc;
+          }
+          & .yadzen-svg-social {
+            fill: #2E3238;
           }
         }
         & svg {
@@ -232,6 +238,19 @@ header {
             & .twitter-svg-social {
               fill: $white-clr;
             }
+            & .yadzen-svg-social {
+              fill: $white-clr;
+              &_black {
+                fill: black;
+              }
+            }
+          }
+          & svg:hover {
+            & .yadzen-svg-social {
+              &_black {
+                fill: $white-clr;
+              }
+            }
           }
         }
         & .header-nav__links {
@@ -282,6 +301,16 @@ header {
           }
           & .yadzen-svg-social {
             fill: $white-clr;
+            &_black {
+              fill: black;
+            }
+          }
+        }
+        & svg:hover {
+          & .yadzen-svg-social {
+            &_black {
+              fill: $white-clr;
+            }
           }
         }
       }
