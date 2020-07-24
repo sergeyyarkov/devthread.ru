@@ -2,6 +2,13 @@ require("dotenv").config()
 
 const siteConfig = require("./config")
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://devthread.ru/',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+
 module.exports = {
   siteMetadata: {
     ...siteConfig,
@@ -15,6 +22,27 @@ module.exports = {
       options: {
         path: `${__dirname}/static/assets`,
         name: "assets",
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
       },
     },
     {
