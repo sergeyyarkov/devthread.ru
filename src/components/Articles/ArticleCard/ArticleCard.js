@@ -10,7 +10,7 @@ const ArticleCard = ({
   return (
     <article className="article-card">
       <div className="article-card__image">
-        <Link to={`/article/${slug}`}>
+        <Link to={`/article/${slug}/`}>
           <Img
             loading="eager"
             fadeIn={false}
@@ -21,17 +21,17 @@ const ArticleCard = ({
       </div>
       <div className="article-card__heading">
         <h2>
-          <Link to={`/article/${slug}`}>{title}</Link>
+          <Link to={`/article/${slug}/`}>{title}</Link>
         </h2>
       </div>
       <div className="article-card__category">
-        <Link to={`/category/${slugify(category)}`}>{category}</Link>
+        <Link to={`/category/${slugify(category)}/`}>{category}</Link>
       </div>
       <div className="article-card__tags">
         <ul>
           {tags.map((tag, i) => (
             <li className="tag-item" key={i}>
-              <Link to={`/tag/${tag}`}>{tag}</Link>
+              <Link to={`/tag/${tag}/`}>{tag}</Link>
             </li>
           ))}
         </ul>

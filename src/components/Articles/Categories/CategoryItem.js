@@ -15,7 +15,7 @@ const CategoryItem = ({ title }) => {
           : "tag-item"
       }
     >
-      <Link to={`/category/${slugify(title)}`}>{title}</Link>
+      <Link to={`/category/${slugify(title)}/`}>{title}</Link>
     </div>
   )
 }

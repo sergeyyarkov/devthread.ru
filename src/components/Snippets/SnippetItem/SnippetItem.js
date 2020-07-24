@@ -7,7 +7,7 @@ const SnippetItem = ({ slug, title, date, tags }) => {
       <div className="left-info">
         <div className="snippet-item__date">{date}</div>
         <div className="snippet-item__heading">
-          <Link to={`/snippet/${slug}`}>{title}</Link>
+          <Link to={`/snippet/${slug}/`}>{title}</Link>
         </div>
       </div>
       <div className="right-info">

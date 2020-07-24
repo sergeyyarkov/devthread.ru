@@ -119,8 +119,9 @@ const Article = ({
                     owner,
                     admin: admin.split(","),
                     language: "ru",
-                    id: pathname,
+                    id: slug,
                     title: title,
+                    labels: ["Статья", "Обсуждение"],
                   }}
                 />
               ) : null}

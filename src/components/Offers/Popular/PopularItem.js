@@ -6,7 +6,7 @@ const PopularItem = ({ slug, title }) => {
   return (
     <div className="article-item">
       <div className="article-item__title">
-        <Link to={`/article/${slug}`}>{title}</Link>
+        <Link to={`/article/${slug}/`}>{title}</Link>
       </div>
       <div className="article-item__views"></div>
     </div>

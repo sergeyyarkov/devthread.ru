@@ -46,7 +46,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   articles.forEach(({ node }) => {
     createPage({
-      path: `article/${node.frontmatter.slug}`,
+      path: `article/${node.frontmatter.slug}/`,
       component: articleTemplate,
       context: {
         slug: node.frontmatter.slug,
@@ -56,7 +56,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   snippets.forEach(({ node }) => {
     createPage({
-      path: `snippet/${node.frontmatter.slug}`,
+      path: `snippet/${node.frontmatter.slug}/`,
       component: snippetTemplate,
       context: {
         slug: node.frontmatter.slug,
@@ -66,7 +66,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   categories.forEach(({ node }) => {
     createPage({
-      path: `category/${slugify(node.frontmatter.title)}`,
+      path: `category/${slugify(node.frontmatter.title)}/`,
       component: categoryTemplate,
       context: {
         title: node.frontmatter.title,
@@ -76,7 +76,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   tags.forEach(({ node }) => {
     createPage({
-      path: `tag/${slugify(node.frontmatter.title)}`,
+      path: `tag/${slugify(node.frontmatter.title)}/`,
       component: tagTemplate,
       context: {
         title: node.frontmatter.title,
