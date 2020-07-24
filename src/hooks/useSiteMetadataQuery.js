@@ -12,7 +12,7 @@ const useSiteMetadata = () => {
           titleTemplate
           siteName
           description
-          siteUrl: url
+          siteUrl
           menuLinks {
             name
             link

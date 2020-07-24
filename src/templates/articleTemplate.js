@@ -68,7 +68,7 @@ export const pageQuery = graphql`
     }
     site {
       siteMetadata {
-        siteUrl: url
+        siteUrl
       }
     }
   }
