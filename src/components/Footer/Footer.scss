@@ -154,6 +154,14 @@ footer {
           & div {
             margin-right: 0;
             margin-bottom: 20px;
+            & ul {
+              & li {
+                & a {
+                  display: block;
+                  padding: 5px 0;
+                }
+              }
+            }
           }
         }
       }
