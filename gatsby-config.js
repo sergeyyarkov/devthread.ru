@@ -85,6 +85,63 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  categories: edge.node.frontmatter.tags,
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: `${site.siteMetadata.siteUrl}/article/${edge.node.frontmatter.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/article/${edge.node.frontmatter.slug}`,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: { frontmatter: { templateKey: { eq: "article" } } }
+                  sort: { order: DESC, fields: frontmatter___date }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      frontmatter {
+                        slug
+                        title
+                        category
+                        tags
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'devthread.ru | RSS Лента',
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
