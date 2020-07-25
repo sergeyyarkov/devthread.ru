@@ -36,6 +36,7 @@ const SEO = ({
       }
     >
       <html lang="ru" />
+      <meta name="mailru-domain" content="1a4ttvvN3ScSGnPZ" />
       <meta name="description" content={seo.description} />
       {seo.keywords && <meta name="keywords" content={seo.keywords} />}
       <meta property="og:locale" content="ru_RU" />
