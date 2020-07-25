@@ -2,8 +2,8 @@ backend:
   name: github
   repo: sergeyyarkov/devthread.ru
 locale: 'ru'
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/assets"
+public_folder: "/assets"
 collections:
   - name: "articles"
     label: "Article"
