@@ -125,6 +125,7 @@ module.exports = {
                       frontmatter {
                         slug
                         title
+                        description
                         category
                         tags
                         date
