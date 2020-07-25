@@ -29,7 +29,7 @@ module.exports = {
     email: "support@devthread.ru",
     telegram: "https://t.me/devthread",
     twitter: "https://twitter.com/devthread",
-    yadzen: "https://zen.yandex.ru/",
+    yadzen: "https://zen.yandex.ru/id/5f1c896990c4997348fb168d",
   },
   options: {
     articles: {
