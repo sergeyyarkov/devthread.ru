@@ -6,6 +6,7 @@ import useSiteMetadataQuery from "../../hooks/useSiteMetadataQuery"
 import LogoIcon from "../../images/logo-icon.svg"
 import GatsbyIcon from "../../images/gatsby-icon.svg"
 import NetlifyIcon from "../../images/netlify-icon.svg"
+import RssIcon from "../../images/rss-icon.svg"
 
 const Footer = () => {
   const {
@@ -94,6 +95,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-content__copy">
+          <div className="rss-feed">
+            <a href="/rss.xml" target="_blank">
+              <RssIcon />
+              RSS Канал
+            </a>
+          </div>
           <span>© 2020 {title}</span>
         </div>
       </div>

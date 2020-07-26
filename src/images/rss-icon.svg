@@ -1,0 +1,12 @@
+<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#rss-icon)">
+<path class="rss-feed-icon" d="M1.85714 12.9999C2.88281 12.9999 3.71429 12.1685 3.71429 11.1428C3.71429 10.1171 2.88281 9.28564 1.85714 9.28564C0.831471 9.28564 0 10.1171 0 11.1428C0 12.1685 0.831471 12.9999 1.85714 12.9999Z" fill="black"/>
+<path class="rss-feed-icon" d="M0 4.3335V6.81C3.41343 6.81 6.19079 9.58643 6.19079 12.9999H8.66636C8.66636 8.22143 4.77843 4.3335 0 4.3335Z" fill="black"/>
+<path class="rss-feed-icon" d="M0 0V2.4765C5.80357 2.4765 10.5244 7.19643 10.5244 13H13C13 5.83143 7.16857 0 0 0Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="rss-icon">
+<rect width="13" height="13" fill="white"/>
+</clipPath>
+</defs>
+</svg>

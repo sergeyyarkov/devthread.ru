@@ -65,12 +65,15 @@ const Header = () => {
       <>
         <a href={yadzen} target="_blank" rel="noreferrer">
           <YadzenIcon />
+          Ян.Дзен
         </a>
         <a href={telegram} target="_blank" rel="noreferrer">
           <TelegramIcon />
+          Телеграмм
         </a>
         <a href={twitter} target="_blank" rel="noreferrer">
           <TwitterIcon />
+          Твиттер
         </a>
       </>
     )

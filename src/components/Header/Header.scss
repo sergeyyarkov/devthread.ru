@@ -44,6 +44,7 @@ header {
       align-items: center;
       & .header-nav__social {
         margin-right: 35px;
+        font-size: 0;
         & svg:hover {
           & .twitter-svg-social {
             fill: #00acee;
@@ -128,6 +129,7 @@ header {
       }
       & .mobile-social {
         margin-top: 30px;
+        font-size: 0;
         & svg:hover {
           & .twitter-svg-social {
             fill: #00acee;

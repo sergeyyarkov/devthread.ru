@@ -78,6 +78,19 @@ footer {
       color: $black-clr;
       font-weight: 700;
       font-size: 13px;
+      display: flex;
+      align-items: center;
+      & span {
+        width: 100%;
+      }
+      & .rss-feed {
+        font-size: 0;
+        & svg:hover {
+          & .rss-feed-icon {
+            fill: #ee802f;
+          }
+        }
+      }
     }
   }
 }
@@ -106,6 +119,20 @@ footer {
       &__copy {
         color: $white-clr;
         font-weight: 600;
+        & .rss-feed {
+          & a {
+            & svg {
+              & .rss-feed-icon {
+                fill: $white-clr;
+              }
+            }
+            & svg:hover {
+              & .rss-feed-icon {
+                fill: #ee802f;
+              }
+            }
+          }
+        }
       }
     }
   }

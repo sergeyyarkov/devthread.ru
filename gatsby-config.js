@@ -4,7 +4,7 @@ const siteConfig = require("./config")
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://devthread.ru/',
+  URL: NETLIFY_SITE_URL = "https://devthread.ru/",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
@@ -41,20 +41,20 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }],
+            policy: [{ userAgent: "*" }],
           },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
@@ -109,7 +109,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: `${site.siteMetadata.siteUrl}/article/${edge.node.frontmatter.slug}`,
                   guid: `${site.siteMetadata.siteUrl}/article/${edge.node.frontmatter.slug}`,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
             },
@@ -135,8 +135,8 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
-            title: 'devthread.ru | RSS Лента',
+            output: "/rss.xml",
+            title: "devthread.ru | RSS Лента",
           },
         ],
       },
@@ -180,15 +180,15 @@ module.exports = {
               maxWidth: 2400,
               quality: 100,
               withWebp: true,
-              loading: 'lazy',
+              loading: "lazy",
               linkImagesToOriginal: false,
-            }
+            },
           },
           `gatsby-remark-responsive-iframe`,
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-              destinationDir: 'static',
+              destinationDir: "static",
             },
           },
           {
