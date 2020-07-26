@@ -22,6 +22,22 @@
   }
 }
 
+div.gt-header > div.gt-header-comment > div.gt-header-controls > a > span > span.gt-svg {
+  display: none;
+}
+
+article .gt-container {
+  & .gt-comment-content {
+    transition: none;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  & .gt-header-textarea {
+    transition: none;
+  }
+}
+
 .btn-loadMore {
   background: none;
   text-decoration: underline;
@@ -152,6 +168,45 @@
 
 .dark {
   background: #202020;
+  article .gt-container {
+    color: $white-clr;
+    & .gt-header-textarea {
+      background-color: #2A2A2A;
+      color: $white-clr;
+    }
+    & .gt-comments {
+      & .markdown-body pre {
+        background: none;
+        color: #fff;
+      }
+    }
+    & .gt-meta {
+      border-bottom: 1px solid rgba(153, 153, 153, 0.2)
+    }
+    & .gt-comment-content {
+      background-color: #2A2A2A;
+    }
+    & .gt-comment-content:hover {
+      box-shadow: none;
+    }
+    & .gt-btn-preview {
+      background-color: #2A2A2A;
+      color: #ffffff;
+      border: 1px solid rgba(153, 153, 153, 0.2);
+      &:hover {
+        background-color: #414141;
+      }
+    }
+    & .gt-header-preview {
+      background-color: #2A2A2A;
+      & p, a, h1, h2 ,h3, h4, h5, h6 {
+        color: $white-clr;
+      }
+    }
+    & .gt-svg svg {
+      fill: $white-clr !important;
+    }
+  }
   & .light-default-light {
     background: #282c34;
   }
