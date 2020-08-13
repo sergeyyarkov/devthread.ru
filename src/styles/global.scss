@@ -254,7 +254,6 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  margin-top: 122px;
   display: flex;
   height: 85%;
   flex-direction: column;
@@ -262,6 +261,7 @@ body {
 
 main {
   flex: 1 0 auto;
+  margin-top: 122px;
 }
 
 svg {

@@ -44,5 +44,8 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
+  const { location: { pathname } } = props
+  pathname.includes('/article/amp') ? props.amp = true : props.amp = false
+
   return <Layout {...props}>{element}</Layout>
 }

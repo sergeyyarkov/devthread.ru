@@ -5,10 +5,11 @@ import path from "path"
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const articleTemplate = path.resolve("src/templates/articleTemplate.js")
-  const snippetTemplate = path.resolve("src/templates/snippetTemplate.js")
-  const categoryTemplate = path.resolve("src/templates/categoryTemplate.js")
-  const tagTemplate = path.resolve("src/templates/tagTemplate.js")
+  const articleTemplate = path.resolve("src/templates/article.js")
+  const articleTemplateAMP = path.resolve("src/templates/article.amp.js")
+  const snippetTemplate = path.resolve("src/templates/snippet.js")
+  const categoryTemplate = path.resolve("src/templates/category.js")
+  const tagTemplate = path.resolve("src/templates/tag.js")
 
   const result = await graphql(
     `
@@ -48,6 +49,14 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `article/${node.frontmatter.slug}/`,
       component: articleTemplate,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    })
+    
+    createPage({
+      path: `article/amp/${node.frontmatter.slug}/`,
+      component: articleTemplateAMP,
       context: {
         slug: node.frontmatter.slug,
       },

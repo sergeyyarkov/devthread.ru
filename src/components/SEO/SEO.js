@@ -12,6 +12,7 @@ const SEO = ({
   image,
   type,
   canonical,
+  url
 }) => {
   const { pathname } = useLocation()
   const { siteMetadata } = useSiteMetadataQuery()
@@ -24,7 +25,7 @@ const SEO = ({
     image: image || "custom image url...",
     description: description || siteMetadata.description,
     keywords: keywords || siteMetadata.keywords,
-    url: `${siteMetadata.siteUrl}${pathname}`,
+    url: url || `${siteMetadata.siteUrl}${pathname}`,
     canonical: canonical || `${siteMetadata.siteUrl}${pathname}`,
   }
 

@@ -26,6 +26,9 @@ header {
     padding: 0px 15px;
     margin: 0 auto;
     height: 100%;
+    &.amp {
+      max-width: 800px;
+    }
     &__logo {
       display: flex;
       align-items: center;
@@ -352,6 +355,11 @@ header {
       }
       &__button.mobile {
         display: none;
+      }
+      &.amp {
+        & .header-content__button.mobile {
+          display: block;
+        }
       }
     }
   }

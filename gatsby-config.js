@@ -84,7 +84,6 @@ module.exports = {
         display: `standalone`,
       },
     },
-    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -140,6 +139,17 @@ module.exports = {
             title: "devthread.ru | RSS Лента",
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        canonicalBaseUrl: 'https://devthread.ru/',
+        components: ['amp-form'],
+        excludedPaths: ['/404*', '/'],
+        pathIdentifier: '/amp/',
+        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+        useAmpClientIdApi: true,
       },
     },
     {

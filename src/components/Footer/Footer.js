@@ -8,7 +8,7 @@ import GatsbyIcon from "../../images/gatsby-icon.svg"
 import NetlifyIcon from "../../images/netlify-icon.svg"
 import RssIcon from "../../images/rss-icon.svg"
 
-const Footer = () => {
+const Footer = ({ amp }) => {
   const {
     siteMetadata: {
       title,
@@ -18,7 +18,7 @@ const Footer = () => {
   } = useSiteMetadataQuery()
   return (
     <footer>
-      <div className="footer-content">
+      <div className="footer-content" style={amp ? { maxWidth: 800 } : null}>
         <div className="footer-content__logo">
           <LogoIcon />
           <Link to="/">{title}</Link>
@@ -111,9 +111,6 @@ const Footer = () => {
 export default Footer
 
 Footer.propTypes = {
-  title: PropTypes.string,
+  amp: PropTypes.bool,
 }
 
-Footer.defaultProps = {
-  title: null,
-}
