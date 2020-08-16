@@ -2,7 +2,8 @@ import "firebase/database"
 import React from "react"
 import Layout from "./src/components/Layout/Layout"
 
-import "gatsby-remark-vscode/styles.css"
+import "prismjs/themes/prism-tomorrow.css"
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 import "./src/styles/global.scss"
 import "./src/components/Header/Header.scss"

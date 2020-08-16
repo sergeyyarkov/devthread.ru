@@ -215,15 +215,40 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-vscode`,
+            resolve: `gatsby-transformer-remark`,
             options: {
-              extensions: ["material-theme"],
-              theme: {
-                default: "Light+ (default light)",
-                parentSelector: {
-                  "body.dark": "One Dark Pro",
+              plugins: [
+                {
+                  resolve: `gatsby-remark-prismjs`,
+                  options: {
+                    classPrefix: "language-",
+                    inlineCodeMarker: null,
+                    aliases: {},
+                    showLineNumbers: true,
+                    noInlineHighlight: false,
+                    languageExtensions: [
+                      {
+                        language: "superscript",
+                        extend: "javascript",
+                        definition: {
+                          superscript_types: /(SuperType)/,
+                        },
+                        insertBefore: {
+                          function: {
+                            superscript_keywords: /(superif|superelse)/,
+                          },
+                        },
+                      },
+                    ],
+                    prompt: {
+                      user: "root",
+                      host: "localhost",
+                      global: false,
+                    },
+                    escapeEntities: {},
+                  },
                 },
-              },
+              ],
             },
           },
         ],

@@ -125,30 +125,70 @@ article .gt-container {
     border-top: 4px solid #6394F7;
   }
 
+  .gatsby-highlight pre[class*="language-"]:before {
+    color: #232129;
+    font-size: 0.75rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: 0.075em;
+    line-height: 1;
+    position: absolute;
+    left: 1.5rem;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0px;
+    border-radius: 0px 0px 4px 4px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .gatsby-highlight pre[class*="language-"] {
+    background: linear-gradient(135.9deg,#f5f9ff,#f5f9ff .01%,#f6f4fb 98.96%);
+    padding-top: 25px;
+    & code {
+      color: #001080;
+    }
+    & .token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin {
+      color: #0000FF;
+    }
+    & .token.string, .token.char, .token.attr-value, .token.regex, .token.variable {
+      color: #A31515;
+    }
+    & .token.boolean, .token.function {
+      color: #795E26;
+    }
+    & .token.number {
+      color: #09885A;
+    }
+    & .token.operator, .token.entity, .token.url {
+      color: #0000FF;
+    }
+    & .token.boolean {
+      color: #0000FF;
+    }
+    & .token.punctuation {
+      color: #000000;
+    }
+  }
+
+  .gatsby-highlight pre[class*="language-"].line-numbers .line-numbers-rows {
+    border: none;
+    padding-left: 15px;
+    padding-top: 25px;
+    & span::before {
+      color: #666666;
+    }
+  }
+
+  .gatsby-highlight pre[class*="language-js"]:before {
+    content: "js";
+    background: rgb(247, 223, 30);
+  }
+
   & pre {
     border-radius: 7px;
     margin: 0 0 15px;
     font-size: 16px;
     & code {
       padding-top: 10px;
-    }
-    &[data-language=js]:before {
-      content: "js";
-      background: rgb(247, 223, 30);
-    }
-    &[data-language]:before {
-      color: #232129;
-      font-size: 0.75rem;
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      letter-spacing: 0.075em;
-      line-height: 1;
-      position: absolute;
-      left: 1.5rem;
-      text-align: right;
-      text-transform: uppercase;
-      top: 0px;
-      border-radius: 0px 0px 4px 4px;
-      padding: 0.25rem 0.5rem;
     }
   }
 }
@@ -236,6 +276,38 @@ article .gt-container {
   }
   & .inner {
     border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+    .gatsby-highlight pre[class*="language-"] {
+      background: #282c34;
+      & code {
+        color: #E5C07B;
+      }
+      & .token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin {
+        color: #C678DD;
+      }
+      & .token.string, .token.char, .token.attr-value, .token.regex, .token.variable {
+        color: #98C379;
+      }
+      & .token.boolean, .token.function {
+        color: #61AFEF;
+      }
+      & .token.number {
+        color: #D19A66;
+      }
+      & .token.operator, .token.entity, .token.url {
+        color: #C678DD;
+      }
+      & .token.boolean {
+        color: #D19A66;
+      }
+      & .token.punctuation {
+        color: #ABB2BF;
+      }
+    }
+    .gatsby-highlight pre[class*="language-"].line-numbers .line-numbers-rows {
+      & span::before {
+        color: #7e838b;
+      }
+    }
   }
 }
 
