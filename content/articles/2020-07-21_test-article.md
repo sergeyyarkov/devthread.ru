@@ -7,7 +7,7 @@ keywords:
 time: "5"
 title: Test article
 popular: true
-image: /assets/reactjs.jpg
+image: /assets/reactjs_javascript_typescript_programming_programming_language_react_native_facebook_react-1568827.webp
 category: Разработка
 date: 2020-07-21T16:17:27.984Z
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -19,24 +19,23 @@ tags:
   - graphql
   - reactjs
 ---
-
 ## this is second article
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligula. Aenean et ex nec magna faucibus congue eu ac justo. Cras malesuada diam lectus, vitae feugiat nulla condimentum id. Duis interdum sodales eros ornare mattis. Nunc id viverra ante. Maecenas suscipit est sed rhoncus condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vehicula risus nisi, quis hendrerit magna tincidunt eu. Phasellus fringilla accumsan viverra. Mauris a cursus orci.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-- Nunc non fermentum ligula?
-- Nunc non fermentum ligula?
-- Nunc non fermentum ligula?
-- Nunc non fermentum ligula?
-- Nunc non fermentum ligula?
+* Nunc non fermentum ligula?
+* Nunc non fermentum ligula?
+* Nunc non fermentum ligula?
+* Nunc non fermentum ligula?
+* Nunc non fermentum ligula?
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligula. Aenean et ex nec magna faucibus congue eu ac justo. Cras malesuada diam lectus, vitae feugiat nulla condimentum id. Duis interdum sodales eros ornare mattis. Nunc id viverra ante. Maecenas suscipit est sed rhoncus condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vehicula risus nisi, quis hendrerit magna tincidunt eu. Phasellus fringilla accumsan viverra. Mauris a cursus orci.
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non fermentum ligula. Aenean et ex nec magna faucibus congue eu ac justo. Cras malesuada diam lectus, vitae feugiat nulla condimentum id. Duis interdum sodales eros ornare mattis. Nunc id viverra ante. Maecenas suscipit est sed rhoncus condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vehicula risus nisi, quis hendrerit magna tincidunt eu. Phasellus fringilla accumsan viverra. Mauris a cursus orci.
 
-![wallpaper](/assets/background1.png)
+![wallpaper](/assets/reactjs_javascript_typescript_programming_programming_language_react_native_facebook_react-1568827.webp)
 
 ```js
 const {
