@@ -145,7 +145,7 @@ module.exports = {
       resolve: `gatsby-plugin-amp`,
       options: {
         canonicalBaseUrl: 'https://devthread.ru/',
-        components: ['amp-form', 'amp-sidebar'],
+        components: ['amp-sidebar', 'amp-accordion'],
         excludedPaths: ['/404*', '/'],
         pathIdentifier: '/amp/',
         relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
