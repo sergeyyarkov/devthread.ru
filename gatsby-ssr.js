@@ -40,16 +40,16 @@ const OnDark = () => {
 }
 
 export const onRenderBody = ({ pathname, setPreBodyComponents }) => {
-  if (pathname.match(/article\/.*\/amp/) !== null) {
+  if (pathname.includes('/amp/article/')) {
     return
   }
-  
+
   setPreBodyComponents(<OnDark key="isDarkTheme" />)
 }
 
 export const wrapPageElement = ({ element, props }) => {
   const { location: { pathname } } = props
-  pathname.match(/article\/.*\/amp/) !== null ? props.amp = true : props.amp = false
-
+  pathname.includes('/amp/article/') && props.pageContext.slug ? props.amp = true : props.amp = false
+  
   return <Layout {...props}>{element}</Layout>
 }

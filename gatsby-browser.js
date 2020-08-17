@@ -31,7 +31,7 @@ export const shouldUpdateScroll = ({ routerProps: { location } }) => {
 
 export const wrapPageElement = ({ element, props }) => {
   const { location: { pathname } } = props
-  pathname.match(/article\/.*\/amp/) !== null ? props.amp = true : props.amp = false
+  pathname.includes('/amp/article/') && props.pageContext.slug ? props.amp = true : props.amp = false
 
   return <Layout {...props}>{element}</Layout>
 }

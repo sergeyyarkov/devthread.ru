@@ -55,7 +55,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
     
     createPage({
-      path: `article/${node.frontmatter.slug}/amp/`,
+      path: `amp/article/${node.frontmatter.slug}/`,
       component: articleTemplateAMP,
       context: {
         slug: node.frontmatter.slug,

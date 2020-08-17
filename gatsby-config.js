@@ -148,7 +148,7 @@ module.exports = {
         components: ['amp-sidebar', 'amp-accordion', 'amp-form'],
         excludedPaths: ['/404*', '/'],
         pathIdentifier: '/amp/',
-        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathIdentifier}}{{pathname}}',
         relCanonicalPattern: '{{canonicalBaseUrl}}{{pathname}}/',
         useAmpClientIdApi: false,
       },
