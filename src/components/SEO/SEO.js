@@ -12,7 +12,8 @@ const SEO = ({
   image,
   type,
   canonical,
-  url
+  url,
+  amp
 }) => {
   const { pathname } = useLocation()
   const { siteMetadata } = useSiteMetadataQuery()
@@ -49,7 +50,7 @@ const SEO = ({
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      <link rel="canonical" href={seo.canonical} />
+      {!amp ? <link rel="canonical" href={seo.canonical} /> : null}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -70,7 +71,7 @@ const SEO = ({
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#191919" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
-      <script type="application/ld+json">
+      {!amp ? <script type="application/ld+json">
         {JSON.stringify({
           "@context": "http://schema.org",
           "@type": "Organization",
@@ -78,7 +79,7 @@ const SEO = ({
           url: siteMetadata.siteUrl,
           sameAs: [siteMetadata.social.twitter],
         })}
-      </script>
+      </script> : null}
     </Helmet>
   )
 }

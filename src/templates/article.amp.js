@@ -26,6 +26,7 @@ const articleTemplateAmp = ({
         type="article"
         url={`${siteUrl}/article/${frontmatter.slug}/`}
         canonical={`${siteUrl}/article/${frontmatter.slug}/`}
+        amp={true}
       />
       <Main>
         <Grid fluid style={{ maxWidth: 800 }}>

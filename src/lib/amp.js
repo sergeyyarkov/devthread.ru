@@ -54,6 +54,7 @@ const HeaderAMP = () => {
             }
             amp-sidebar .amp-sidebar__social {
               display: flex;
+              margin-top: 30px;
             }
             amp-sidebar .amp-sidebar__social a {
               font-size: 0;
@@ -80,7 +81,7 @@ const HeaderAMP = () => {
             <LogoIcon />
             <a href='/'>devthread.ru</a>
           </div>
-          <button on='tap:sidebar-header' aria-label="menu" className="header-content__button mobile">
+          <button tabindex="0" on='tap:sidebar-header' aria-label="menu" className="header-content__button mobile">
             <span />
             <span />
             <span />
@@ -89,7 +90,7 @@ const HeaderAMP = () => {
       </header>
       <amp-sidebar id="sidebar-header" layout="nodisplay" side="left">
         <nav>
-          <div role='button' on='tap:sidebar-header.toggle' aria-label="menu" className='amp-sidebar__toggleBtn'>
+          <div role='button' tabindex="0" on='tap:sidebar-header.toggle' aria-label="menu" className='amp-sidebar__toggleBtn'>
             ✕
           </div>
           <span>{title}</span>
