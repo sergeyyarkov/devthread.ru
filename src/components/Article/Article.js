@@ -40,10 +40,10 @@ const Article = ({
               <div className="article-info__time">
                 <span>~ {time} мин</span>
               </div>
-              <div className="article-info__views">
+              {!amp ? <div className="article-info__views">
                 <ViewsIcon />
                 <ViewCounter id={pathname} />
-              </div>
+              </div> : null}
             </div>
             <div className="right-info">
               <div className="article-info__date">
@@ -103,6 +103,7 @@ const Article = ({
               : <img
                   src={image.childImageSharp.fluid.src}
                   height='350'
+                  alt={title}
                 />
             }
           </div>

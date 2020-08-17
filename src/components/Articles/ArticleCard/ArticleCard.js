@@ -19,7 +19,7 @@ const ArticleCard = ({
                   fluid={image.childImageSharp.fluid}
                   alt={title}
                 />
-              : <img src={image.childImageSharp.fluid.src} height='380' />
+              : <img src={image.childImageSharp.fluid.src} height='380' alt={title} />
           }
         </Link>
       </div>
