@@ -3,7 +3,7 @@ import { useLocation } from "@reach/router"
 import useMoreArticlesQuery from "../../../hooks/useMoreArticlesQuery"
 import ArticleCard from "../ArticleCard/ArticleCard"
 
-const MoreArticles = () => {
+const MoreArticles = ({ amp }) => {
   const { edges } = useMoreArticlesQuery()
   const { pathname } = useLocation()
   const query = pathname.split("/")[pathname.split("/").length - 1]
@@ -19,7 +19,7 @@ const MoreArticles = () => {
           .sort(() => Math.random() - 0.5)
           .map(({ node }, i) => {
             if (i < 4) {
-              return <ArticleCard key={i} data={node.frontmatter} />
+              return <ArticleCard key={i} data={node.frontmatter} amp={amp} />
             }
             return null
           })}

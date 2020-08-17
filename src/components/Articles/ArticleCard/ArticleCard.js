@@ -6,17 +6,21 @@ import { Link } from "gatsby"
 
 const ArticleCard = ({
   data: { slug, title, image, category, description, tags },
+  amp
 }) => {
   return (
     <article className="article-card">
       <div className="article-card__image">
         <Link to={`/article/${slug}/`}>
-          <Img
-            loading="eager"
-            fadeIn={false}
-            fluid={image.childImageSharp.fluid}
-            alt={title}
-          />
+          {!amp 
+              ? <Img
+                  loading="eager"
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                  alt={title}
+                />
+              : <img src={image.childImageSharp.fluid.src} height='380' />
+          }
         </Link>
       </div>
       <div className="article-card__heading">

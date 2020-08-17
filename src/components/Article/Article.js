@@ -18,6 +18,7 @@ import FacebookIcon from "../../images/facebook-icon__large.svg"
 const Article = ({
   data: { slug, title, image, description, category, tags, time, date },
   html,
+  amp
 }) => {
   const {
     siteMetadata: {
@@ -92,12 +93,18 @@ const Article = ({
             ))}
           </div>
           <div className="article-image">
-            <Img
-              loading="eager"
-              fadeIn={false}
-              fluid={image.childImageSharp.fluid}
-              alt={title}
-            />
+            {!amp 
+              ? <Img
+                  loading="eager"
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                  alt={title}
+                /> 
+              : <img
+                  src={image.childImageSharp.fluid.src}
+                  height='350'
+                />
+            }
           </div>
           <div className="article-inner inner">
             <div dangerouslySetInnerHTML={{ __html: html }}></div>
