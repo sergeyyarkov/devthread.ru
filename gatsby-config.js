@@ -174,8 +174,8 @@ module.exports = {
         showSpinner: false,
       },
     },
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -189,11 +189,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 2400,
-              quality: 100,
+              maxWidth: 900,
+              quality: 85,
               withWebp: true,
               loading: "lazy",
-              linkImagesToOriginal: false,
+              linkImagesToOriginal: true,
             },
           },
           `gatsby-remark-responsive-iframe`,
@@ -216,40 +216,33 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-transformer-remark`,
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              plugins: [
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              languageExtensions: [
                 {
-                  resolve: `gatsby-remark-prismjs`,
-                  options: {
-                    classPrefix: "language-",
-                    inlineCodeMarker: null,
-                    aliases: {},
-                    showLineNumbers: true,
-                    noInlineHighlight: false,
-                    languageExtensions: [
-                      {
-                        language: "superscript",
-                        extend: "javascript",
-                        definition: {
-                          superscript_types: /(SuperType)/,
-                        },
-                        insertBefore: {
-                          function: {
-                            superscript_keywords: /(superif|superelse)/,
-                          },
-                        },
-                      },
-                    ],
-                    prompt: {
-                      user: "root",
-                      host: "localhost",
-                      global: false,
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
                     },
-                    escapeEntities: {},
                   },
                 },
               ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
             },
           },
         ],
