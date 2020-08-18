@@ -18,7 +18,7 @@ const useMoreArticlesQuery = () => {
               image {
                 childImageSharp {
                   fluid(maxWidth: 650 quality: 100) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }

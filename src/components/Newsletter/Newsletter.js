@@ -5,7 +5,7 @@ const Newsletter = () => {
     <div className="newsletter">
       <div className="newsletter-heading">Новостная рассылка</div>
       <div className="newsletter-content">
-        <form action="#" target='Новостная рассылка'>
+        <form action="#" target='newsletter'>
           <p>
             <span role="img" aria-label="hot">
               🔥
