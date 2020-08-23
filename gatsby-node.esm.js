@@ -1,5 +1,4 @@
 import slugify from "./src/helpers/slugify"
-import { fmImagesToRelative } from "gatsby-remark-relative-images"
 import path from "path"
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -92,8 +91,4 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
-}
-
-exports.onCreateNode = ({ node }) => {
-  fmImagesToRelative(node)
 }

@@ -32,7 +32,7 @@ const articleTemplateAmp = ({
         <Grid fluid style={{ maxWidth: 800 }}>
           <Row>
             <Col xs={12}>
-              <Article data={frontmatter} html={html} amp={true} />
+              <Article data={frontmatter} html={html.replace(/loading="[^"]*"/, "")} amp={true} />
               <Newsletter />
               <MoreArticles amp={true} />
             </Col>
