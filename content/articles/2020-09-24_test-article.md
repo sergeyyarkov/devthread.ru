@@ -1,13 +1,13 @@
 ---
 templateKey: article
-slug: article-ts
+slug: ispolzovanie-apollo-server-vmeste-s-typescript
 keywords:
   - typescript
   - apollo
   - nodejs
   - graphql
 time: "10"
-title: ispolzovanie-apollo-server-vmeste-s-typescript
+title: Использование Apollo Server вместе с TypeScript
 popular: true
 image: /assets/typescript-apollo-wallpaper.png
 category: Разработка
