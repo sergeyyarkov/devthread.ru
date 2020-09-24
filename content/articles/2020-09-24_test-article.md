@@ -12,11 +12,8 @@ popular: true
 image: /assets/typescript-apollo-wallpaper.png
 category: Разработка
 date: 2020-09-24T15:55:48.534Z
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-  esse cillum dolore eu fugiat nulla pariatur.
+description: В этом небольшом руководстве мы рассмотрим использование TypeScript
+  вместе с Apollo Server Express
 tags:
   - typescript
   - apollo
