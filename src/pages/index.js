@@ -43,7 +43,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
             <Col lg={9} xs={12}>
               <Articles data={edges} limit={limit} setLimit={setLimit} />
               <Snippets>
-                <h2>Сниппеты</h2>
+                {snippets.length <= 0 ? null : <h2>Сниппеты</h2> }
                 {snippets.map(({ node: { frontmatter } }, i) => (
                   <SnippetItem
                     key={i}
