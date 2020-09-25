@@ -98,7 +98,7 @@ article .gt-container {
     margin-bottom: 15px;
 
     & li {
-      padding: 9px 0;
+      padding: 7px 0;
 
       &::before {
         content: "\2022";
@@ -114,6 +114,7 @@ article .gt-container {
   & ol {
     & li {
       padding: 4px 0;
+      line-height: 23px;
     }
   }
 
@@ -181,6 +182,22 @@ article .gt-container {
   .gatsby-highlight pre[class*="language-js"]:before {
     content: "js";
     background: rgb(247, 223, 30);
+  }
+
+  .gatsby-highlight pre[class*="language-text"]:before {
+    content: "text";
+    background: #efefef;
+  }
+
+  .gatsby-highlight pre[class*="language-bash"]:before {
+    content: "bash";
+    background: #efefef;
+  }
+
+  .gatsby-highlight pre[class*="language-graphql"]:before {
+    content: "graphql";
+    color: #fff;
+    background: #e535ab;
   }
 
   & pre {
