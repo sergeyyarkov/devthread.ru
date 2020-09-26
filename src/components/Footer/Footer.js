@@ -4,8 +4,6 @@ import PropTypes from "prop-types"
 import useSiteMetadataQuery from "../../hooks/useSiteMetadataQuery"
 
 import LogoIcon from "../../images/logo-icon.svg"
-import GatsbyIcon from "../../images/gatsby-icon.svg"
-import NetlifyIcon from "../../images/netlify-icon.svg"
 import RssIcon from "../../images/rss-icon.svg"
 
 const Footer = ({ amp }) => {
@@ -70,27 +68,6 @@ const Footer = ({ amp }) => {
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className="footer-nav__helpers">
-            <span>Разработка при помощи:</span>
-            <div className="helpers-icons">
-              <a
-                href="https://www.gatsbyjs.org/"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <GatsbyIcon />
-                GatsbyJS
-              </a>
-              <a
-                href="https://www.netlify.com/"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <NetlifyIcon />
-                Netlify
-              </a>
             </div>
           </div>
         </div>
