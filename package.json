@@ -2,7 +2,7 @@
   "name": "devthread.ru",
   "private": true,
   "description": "Сборник статей и руководств по веб-разработке",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Sergey Yarkov <serzh.yarkov@gmail.com>",
   "license": "MIT",
   "scripts": {
