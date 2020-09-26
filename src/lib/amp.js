@@ -1,8 +1,8 @@
-import React from 'react';
-import { Helmet } from 'react-helmet'
-import useSiteMetadataQuery from '../hooks/useSiteMetadataQuery'
+import React from "react"
+import { Helmet } from "react-helmet"
+import useSiteMetadataQuery from "../hooks/useSiteMetadataQuery"
 
-import LogoIcon from '../images/logo-icon.svg'
+import LogoIcon from "../images/logo-icon.svg"
 import TelegramIcon from "../images/telegram-icon.svg"
 import TwitterIcon from "../images/twitter-icon.svg"
 import YadzenIcon from "../images/yadzen-icon.svg"
@@ -25,7 +25,7 @@ const HeaderAMP = () => {
               height: 100%;
               padding: 0px 24px;
               padding-top: 25px;
-              background-color: rgba(7,11,14,.99);
+              background-color: rgba(7, 11, 14, 0.99);
               width: 320px;
             }
             amp-sidebar nav li {
@@ -79,9 +79,14 @@ const HeaderAMP = () => {
         <div className="header-content amp">
           <div className="header-content__logo">
             <LogoIcon />
-            <a href='/'>devthread.ru</a>
+            <a href="/">devthread.ru</a>
           </div>
-          <button tabindex="0" on='tap:sidebar-header' aria-label="menu" className="header-content__button mobile">
+          <button
+            tabindex="0"
+            on="tap:sidebar-header"
+            aria-label="menu"
+            className="header-content__button mobile"
+          >
             <span />
             <span />
             <span />
@@ -90,7 +95,13 @@ const HeaderAMP = () => {
       </header>
       <amp-sidebar id="sidebar-header" layout="nodisplay" side="left">
         <nav>
-          <div role='button' tabindex="0" on='tap:sidebar-header.toggle' aria-label="menu" className='amp-sidebar__toggleBtn'>
+          <div
+            role="button"
+            tabindex="0"
+            on="tap:sidebar-header.toggle"
+            aria-label="menu"
+            className="amp-sidebar__toggleBtn"
+          >
             ✕
           </div>
           <span>{title}</span>

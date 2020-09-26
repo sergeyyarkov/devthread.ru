@@ -18,7 +18,7 @@ import FacebookIcon from "../../images/facebook-icon__large.svg"
 const Article = ({
   data: { slug, title, image, description, category, tags, time, date },
   html,
-  amp
+  amp,
 }) => {
   const {
     siteMetadata: {
@@ -40,10 +40,12 @@ const Article = ({
               <div className="article-info__time">
                 <span>~ {time} мин</span>
               </div>
-              {!amp ? <div className="article-info__views">
-                <ViewsIcon />
-                <ViewCounter id={pathname} />
-              </div> : null}
+              {!amp ? (
+                <div className="article-info__views">
+                  <ViewsIcon />
+                  <ViewCounter id={pathname} />
+                </div>
+              ) : null}
             </div>
             <div className="right-info">
               <div className="article-info__date">
@@ -93,19 +95,20 @@ const Article = ({
             ))}
           </div>
           <div className="article-image">
-            {!amp 
-              ? <Img
-                  loading="eager"
-                  fadeIn={false}
-                  fluid={image.childImageSharp.fluid}
-                  alt={title}
-                /> 
-              : <img
-                  src={image.childImageSharp.fluid.src}
-                  height='350'
-                  alt={title}
-                />
-            }
+            {!amp ? (
+              <Img
+                loading="eager"
+                fadeIn={false}
+                fluid={image.childImageSharp.fluid}
+                alt={title}
+              />
+            ) : (
+              <img
+                src={image.childImageSharp.fluid.src}
+                height="350"
+                alt={title}
+              />
+            )}
           </div>
           <div className="article-inner inner">
             <div dangerouslySetInnerHTML={{ __html: html }}></div>

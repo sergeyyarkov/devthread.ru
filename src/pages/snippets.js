@@ -24,7 +24,7 @@ const SnippetsPage = ({
                   Сниппеты это готовые решения некоторых проблем, которые можно
                   скопировать и вставить
                 </p>
-                {snippets.length <= 0 ? <p>Soon...</p> : null }
+                {snippets.length <= 0 ? <p>Soon...</p> : null}
                 {snippets.map(({ node: { frontmatter } }, i) => (
                   <SnippetItem
                     key={i}

@@ -2,10 +2,9 @@ import React from "react"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 
-import { HeaderAMP } from '../../lib/amp'
+import { HeaderAMP } from "../../lib/amp"
 
 const Layout = ({ children, amp }) => {
-  
   /*
     amp is accelerated mobile pages
   */

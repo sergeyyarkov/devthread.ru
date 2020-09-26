@@ -90,4 +90,3 @@ export default Footer
 Footer.propTypes = {
   amp: PropTypes.bool,
 }
-

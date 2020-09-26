@@ -161,12 +161,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-amp`,
       options: {
-        canonicalBaseUrl: 'https://devthread.ru/',
-        components: ['amp-sidebar', 'amp-accordion', 'amp-form'],
-        excludedPaths: ['/404*', '/'],
-        pathIdentifier: '/amp/',
-        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathIdentifier}}{{pathname}}',
-        relCanonicalPattern: '{{canonicalBaseUrl}}{{pathname}}/',
+        canonicalBaseUrl: "https://devthread.ru/",
+        components: ["amp-sidebar", "amp-accordion", "amp-form"],
+        excludedPaths: ["/404*", "/"],
+        pathIdentifier: "/amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathIdentifier}}{{pathname}}",
+        relCanonicalPattern: "{{canonicalBaseUrl}}{{pathname}}/",
         useAmpClientIdApi: false,
       },
     },

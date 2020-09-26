@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "./src/components/Layout/Layout"
 
 import "prismjs/themes/prism-tomorrow.css"
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 
 import "./src/styles/global.scss"
 import "./src/components/Header/Header.scss"
@@ -30,8 +30,12 @@ export const shouldUpdateScroll = ({ routerProps: { location } }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
-  const { location: { pathname } } = props
-  pathname.includes('/amp/article/') && props.pageContext.slug ? props.amp = true : props.amp = false
+  const {
+    location: { pathname },
+  } = props
+  pathname.includes("/amp/article/") && props.pageContext.slug
+    ? (props.amp = true)
+    : (props.amp = false)
 
   return <Layout {...props}>{element}</Layout>
 }

@@ -43,7 +43,7 @@ const IndexPage = ({ data: { allMarkdownRemark: edges } }) => {
             <Col lg={9} xs={12}>
               <Articles data={edges} limit={limit} setLimit={setLimit} />
               <Snippets>
-                {snippets.length <= 0 ? null : <h2>Сниппеты</h2> }
+                {snippets.length <= 0 ? null : <h2>Сниппеты</h2>}
                 {snippets.map(({ node: { frontmatter } }, i) => (
                   <SnippetItem
                     key={i}
@@ -78,7 +78,7 @@ export const query = graphql`
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 650 quality: 100) {
+                fluid(maxWidth: 650, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

@@ -13,7 +13,7 @@ const SEO = ({
   type,
   canonical,
   url,
-  amp
+  amp,
 }) => {
   const { pathname } = useLocation()
   const { siteMetadata } = useSiteMetadataQuery()
@@ -71,15 +71,17 @@ const SEO = ({
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#191919" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
-      {!amp ? <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "http://schema.org",
-          "@type": "Organization",
-          name: "devthread",
-          url: siteMetadata.siteUrl,
-          sameAs: [siteMetadata.social.twitter],
-        })}
-      </script> : null}
+      {!amp ? (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            name: "devthread",
+            url: siteMetadata.siteUrl,
+            sameAs: [siteMetadata.social.twitter],
+          })}
+        </script>
+      ) : null}
     </Helmet>
   )
 }

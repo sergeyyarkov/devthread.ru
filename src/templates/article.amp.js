@@ -1,5 +1,5 @@
 import React from "react"
-import { parse } from 'node-html-parser'
+import { parse } from "node-html-parser"
 import { Main } from "../ui/ui"
 import { Grid, Row, Col } from "react-flexbox-grid"
 import SEO from "../components/SEO/SEO"
@@ -16,12 +16,17 @@ const articleTemplateAmp = ({
     },
   },
 }) => {
-  
   // gatsbyImage to default image
   const parsedHTML = parse(html, { pre: true })
-  const pictures = [...parsedHTML.querySelectorAll('.gatsby-resp-image-link')]
-  
-  pictures.forEach(picture => picture.parentNode.parentNode.set_content(`<img src="${picture.getAttribute('href')}" alt="${picture.querySelector('.gatsby-resp-image-image').getAttribute('alt')}" height="350" />`))
+  const pictures = [...parsedHTML.querySelectorAll(".gatsby-resp-image-link")]
+
+  pictures.forEach(picture =>
+    picture.parentNode.parentNode.set_content(
+      `<img src="${picture.getAttribute("href")}" alt="${picture
+        .querySelector(".gatsby-resp-image-image")
+        .getAttribute("alt")}" height="350" />`
+    )
+  )
 
   return (
     <>
@@ -40,7 +45,11 @@ const articleTemplateAmp = ({
         <Grid fluid style={{ maxWidth: 800 }}>
           <Row>
             <Col xs={12}>
-              <Article data={frontmatter} html={parsedHTML.toString().replace(/loading="[^"]*"/, "")} amp={true} />
+              <Article
+                data={frontmatter}
+                html={parsedHTML.toString().replace(/loading="[^"]*"/, "")}
+                amp={true}
+              />
               <Newsletter />
               <MoreArticles amp={true} />
             </Col>
@@ -61,7 +70,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 1400 quality: 100) {
+            fluid(maxWidth: 1400, quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
