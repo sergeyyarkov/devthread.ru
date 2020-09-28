@@ -56,6 +56,12 @@ module.exports = {
         defer: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",

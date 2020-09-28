@@ -51,6 +51,14 @@
         }
       }
     }
+    &__error {
+      color: tomato;
+      margin-top: 15px;
+    }
+    &__success {
+      color: rgb(101, 190, 101);
+      margin-top: 15px;
+    }
   }
 }
 
