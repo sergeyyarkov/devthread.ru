@@ -5,10 +5,13 @@ const Newsletter = () => {
   const [email, setEmail] = React.useState("")
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState({ isError: false, message: "" })
+  const $subscribeButton = React.useRef()
 
   const submitHandler = async e => {
     try {
       e.preventDefault()
+      document.body.style.cursor = "wait"
+      $subscribeButton.current.style.cursor = "wait"
 
       if (
         !email.match(
@@ -32,11 +35,15 @@ const Newsletter = () => {
         })
         window.setTimeout(() => setError({ isError: false, message: "" }), 5000)
         console.log(data.msg)
+        document.body.style.cursor = "auto"
+        $subscribeButton.current.style.cursor = "pointer"
         return
       }
 
       setSuccess(true)
       window.setTimeout(() => setSuccess(false), 5000)
+      document.body.style.cursor = "auto"
+      $subscribeButton.current.style.cursor = "pointer"
     } catch (error) {
       console.log(error)
       setSuccess(false)
@@ -67,9 +74,10 @@ const Newsletter = () => {
               value={email}
               onChange={handleChangeEmail}
               placeholder="ваш e-mail"
+              type="email"
               name="email"
             />
-            <button>Подписаться</button>
+            <button ref={$subscribeButton}>Подписаться</button>
           </div>
         </form>
         {success ? (
