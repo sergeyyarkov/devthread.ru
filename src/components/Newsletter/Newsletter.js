@@ -1,29 +1,36 @@
 import React from "react"
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+import addToMailchimp from "gatsby-plugin-mailchimp"
 
 const Newsletter = () => {
-  const [email, setEmail] = React.useState('')
+  const [email, setEmail] = React.useState("")
   const [success, setSuccess] = React.useState(false)
-  const [error, setError] = React.useState({ isError: false, message: '' })
+  const [error, setError] = React.useState({ isError: false, message: "" })
 
-  const submitHandler = async (e) => {  
+  const submitHandler = async e => {
     try {
       e.preventDefault()
 
-      if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-        setError({ isError: true, message: 'Заполните поле в формате E-mail!' })
+      if (
+        !email.match(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        )
+      ) {
+        setError({ isError: true, message: "Заполните поле в формате E-mail!" })
         setSuccess(false)
-        window.setTimeout(() => setError({ isError: false, message: '' }), 5000)
+        window.setTimeout(() => setError({ isError: false, message: "" }), 5000)
         return
       }
-  
-      setError({ isError: false, message: '' })
-  
+
+      setError({ isError: false, message: "" })
+
       const data = await addToMailchimp(email)
 
-      if (data.result !== 'success') {
-        setError({ isError: true, message: `Произошла ошибка, возможно "${email}" уже подписан на рассылку. Попробуйте запрос позже.` })
-        window.setTimeout(() => setError({ isError: false, message: '' }), 5000)
+      if (data.result !== "success") {
+        setError({
+          isError: true,
+          message: `Произошла ошибка, возможно "${email}" уже подписан на рассылку. Попробуйте запрос позже.`,
+        })
+        window.setTimeout(() => setError({ isError: false, message: "" }), 5000)
         console.log(data.msg)
         return
       }
@@ -36,7 +43,7 @@ const Newsletter = () => {
     }
   }
 
-  const handleChangeEmail = (e) => {
+  const handleChangeEmail = e => {
     const email = e.target.value.trim().toLowerCase()
 
     setEmail(email)
@@ -56,12 +63,26 @@ const Newsletter = () => {
         </p>
         <form onSubmit={submitHandler} action="#" target="_blank">
           <div className="email-field">
-            <input value={email} onChange={handleChangeEmail} placeholder="ваш e-mail" name="email" />
+            <input
+              value={email}
+              onChange={handleChangeEmail}
+              placeholder="ваш e-mail"
+              name="email"
+            />
             <button>Подписаться</button>
           </div>
         </form>
-        {success ? <p className='newsletter-content__success'><span role="img" aria-label="checkMark">✔️</span> Вы успешно подписались на рыссылку!</p> : null}
-        {error.isError ? <p className='newsletter-content__error'>{error.message}</p> : null}
+        {success ? (
+          <p className="newsletter-content__success">
+            <span role="img" aria-label="checkMark">
+              ✔️
+            </span>{" "}
+            Вы успешно подписались на рыссылку!
+          </p>
+        ) : null}
+        {error.isError ? (
+          <p className="newsletter-content__error">{error.message}</p>
+        ) : null}
       </div>
     </div>
   )
