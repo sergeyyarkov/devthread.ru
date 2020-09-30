@@ -202,7 +202,7 @@ cd ..
 
 Файл **Books.ts**:
 
-```js
+```ts
 // ./graphql/resolvers/Books/Books.ts
 
 import { IResolvers } from "graphql-tools"
@@ -228,7 +228,7 @@ export default booksResolver
 
 Файл **Users.ts**:
 
-```js
+```ts
 // ./graphql/resolvers/Users/Users.ts
 
 import { IResolvers } from "graphql-tools"
@@ -254,7 +254,7 @@ export default usersResolver
 
 Резолверы получились довольно простые и понятные, теперь нужно собрать их в один массив для дальнейшего экспорта. В файле **index.ts** прописываем следующее:
 
-```js
+```ts
 // ./graphql/resolvers/index.ts
 
 import { IResolvers } from "graphql-tools"
@@ -274,7 +274,7 @@ export default resolvers
 Раньше для того чтобы работали наши graphql импорты мы применяли пакет **graphql-import**, но теперь его не нужно устанавливать так как он уже входит в состав **graphql-tools**. Подробнее об этом можно прочитать [здесь](https://www.graphql-tools.com/docs/migration-from-import).
 С помощью функций **loadSchemaSync**, **loadFilesSync**, и **addResolversToSchema** мы собираем нашу схему. Функция **mergeResolvers** предназначена для объединения наших резолверов. Подробнее о "**Resolvers merging**" [здесь](https://www.graphql-tools.com/docs/merge-resolvers/). Далее всё что нам остается сделать - это экспортировать нашу схему и написать сервер.
 
-```js
+```ts
 // ./graphql/schema.ts
 
 import {
@@ -309,7 +309,7 @@ touch index.ts
 
 Импортируем все необходимые пакеты и напишем функцию **startServer**, которая будет запускать наш сервер. Сделаем это согласно документации к пакету [apollo-server-express](https://www.npmjs.com/package/apollo-server-express).
 
-```js
+```ts
 // ./index.ts
 
 import express, { Application, Request, Response } from "express"

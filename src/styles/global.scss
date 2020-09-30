@@ -184,6 +184,12 @@ article .gt-container {
     background: rgb(247, 223, 30);
   }
 
+  .gatsby-highlight pre[class*="language-ts"]:before {
+    content: "ts";
+    background: #007acc;
+    color: $white-clr;
+  }
+
   .gatsby-highlight pre[class*="language-text"]:before {
     content: "text";
     background: #efefef;
