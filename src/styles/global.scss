@@ -1,6 +1,22 @@
 @import './variables.scss';
 @import './fonts.scss';
 
+/* Components */
+
+@import '../components/Header/Header.scss';
+@import '../components/About/About.scss';
+@import '../components/Offers/Offers.scss';
+@import '../components/Articles/Articles.scss';
+@import '../components/Articles/ArticleCard/ArticleCard.scss';
+@import '../components/Newsletter/Newsletter.scss';
+@import '../components/Article/Article.scss';
+@import '../components/Snippet/Snippet.scss';
+@import '../components/Snippets/Snippets.scss';
+@import '../components/Articles/MoreArticles/MoreArticles.scss';
+@import '../components/Books/Books.scss';
+@import '../components/Contacts/Contacts.scss';
+@import '../components/Footer/Footer.scss';
+
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
