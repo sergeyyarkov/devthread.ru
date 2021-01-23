@@ -107,15 +107,21 @@ article .gt-container {
   & p img {
     text-align: center;
     border-radius: 7px;
+    border: 1px solid #f0f0f0;
   }
 
   & ul {
     margin-left: 34px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 
     & li {
       padding: 7px 0;
-
+      & p {
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        right: 4px;
+      }
       &::before {
         content: "\2022";
         color: #6394F7;
@@ -327,6 +333,9 @@ article .gt-container {
   }
   & .inner {
     border-bottom: 1px solid rgba(153, 153, 153, 0.2);
+    & p img {
+      border: 1px solid #505050;
+    }
     .gatsby-highlight pre[class*="language-"] {
       background: #282c34;
       & code {
