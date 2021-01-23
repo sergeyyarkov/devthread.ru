@@ -88,9 +88,9 @@ git clone https://github.com/gatsbyjs/gatsby-starter-hello-world .
 * **build** - сборка приложения
 * **develop** - запуск сервера для разработки
 * **format** - форматирование всех файлов через prettier
-* **start** - запускает `npm run develop`
+* **start** - запускает **npm run develop**
 * **serve** - запуск скомпилированного сайта
-* **clean** - очищает папку `.cache`
+* **clean** - очищает папку **.cache**
 
 Более подробно о gatsby cli можно узнать [здесь](https://www.gatsbyjs.com/docs/reference/gatsby-cli/).
 
@@ -600,7 +600,7 @@ SEO.propTypes = {
 
 Далее осталось вставить этот компонент на все страницы вот таким образом:
 
-```js
+```jsx
 // ./src/pages/index.jsx
 
 import React from 'react';

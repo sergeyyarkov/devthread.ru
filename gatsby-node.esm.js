@@ -53,13 +53,13 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
 
-    createPage({
-      path: `amp/article/${node.frontmatter.slug}/`,
-      component: articleTemplateAMP,
-      context: {
-        slug: node.frontmatter.slug,
-      },
-    })
+    // createPage({
+    //   path: `amp/article/${node.frontmatter.slug}/`,
+    //   component: articleTemplateAMP,
+    //   context: {
+    //     slug: node.frontmatter.slug,
+    //   },
+    // })
   })
 
   snippets.forEach(({ node }) => {

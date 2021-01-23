@@ -207,6 +207,44 @@ article .gt-container {
     color: $white-clr;
   }
 
+  .gatsby-highlight pre[class*="language-scss"] {
+    & code {
+      & span.token.property {
+        color: #dea53d;
+      }
+    }
+  }
+
+  .gatsby-highlight pre[class*="language-ts"] {
+    & code {
+      & span.token.class-name {
+        color: #f08787;
+      }
+      & span.token.constant {
+        color: #9a6c07;
+      }
+    }
+  }
+
+  .gatsby-highlight pre[class*="language-js"] {
+    & code {
+      & span.token.class-name {
+        color: #f08787;
+      }
+      & span.token.constant {
+        color: #9a6c07;
+      }
+    }
+  }
+
+  .gatsby-highlight pre[class*="language-jsx"] {
+    & code {
+      & span.token.class-name {
+        color: #f08787;
+      }
+    }
+  }
+
   .gatsby-highlight pre[class*="language-js"]:before {
     content: "js";
     background: rgb(247, 223, 30);
@@ -336,6 +374,23 @@ article .gt-container {
     & p img {
       border: 1px solid #505050;
     }
+
+    .gatsby-highlight pre[class*="language-ts"] {
+      & code {
+        & span.token.constant {
+          color: #f8c555;
+        }
+      }
+    }
+  
+    .gatsby-highlight pre[class*="language-js"] {
+      & code {
+        & span.token.constant {
+          color: #f8c555;
+        }
+      }
+    }
+
     .gatsby-highlight pre[class*="language-"] {
       background: #282c34;
       & code {
