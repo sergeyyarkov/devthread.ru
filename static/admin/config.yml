@@ -11,7 +11,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", wisdget: "hidden", default: "article"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Keywords", name: "keywords", widget: "list"}
       - {label: "Время чтения", name: "time", widget: "string"}

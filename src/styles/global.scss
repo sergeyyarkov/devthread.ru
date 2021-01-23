@@ -195,9 +195,21 @@ article .gt-container {
     }
   }
 
+  .gatsby-highlight pre[class*="language-scss"]:before {
+    content: "scss";
+    background: #e73eaf;
+    color: $white-clr;
+  }
+
   .gatsby-highlight pre[class*="language-js"]:before {
     content: "js";
     background: rgb(247, 223, 30);
+  }
+
+  .gatsby-highlight pre[class*="language-jsx"]:before {
+    content: "jsx";
+    background: #0a91eb;
+    color: $white-clr;
   }
 
   .gatsby-highlight pre[class*="language-ts"]:before {
