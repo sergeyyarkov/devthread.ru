@@ -268,6 +268,7 @@ main {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 15px;
 }
 
 .blog-post {
@@ -431,6 +432,7 @@ export default Header
   display: flex;
   align-items: center;
   box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+  padding: 0 15px;
   & a {
     text-decoration: none;
     color: #000;
