@@ -130,7 +130,7 @@ const Article = ({
                     owner,
                     admin: admin.split(","),
                     language: "ru",
-                    id: slug,
+                    id: Date.now(),
                     title: title,
                     labels: ["Статья", "Обсуждение"],
                   }}
