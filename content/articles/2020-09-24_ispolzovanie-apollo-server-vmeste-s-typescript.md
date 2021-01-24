@@ -346,7 +346,7 @@ const startServer = (): void => {
 startServer()
 ```
 
-Как видим, ничего сложного нет, просто применяем функцию [applyMiddleware](https://www.apollographql.com/docs/apollo-server/api/apollo-server/#applymiddleware) для того чтобы соедениеть Apollo Server с фрэймворком Express.js. Далее можно протестировать наш сервер, запускаем команду **npm run start** и переходим по адресу **/graphql**. Для тестирования можно выполнить вот такой запрос:
+Как видим, ничего сложного нет, просто применяем функцию [applyMiddleware](https://www.apollographql.com/docs/apollo-server/api/apollo-server/#applymiddleware) для того чтобы соединить Apollo Server с фрэймворком Express.js. Далее можно протестировать наш сервер, запускаем команду **npm run start** и переходим по адресу **/graphql**. Для тестирования можно выполнить вот такой запрос:
 
 ```text
 {

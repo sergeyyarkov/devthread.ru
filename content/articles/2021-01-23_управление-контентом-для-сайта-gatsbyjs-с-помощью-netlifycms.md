@@ -512,7 +512,7 @@ const useSiteMetadataQuery = () => {
 export { useSiteMetadataQuery }
 ```
 
-Как видно, для того чтобы выполнить запрос и вытащить данные из graphql, мо должны импользовать [тэг-функцию](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates) graphql. Gatsby обрабатывает этот тэг своим способом. Подробнее можно узнать в [документации](https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/).
+Как видно, для того чтобы выполнить запрос и вытащить данные из graphql, то должны импользовать [тэг-функцию](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates) graphql. Gatsby обрабатывает этот тэг своим способом. Подробнее можно узнать в [документации](https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/).
 
 Теперь мы можем легко использовать этот **hook**. Перейдем в Header компонент и изменим его вот так:
 
@@ -697,7 +697,7 @@ git remote add origin https://github.com/username/repo-name.git
 git push -u origin main
 ```
 
-Далее переходим на сам сайт [Netlify](https://www.netlify.com/) и регистрируемся. После нажимаем на кнопку **New site from Gi**`, выбираем Git провайдера (GitHub) и далее выбираем наш репозиторий с сайтом. Вконце нажимем **Deploy site**. Далее ждем когда Netlify установит все необходимые пакеты и соберет сайт. После сборки вы должны увидеть свой сайт.
+Далее переходим на сам сайт [Netlify](https://www.netlify.com/) и регистрируемся. После нажимаем на кнопку **New site from Git**, выбираем Git провайдера (GitHub) и далее выбираем наш репозиторий с сайтом. Вконце нажимем **Deploy site**. Далее ждем когда Netlify установит все необходимые пакеты и соберет сайт. После сборки вы должны увидеть свой сайт.
 
 ## Настройка OAuth на Github
 
@@ -964,7 +964,7 @@ exports.createPages = async ({ actions, graphql }) => {
 }
 ```
 
-Здесь тоже всё просто. Сначала получаем абсолютный путь до нашего шаблона **src/templates/article.jsx**. Далее выполняем запрос на получение всех существующих "узлов". Отфилтровываем массив для получения только статей и далее через функцию forEach создаем страницу с помощью [createPage](https://www.gatsbyjs.com/docs/reference/config-files/actions/#createPage) где:
+Здесь тоже всё просто. Сначала получаем абсолютный путь до нашего шаблона **src/templates/article.jsx**. Далее выполняем запрос на получение всех существующих "узлов". Отфильтровываем массив для получения только статей и далее через функцию forEach создаем страницу с помощью [createPage](https://www.gatsbyjs.com/docs/reference/config-files/actions/#createPage) где:
 
 * **path** - валидный URL.
 * **component** - абсолютный путь к компоненту для этой страницы
@@ -995,7 +995,7 @@ git push origin main
 
 ![netlify-identity](/assets/wyoedkj.png)
 
-Затем перейти по пути **Site settings > Identity > Services > Git Gateway** и выбираем **Enable Git Gateway**. Далее в файле **config.yml** меняем поле **backend** с **github** на **git-gateway**. И делаем push в репозиторий.
+Затем перейти по пути **Site settings > Identity > Services > Git Gateway** и выбрать **Enable Git Gateway**. Далее в файле **config.yml** меняем поле **backend** с **github** на **git-gateway**. И делаем push в репозиторий.
 После очередной сборки сайта, вы можете перейди в админ-панель и нажать на кнопку **Login with Netlify Identity**. Далее вы сможете создать нового пользователя и войти в админ-панель.
 
 ![netlify-identity-signup](/assets/td2wlx2.png)
