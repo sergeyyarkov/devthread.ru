@@ -38,7 +38,7 @@ const Snippet = ({ data: { slug, description, title, date }, html }) => {
                     owner,
                     admin: admin.split(","),
                     language: "ru",
-                    id: slug,
+                    id: slug.substr(0, 48),
                     title: title,
                     labels: ["Сниппет", "Обсуждение"],
                   }}
