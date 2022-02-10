@@ -48,7 +48,7 @@
     "gitalk": "^1.6.2",
     "netlify-cms-app": "^2.12.16",
     "node-html-parser": "^1.2.20",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "preact": "^10.4.6",
     "preact-render-to-string": "^5.1.10",
     "prismjs": "^1.21.0",
